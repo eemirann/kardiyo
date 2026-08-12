@@ -42,7 +42,12 @@ const SETS = [
       /^KARDİYOVASKÜLER KLİNİK FARMAKOLOJİ$/,
       /^Deneme\s+\d+\s+—\s+Cevap Anahtarı$/,
       /^SoruCevap/,
-      /^(\d{1,2}[A-E]){2,}$/, // cevap anahtari tablosu satirlari
+      /^(\d{1,2}[A-E]){2,}$/, // deneme sonu cevap anahtari tablosu satirlari
+      // Kitabin sonundaki "Toplu Cevap Anahtari (10 Deneme)" tablosu: son sorunun
+      // cozumune yapisiyordu ("1CCBBBBBAAA" gibi satirlar)
+      /^Toplu Cevap Anahtarı/,
+      /^SoruD1D2/,
+      /^\d{1,2}[A-E]{10}$/,
     ],
   },
   {
@@ -239,12 +244,26 @@ async function parseSet(cfg) {
       if (fix) {
         out.fixedOptions = [];
         for (const [label, patch] of Object.entries(fix)) {
-          const opt = out.options.find((o) => o.label === label);
-          if (!opt) {
-            problems.push(`Deneme ${s.number} soru ${q.number}: düzeltilecek ${label} şıkkı yok`);
-            continue;
+          // patch.text: metni tamamen degistir | patch.replace: [eski, yeni] parca degistir
+          const apply = (cur) =>
+            patch.replace ? cur.split(patch.replace[0]).join(patch.replace[1]) : patch.text;
+
+          if (label === 'stem') {
+            const next = apply(out.stem);
+            if (next === out.stem)
+              problems.push(`Deneme ${s.number} soru ${q.number}: kök düzeltmesi eşleşmedi`);
+            out.stem = next;
+          } else {
+            const opt = out.options.find((o) => o.label === label);
+            if (!opt) {
+              problems.push(`Deneme ${s.number} soru ${q.number}: düzeltilecek ${label} şıkkı yok`);
+              continue;
+            }
+            const next = apply(opt.text);
+            if (next === opt.text)
+              problems.push(`Deneme ${s.number} soru ${q.number}: ${label} düzeltmesi eşleşmedi`);
+            opt.text = next;
           }
-          opt.text = patch.text;
           out.fixedOptions.push(`${label} (${patch.kind})`);
         }
       }

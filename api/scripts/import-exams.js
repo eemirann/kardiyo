@@ -218,12 +218,28 @@ async function run() {
       }
     }
 
+    // Soru kokunu degistiren bir duzeltme yapildiysa eski satir eslesmez ve
+    // hicbir sinava bagli olmayan bir kopya olarak kalir; goze batsin diye rapor et.
+    const { rows: orphans } = await client.query(
+      `SELECT q.id, LEFT(regexp_replace(q.body, '<[^>]+>', '', 'g'), 70) AS ozet
+         FROM questions q
+        WHERE NOT EXISTS (SELECT 1 FROM exam_questions eq WHERE eq.question_id = q.id)
+        ORDER BY q.id`
+    );
+
     await client.query('COMMIT');
 
     console.log(`\nDeneme: ${examCount} | İşlenen soru: ${questionCount}`);
     if (duplicates.length) {
       console.log(`\nAynı sınavda tekrar ettiği için atlanan ${duplicates.length} soru:`);
       for (const d of duplicates) console.log(`  ${d}`);
+    }
+    if (orphans.length) {
+      console.log(
+        `\nHiçbir sınava bağlı olmayan ${orphans.length} soru var. Soru kökü düzeltildiyse` +
+          ' eski kopya burada görünür; gerekiyorsa yönetici panelinden silin:'
+      );
+      for (const o of orphans) console.log(`  #${o.id} ${o.ozet}…`);
     }
     if (missingLabels.size)
       console.log(`Eslenmeyen konu basliklari: ${[...missingLabels].join(', ')}`);

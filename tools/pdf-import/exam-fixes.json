@@ -4,6 +4,9 @@
     "boylece exams.json yeniden uretildiginde duzeltmeler korunur.",
     "kind = 'tamamlandi': metin kaynakta yarida kesilmis, cozum metnine dayanarak tamamlandi.",
     "kind = 'yeniden-yazildi': kaynakta sik tamamen kayip/bozuk, yerine celdirici yazildi.",
+    "kind = 'yazim': yalnizca yazim hatasi duzeltmesi, anlam degismedi.",
+    "Anahtar 'stem' ise soru kokune, A-E ise ilgili sikka uygulanir.",
+    "patch.text metni tamamen degistirir; patch.replace = [eski, yeni] parca degistirir.",
     "Dogru sik ve cevap anahtari hicbir yerde degistirilmedi."
   ],
 
@@ -16,10 +19,22 @@
     "D6S20": { "D": { "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi", "kind": "yeniden-yazildi" } },
     "D7S15": { "D": { "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi", "kind": "yeniden-yazildi" } },
 
-    "_valvuler_af": "C (doğru şık) '(DOA' ile kesilmiş; çözüm metnine göre tamamlandı.",
-    "D1S4":  { "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" } },
-    "D4S11": { "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" } },
-    "D5S11": { "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" } },
+    "_valvuler_af": "C (doğru şık) '(DOA' ile kesilmiş; çözüm metnine göre tamamlandı. A ve D şıklarında skor adı 'CHAD2DS2-VASc' yanlış yazılmış.",
+    "D1S4": {
+      "A": { "replace": ["CHAD2DS2-VASc", "CHA2DS2-VASc"], "kind": "yazim" },
+      "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" },
+      "D": { "replace": ["CHAD2DS2-VASc", "CHA2DS2-VASc"], "kind": "yazim" }
+    },
+    "D4S11": {
+      "A": { "replace": ["CHAD2DS2-VASc", "CHA2DS2-VASc"], "kind": "yazim" },
+      "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" },
+      "D": { "replace": ["CHAD2DS2-VASc", "CHA2DS2-VASc"], "kind": "yazim" }
+    },
+    "D5S11": {
+      "A": { "replace": ["CHAD2DS2-VASc", "CHA2DS2-VASc"], "kind": "yazim" },
+      "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" },
+      "D": { "replace": ["CHAD2DS2-VASc", "CHA2DS2-VASc"], "kind": "yazim" }
+    },
 
     "_ht_baslangic": "C (doğru şık) '(SP' ile kesilmiş; çözümdeki 'tek hap kombinasyonu - SPC' ifadesine göre tamamlandı.",
     "D2S12": { "C": { "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SPC) ile başlanmalıdır.", "kind": "tamamlandi" } },
@@ -30,9 +45,15 @@
     "D5S14": { "E": { "text": "Ritim kontrolü denenmeden yalnızca hız kontrolü uygulanmalı, kardiyoversiyon düşünülmemelidir.", "kind": "yeniden-yazildi" } },
     "D8S9":  { "E": { "text": "Ritim kontrolü denenmeden yalnızca hız kontrolü uygulanmalı, kardiyoversiyon düşünülmemelidir.", "kind": "yeniden-yazildi" } },
 
-    "_mi_sonrasi_icd": "D şıkkı C'nin kopyası ('C) Geçici Pacemaker'); yerine yeni çeldirici.",
-    "D6S12": { "D": { "text": "Kalıcı çift odacıklı (DDD) kalp pili implantasyonu", "kind": "yeniden-yazildi" } },
-    "D7S11": { "D": { "text": "Kalıcı çift odacıklı (DDD) kalp pili implantasyonu", "kind": "yeniden-yazildi" } },
+    "_mi_sonrasi_icd": "D şıkkı C'nin kopyası ('C) Geçici Pacemaker'); yerine yeni çeldirici. Kökte 'NYHA Sınıf IIIII', araya giren tire kaybolmuş.",
+    "D6S12": {
+      "stem": { "replace": ["NYHA Sınıf IIIII", "NYHA Sınıf II-III"], "kind": "yazim" },
+      "D": { "text": "Kalıcı çift odacıklı (DDD) kalp pili implantasyonu", "kind": "yeniden-yazildi" }
+    },
+    "D7S11": {
+      "stem": { "replace": ["NYHA Sınıf IIIII", "NYHA Sınıf II-III"], "kind": "yazim" },
+      "D": { "text": "Kalıcı çift odacıklı (DDD) kalp pili implantasyonu", "kind": "yeniden-yazildi" }
+    },
 
     "_sekonder_korunma": "'(ICD) takılması' ifadesindeki 'D)' şık etiketi sanılıp doğru şık ikiye bölünmüş: C tamamlandı, boşalan D'ye yeni çeldirici yazıldı.",
     "D6S16": {

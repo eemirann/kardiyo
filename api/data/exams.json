@@ -7252,7 +7252,7 @@
                 }
               ],
               "answer": "A",
-              "explanation": "Yapısal kalp hastalığı ve/veya azalmış LVEF varlığında antiaritmik seçimi belirgin daralır. Sınıf IC ajanlar (flekainid, propafenon) iskemik/yapısal kalp hastalığında proaritmi ve mortalite artışı nedeniyle KONTRENDİKEDİR (CAST çalışması). Dronedaron ileri kalp yetmezliği (ANDROMEDA) ve kalıcı AF'de (PALLAS) mortaliteyi artırdığından kullanılmaz. Sotalol, LVEF düşüklüğü ve QT riski nedeniyle bu hastada tercih edilmez. Bu koşullarda güvenli seçenek amiodarondur; negatif inotropik etkisi minimaldir ve yapısal kalp hastalığında proaritmi riski en düşük ajandır. Dofetilid de kalp yetmezliğinde kullanılabilen bir alternatiftir (hastanede başlatma koşuluyla). Uzun dönemde amiodaronun multi-organ toksisitesi nedeniyle genç hastalarda kateter ablasyonu öne alınmalıdır. Toplu Cevap Anahtarı (10 Deneme) SoruD1D2D3D4D5D6D7D8D9D10 1CCBBBBBAAA 2BBCBAAAAAA 3BBABAABAAA 4BABAABBBAA 5BBABBAAAAA 6BCBABBAAAA 7CBBBABAAAA 8CADABAAAAA 9CBABBABAAA 10BBABABAAAA 11ABBBABBAAA 12CBBBBAAAAA 13CBBBBABAAA 14BBAABAAAAA 15BAABAABAAA 16BBABBAAAAA 17BAABBAAAAA 18DBBBBBAAAA 19CABAAAAAAA 20ABBBABAAAA",
+              "explanation": "Yapısal kalp hastalığı ve/veya azalmış LVEF varlığında antiaritmik seçimi belirgin daralır. Sınıf IC ajanlar (flekainid, propafenon) iskemik/yapısal kalp hastalığında proaritmi ve mortalite artışı nedeniyle KONTRENDİKEDİR (CAST çalışması). Dronedaron ileri kalp yetmezliği (ANDROMEDA) ve kalıcı AF'de (PALLAS) mortaliteyi artırdığından kullanılmaz. Sotalol, LVEF düşüklüğü ve QT riski nedeniyle bu hastada tercih edilmez. Bu koşullarda güvenli seçenek amiodarondur; negatif inotropik etkisi minimaldir ve yapısal kalp hastalığında proaritmi riski en düşük ajandır. Dofetilid de kalp yetmezliğinde kullanılabilen bir alternatiftir (hastanede başlatma koşuluyla). Uzun dönemde amiodaronun multi-organ toksisitesi nedeniyle genç hastalarda kateter ablasyonu öne alınmalıdır.",
               "reference": "Bölüm 8.6 Yapısal Kalp Hastalığında Antiaritmik Seçimi",
               "warnings": []
             }
@@ -7390,7 +7390,7 @@
               "options": [
                 {
                   "label": "A",
-                  "text": "CHAD2DS2-VASc skoru hesaplanıp skor ≥2 ise Rivaroksaban başlanmalıdır.",
+                  "text": "CHA2DS2-VASc skoru hesaplanıp skor ≥2 ise Rivaroksaban başlanmalıdır.",
                   "isCorrect": false
                 },
                 {
@@ -7405,7 +7405,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "CHAD2DS2-VASc skoru 0 olduğu için antikoagülasyona gerek yoktur.",
+                  "text": "CHA2DS2-VASc skoru 0 olduğu için antikoagülasyona gerek yoktur.",
                   "isCorrect": false
                 },
                 {
@@ -7418,7 +7418,9 @@
               "explanation": "Hastada romatizmal Orta-Ciddi Mitral Darlığı ve buna eşlik eden yeni başlayan Atriyal Fibrilasyon mevcuttur. Bu durum 'Valvüler Atriyal Fibrilasyon' olarak tanımlanır. Valvüler AF'de (orta/ciddi MD veya mekanik kapak protezi) inme riski çok yüksektir ve DOAC'lar (Apiksaban, Rivaroksaban vb.) kullanılamaz; sadece Vitamin K antagonisti olan Warfarin endikedir.",
               "reference": "",
               "fixedOptions": [
-                "C (tamamlandi)"
+                "A (yazim)",
+                "C (tamamlandi)",
+                "D (yazim)"
               ],
               "warnings": []
             },
@@ -9835,7 +9837,7 @@
               "options": [
                 {
                   "label": "A",
-                  "text": "CHAD2DS2-VASc skoru hesaplanıp skor ≥2 ise Rivaroksaban başlanmalıdır.",
+                  "text": "CHA2DS2-VASc skoru hesaplanıp skor ≥2 ise Rivaroksaban başlanmalıdır.",
                   "isCorrect": false
                 },
                 {
@@ -9850,7 +9852,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "CHAD2DS2-VASc skoru 0 olduğu için antikoagülasyona gerek yoktur.",
+                  "text": "CHA2DS2-VASc skoru 0 olduğu için antikoagülasyona gerek yoktur.",
                   "isCorrect": false
                 },
                 {
@@ -9863,7 +9865,9 @@
               "explanation": "Hastada romatizmal Orta-Ciddi Mitral Darlığı ve buna eşlik eden yeni başlayan Atriyal Fibrilasyon mevcuttur. Bu durum 'Valvüler Atriyal Fibrilasyon' olarak tanımlanır. Valvüler AF'de (orta/ciddi MD veya mekanik kapak protezi) inme riski çok yüksektir ve DOAC'lar (Apiksaban, Rivaroksaban vb.) kullanılamaz; sadece Vitamin K antagonisti olan Warfarin endikedir.",
               "reference": "",
               "fixedOptions": [
-                "C (tamamlandi)"
+                "A (yazim)",
+                "C (tamamlandi)",
+                "D (yazim)"
               ],
               "warnings": []
             },
@@ -10563,7 +10567,7 @@
               "options": [
                 {
                   "label": "A",
-                  "text": "CHAD2DS2-VASc skoru hesaplanıp skor ≥2 ise Rivaroksaban başlanmalıdır.",
+                  "text": "CHA2DS2-VASc skoru hesaplanıp skor ≥2 ise Rivaroksaban başlanmalıdır.",
                   "isCorrect": false
                 },
                 {
@@ -10578,7 +10582,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "CHAD2DS2-VASc skoru 0 olduğu için antikoagülasyona gerek yoktur.",
+                  "text": "CHA2DS2-VASc skoru 0 olduğu için antikoagülasyona gerek yoktur.",
                   "isCorrect": false
                 },
                 {
@@ -10591,7 +10595,9 @@
               "explanation": "Hastada romatizmal Orta-Ciddi Mitral Darlığı ve buna eşlik eden yeni başlayan Atriyal Fibrilasyon mevcuttur. Bu durum 'Valvüler Atriyal Fibrilasyon' olarak tanımlanır. Valvüler AF'de (orta/ciddi MD veya mekanik kapak protezi) inme riski çok yüksektir ve DOAC'lar (Apiksaban, Rivaroksaban vb.) kullanılamaz; sadece Vitamin K antagonisti olan Warfarin endikedir.",
               "reference": "",
               "fixedOptions": [
-                "C (tamamlandi)"
+                "A (yazim)",
+                "C (tamamlandi)",
+                "D (yazim)"
               ],
               "warnings": []
             },
@@ -11326,7 +11332,7 @@
             {
               "number": 12,
               "topicLabel": "KALP YETMEZLIĞI",
-              "stem": "65 yaşında erkek hasta, 117 gün önce geçirilmiş anterior miyokard infarktüsü (MI) öyküsüyle polikliniğe başvuruyor. Güncel LVEF %30 olarak ölçülüyor. Hasta NYHA Sınıf IIIII semptomları tarifliyor ve optimal 4 sütun kalp yetmezliği medikal tedavisini tolere ediyor. EKG'sinde QRS süresi 100 ms saptanıyor. Bu hastada ani kardiyak ölümü önlemek amacıyla aşağıdaki cihaz tedavilerinden hangisi en uygundur?",
+              "stem": "65 yaşında erkek hasta, 117 gün önce geçirilmiş anterior miyokard infarktüsü (MI) öyküsüyle polikliniğe başvuruyor. Güncel LVEF %30 olarak ölçülüyor. Hasta NYHA Sınıf II-III semptomları tarifliyor ve optimal 4 sütun kalp yetmezliği medikal tedavisini tolere ediyor. EKG'sinde QRS süresi 100 ms saptanıyor. Bu hastada ani kardiyak ölümü önlemek amacıyla aşağıdaki cihaz tedavilerinden hangisi en uygundur?",
               "options": [
                 {
                   "label": "A",
@@ -11358,6 +11364,7 @@
               "explanation": "İskemik etiyolojisi olan (MI'dan en az 40 gün geçmiş), optimal medikal tedaviye rağmen LVEF ≤ %35 olan ve semptomatik (NYHA II-III) hastalarda ani kardiyak ölümün primer koruması için İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması endikedir. Hastanın QRS süresi dar olduğu için CRT endikasyonu yoktur.",
               "reference": "",
               "fixedOptions": [
+                "stem (yazim)",
                 "D (yeniden-yazildi)"
               ],
               "warnings": []
@@ -12029,7 +12036,7 @@
             {
               "number": 11,
               "topicLabel": "KALP YETMEZLIĞI",
-              "stem": "82 yaşında kadın hasta, 118 gün önce geçirilmiş anterior miyokard infarktüsü (MI) öyküsüyle polikliniğe başvuruyor. Güncel LVEF %25 olarak ölçülüyor. Hasta NYHA Sınıf IIIII semptomları tarifliyor ve optimal 4 sütun kalp yetmezliği medikal tedavisini tolere ediyor. EKG'sinde QRS süresi 100 ms saptanıyor. Bu hastada ani kardiyak ölümü önlemek amacıyla aşağıdaki cihaz tedavilerinden hangisi en uygundur?",
+              "stem": "82 yaşında kadın hasta, 118 gün önce geçirilmiş anterior miyokard infarktüsü (MI) öyküsüyle polikliniğe başvuruyor. Güncel LVEF %25 olarak ölçülüyor. Hasta NYHA Sınıf II-III semptomları tarifliyor ve optimal 4 sütun kalp yetmezliği medikal tedavisini tolere ediyor. EKG'sinde QRS süresi 100 ms saptanıyor. Bu hastada ani kardiyak ölümü önlemek amacıyla aşağıdaki cihaz tedavilerinden hangisi en uygundur?",
               "options": [
                 {
                   "label": "A",
@@ -12061,6 +12068,7 @@
               "explanation": "İskemik etiyolojisi olan (MI'dan en az 40 gün geçmiş), optimal medikal tedaviye rağmen LVEF ≤ %35 olan ve semptomatik (NYHA II-III) hastalarda ani kardiyak ölümün primer koruması için İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması endikedir. Hastanın QRS süresi dar olduğu için CRT endikasyonu yoktur.",
               "reference": "",
               "fixedOptions": [
+                "stem (yazim)",
                 "D (yeniden-yazildi)"
               ],
               "warnings": []
