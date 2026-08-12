@@ -184,7 +184,8 @@ export function VideoDetailPage() {
     <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
       <div>
         <div className="overflow-hidden rounded-xl bg-inverse-surface">
-          {video.source === 'upload' && video.url ? (
+          {/* 'file' = dogrudan mp4/webm baglantisi, 'upload' = R2'ye yuklenen dosya */}
+          {(video.source === 'upload' || video.source === 'file') && video.url ? (
             <video
               ref={videoRef}
               src={video.url}

@@ -34,7 +34,9 @@ router.get(
         ORDER BY t.sort_order, t.name`,
       [userId, premium]
     );
-    res.json({ topics: rows });
+    // Icerigi olmayan konu basliklari listede gorunmez (bos sayfaya goturuyordu).
+    // Yonetici paneli /admin/topics ucunu kullandigi icin oradan hepsi yonetilebilir.
+    res.json({ topics: rows.filter((t) => t.question_count > 0 || t.video_count > 0) });
   })
 );
 

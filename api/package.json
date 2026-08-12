@@ -14,7 +14,8 @@
     "import-exams": "node scripts/import-exams.js",
     "import-guides": "node scripts/import-guides.js",
     "import-question-sets": "node scripts/import-question-sets.js",
-    "set-admin-password": "node scripts/set-admin-password.js"
+    "set-admin-password": "node scripts/set-admin-password.js",
+    "dedupe-questions": "node scripts/dedupe-questions.js"
   },
   "license": "ISC",
   "dependencies": {

@@ -380,7 +380,9 @@ const videoSchema = z
     topicId: z.coerce.number().int().positive().nullish(),
     title: z.string().min(3).max(200).trim(),
     description: z.string().max(2000).nullish(),
-    source: z.enum(['youtube', 'vimeo', 'upload']),
+    // 'file': dogrudan mp4/webm baglantisi — dosya yukleme (R2) kapaliyken de
+    // kendi barindirdiginiz videoyu ekleyebilmek icin
+    source: z.enum(['youtube', 'vimeo', 'file', 'upload']),
     url: z.string().url().max(500).nullish(),
     storageKey: z.string().max(500).nullish(),
     durationSeconds: z.coerce.number().int().min(0).nullish(),

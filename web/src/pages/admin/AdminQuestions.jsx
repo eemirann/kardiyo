@@ -4,7 +4,8 @@ import { useToast } from '../../context/ToastContext';
 import { AdminHeader, DataTable, Field, Modal, RowActions, StatusPill, Toggle } from '../../components/admin';
 import { DifficultyChip, ErrorBox, Icon, PageLoader, Spinner } from '../../components/ui';
 
-const LABELS = ['A', 'B', 'C', 'D', 'E'];
+// Varsayilan 5 sik; form 2 ile 6 arasinda sik eklemeye/silmeye izin verir (API siniri 6)
+const LABELS = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 const emptyForm = (topicId) => ({
   topicId: topicId || '',
@@ -318,9 +319,50 @@ export default function AdminQuestions() {
                         })
                       }
                     />
+                    {editing.form.options.length > 2 && (
+                      <button
+                        type="button"
+                        title="Bu şıkkı kaldır"
+                        className="btn-ghost px-2 py-1.5 text-error hover:bg-error-container"
+                        onClick={() =>
+                          setEditing({
+                            ...editing,
+                            form: {
+                              ...editing.form,
+                              // Etiketler her zaman A'dan basliyor: silinince yeniden harflenir
+                              options: editing.form.options
+                                .filter((_, j) => j !== i)
+                                .map((x, j) => ({ ...x, label: LABELS[j] })),
+                            },
+                          })
+                        }
+                      >
+                        <Icon name="close" size={16} />
+                      </button>
+                    )}
                   </div>
                 ))}
               </div>
+              {editing.form.options.length < LABELS.length && (
+                <button
+                  type="button"
+                  className="btn-outline mt-3 px-3 py-1.5 text-label-sm"
+                  onClick={() =>
+                    setEditing({
+                      ...editing,
+                      form: {
+                        ...editing.form,
+                        options: [
+                          ...editing.form.options,
+                          { label: LABELS[editing.form.options.length], text: '', isCorrect: false },
+                        ],
+                      },
+                    })
+                  }
+                >
+                  <Icon name="add" size={16} /> Şık ekle
+                </button>
+              )}
             </Field>
 
             <Field label="Ayrıntılı çözüm">

@@ -108,8 +108,9 @@ export default function AdminVideos() {
 
       {!uploadEnabled && (
         <div className="mb-4 rounded-lg border border-warning/30 bg-warning-container px-4 py-3 text-on-warning-container">
-          <Icon name="info" size={18} /> Dosya yükleme kapalı (R2 ayarları eksik). YouTube/Vimeo
-          linkiyle video eklemeye devam edebilirsiniz.
+          <Icon name="info" size={18} /> Sunucuya dosya yükleme kapalı (R2 ayarları eksik).
+          YouTube/Vimeo linkiyle veya kendi barındırdığınız mp4/webm adresini "Doğrudan video
+          bağlantısı" olarak ekleyebilirsiniz.
         </div>
       )}
 
@@ -128,7 +129,9 @@ export default function AdminVideos() {
                 </td>
                 <td className="px-4 py-3 text-body-md text-secondary">{v.topic_name || '—'}</td>
                 <td className="px-4 py-3 text-body-md text-secondary">
-                  {v.source === 'upload' ? 'Yüklenen dosya' : v.source}
+                  {{ upload: 'Yüklenen dosya', file: 'Doğrudan bağlantı', youtube: 'YouTube', vimeo: 'Vimeo' }[
+                    v.source
+                  ] || v.source}
                 </td>
                 <td className="px-4 py-3 text-body-md text-secondary">
                   {v.duration_seconds ? formatDuration(v.duration_seconds) : '—'}
@@ -201,8 +204,9 @@ export default function AdminVideos() {
                 <select className="input" value={editing.form.source} onChange={(e) => setForm({ source: e.target.value })}>
                   <option value="youtube">YouTube linki</option>
                   <option value="vimeo">Vimeo linki</option>
+                  <option value="file">Doğrudan video bağlantısı (mp4/webm)</option>
                   <option value="upload" disabled={!uploadEnabled}>
-                    Dosya yükle {uploadEnabled ? '' : '(kapalı)'}
+                    Dosya yükle {uploadEnabled ? '' : '(R2 ayarlı değil)'}
                   </option>
                 </select>
               </Field>
@@ -225,7 +229,14 @@ export default function AdminVideos() {
                 )}
               </Field>
             ) : (
-              <Field label="Video linki" hint="Örn. https://www.youtube.com/watch?v=XXXXXXXXXXX">
+              <Field
+                label="Video linki"
+                hint={
+                  editing.form.source === 'file'
+                    ? "Doğrudan dosya adresi, örn. https://.../ders.mp4 — tarayıcıda oynatılır."
+                    : 'Örn. https://www.youtube.com/watch?v=XXXXXXXXXXX'
+                }
+              >
                 <input
                   type="url"
                   className="input"
