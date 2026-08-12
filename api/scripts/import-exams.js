@@ -49,7 +49,8 @@ const NEW_TOPICS = [
   {
     slug: 'enfektif-endokardit',
     name: 'Enfektif Endokardit',
-    icon: 'infection',
+    // 'infection' Material Symbols'ta yok, adi duz yazi olarak basiliyordu
+    icon: 'coronavirus',
     order: 9,
     description: 'Tanı ölçütleri, etkene göre antibiyoterapi, profilaksi ve cerrahi endikasyonlar.',
   },
