@@ -10,7 +10,10 @@ const { pool } = require('../config/db');
 
 const MIGRATIONS_DIR = path.join(__dirname, '..', 'migrations');
 
-async function run() {
+/**
+ * @param {{closePool?: boolean}} opts  Sunucu acilisinda cagrilirken havuz kapatilmamali.
+ */
+async function run({ closePool = true } = {}) {
   const client = await pool.connect();
   try {
     await client.query(`
@@ -49,11 +52,23 @@ async function run() {
     console.log(count === 0 ? 'Veritabani zaten guncel.' : `${count} migration uygulandi.`);
   } finally {
     client.release();
-    await pool.end();
+    if (closePool) await pool.end();
   }
 }
 
-run().catch((err) => {
-  console.error('Migration basarisiz:', err.message);
-  process.exit(1);
-});
+module.exports = { run };
+
+if (require.main === module) {
+  run().catch((err) => {
+    // Baglanti hic kurulamadiginda Node bos mesajli AggregateError firlatiyor;
+    // sebebi gorunsun diye kodu ve alt hatalari da yazdiriyoruz.
+    const detail =
+      [err.code, err.message].filter(Boolean).join(' ') ||
+      (err.errors || []).map((e) => `${e.code || ''} ${e.message || ''}`.trim()).join(' | ') ||
+      String(err);
+    console.error(`Migration basarisiz: ${detail}`);
+    if (!process.env.DATABASE_URL)
+      console.error('DATABASE_URL tanimli degil — ortam degiskenlerini kontrol edin.');
+    process.exit(1);
+  });
+}

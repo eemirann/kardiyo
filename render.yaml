@@ -8,9 +8,9 @@ services:
     plan: free
     # Neon veritabani eu-central-1'de; API'yi de Frankfurt'ta tutmak gecikmeyi dusuruyor
     region: frankfurt
-    # Ucretsiz planda preDeployCommand ve Shell yok; migration build asamasinda
-    # calistiriliyor. Migration idempotent (schema_migrations tablosu tutuluyor).
-    buildCommand: npm install && npm run migrate
+    # Ucretsiz planda preDeployCommand ve Shell yok; migration sunucu acilisinda
+    # calisiyor (server.js). Build'in veritabanina ihtiyaci yok.
+    buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /health
     envVars:
