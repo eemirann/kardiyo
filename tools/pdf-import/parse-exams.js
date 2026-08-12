@@ -18,6 +18,7 @@ const { extractLines } = require('./layout');
 
 const OKU = 'C:/Users/LENOVO/Desktop/kardiyo/OKU';
 const OUT = path.join(__dirname, '..', '..', 'api', 'data', 'exams.json');
+const FIXES = require('./exam-fixes.json');
 
 const SETS = [
   {
@@ -233,6 +234,21 @@ async function parseSet(cfg) {
         explanation: stripLeadingAnswerText(tidy(sol?.explanation || ''), correct?.text || ''),
         reference: sol?.reference || '',
       };
+      // Kaynakta bozuk siklarin duzeltmesi (exam-fixes.json)
+      const fix = FIXES[cfg.key]?.[`D${s.number}S${q.number}`];
+      if (fix) {
+        out.fixedOptions = [];
+        for (const [label, patch] of Object.entries(fix)) {
+          const opt = out.options.find((o) => o.label === label);
+          if (!opt) {
+            problems.push(`Deneme ${s.number} soru ${q.number}: düzeltilecek ${label} şıkkı yok`);
+            continue;
+          }
+          opt.text = patch.text;
+          out.fixedOptions.push(`${label} (${patch.kind})`);
+        }
+      }
+
       out.warnings = qualityWarnings(out);
       return out;
     });
@@ -267,10 +283,16 @@ async function parseSet(cfg) {
     console.log(`Konu blokları: ${[...new Set(qs.map((q) => q.topicLabel))].join(' | ')}`);
     console.log(`SORUN (${set.problems.length}): ${set.problems.slice(0, 10).join(' · ') || 'yok'}`);
 
+    const fixed = set.exams.flatMap((e) =>
+      e.questions.filter((q) => q.fixedOptions?.length).map((q) => ({ e: e.number, q }))
+    );
+    console.log(`Düzeltilen soru: ${fixed.length}`);
+    for (const f of fixed) console.log(`  D${f.e}S${f.q.number}: ${f.q.fixedOptions.join(', ')}`);
+
     const flagged = set.exams.flatMap((e) =>
       e.questions.filter((q) => q.warnings.length).map((q) => ({ e: e.number, q }))
     );
-    console.log(`Kaynakta bozuk soru: ${flagged.length}`);
+    console.log(`Hâlâ bozuk soru: ${flagged.length}`);
     for (const f of flagged) console.log(`  D${f.e}S${f.q.number}: ${f.q.warnings.join(', ')}`);
   }
 

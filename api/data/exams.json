@@ -7294,7 +7294,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "stabil plak rüptürü B) Akut viral miyokardite bağlı lenfositik infiltrasyon C) Akut, şiddetli fiziksel veya emosyonel strese bağlı masif katekolamin deşarjı ve miyokardiyal toksisite",
+                  "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi",
                   "isCorrect": false
                 },
                 {
@@ -7306,10 +7306,10 @@
               "answer": "C",
               "explanation": "Takotsubo (Stres) Kardiyomiyopatisi, genellikle postmenopozal kadınlarda ani ve şiddetli bir emosyonel/fiziksel stresör sonrası aşırı katekolamin deşarjının miyokard (özellikle apeks) üzerinde oluşturduğu toksik etki ve mikrovasküler spazm sonucu gelişir. Koroner anjiyografi normaldir, ancak EKG STEMI'yi taklit eder. Miyokard infarktüsünün aksine, bu hastalarda kalp fonksiyonları haftalar içinde genellikle tamamen düzelir.",
               "reference": "",
-              "warnings": [
-                "D şıkkına başka şıkkın metni sızmış",
-                "D şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 2,
@@ -7400,7 +7400,7 @@
                 },
                 {
                   "label": "C",
-                  "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOA",
+                  "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.",
                   "isCorrect": true
                 },
                 {
@@ -7417,9 +7417,10 @@
               "answer": "C",
               "explanation": "Hastada romatizmal Orta-Ciddi Mitral Darlığı ve buna eşlik eden yeni başlayan Atriyal Fibrilasyon mevcuttur. Bu durum 'Valvüler Atriyal Fibrilasyon' olarak tanımlanır. Valvüler AF'de (orta/ciddi MD veya mekanik kapak protezi) inme riski çok yüksektir ve DOAC'lar (Apiksaban, Rivaroksaban vb.) kullanılamaz; sadece Vitamin K antagonisti olan Warfarin endikedir.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)"
+              ],
+              "warnings": []
             },
             {
               "number": 5,
@@ -7767,7 +7768,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "stabil plak rüptürü B) Akut viral miyokardite bağlı lenfositik infiltrasyon C) Akut, şiddetli fiziksel veya emosyonel strese bağlı masif katekolamin deşarjı ve miyokardiyal toksisite",
+                  "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi",
                   "isCorrect": false
                 },
                 {
@@ -7779,10 +7780,10 @@
               "answer": "C",
               "explanation": "Takotsubo (Stres) Kardiyomiyopatisi, genellikle postmenopozal kadınlarda ani ve şiddetli bir emosyonel/fiziksel stresör sonrası aşırı katekolamin deşarjının miyokard (özellikle apeks) üzerinde oluşturduğu toksik etki ve mikrovasküler spazm sonucu gelişir. Koroner anjiyografi normaldir, ancak EKG STEMI'yi taklit eder. Miyokard infarktüsünün aksine, bu hastalarda kalp fonksiyonları haftalar içinde genellikle tamamen düzelir.",
               "reference": "",
-              "warnings": [
-                "D şıkkına başka şıkkın metni sızmış",
-                "D şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 15,
@@ -8418,7 +8419,7 @@
                 },
                 {
                   "label": "C",
-                  "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SP",
+                  "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SPC) ile başlanmalıdır.",
                   "isCorrect": true
                 },
                 {
@@ -8435,9 +8436,10 @@
               "answer": "C",
               "explanation": "Güncel kılavuzlar (ESC 2024 / ESH 2023), spesifik endikasyonu olmayan ve frail olmayan çoğu hipertansiyon hastasında tedaviye monoterapi yerine başlangıçta düşük doz ikili kombinasyon ile (tercihen hasta uyumunu artırmak için tek hap kombinasyonu - SPC) başlanmasını önermektedir. Standart ilk adım ACEİ/ARB + Kalsiyum kanal blokeri veya Tiyazid/Tiyazid benzeri diüretik şeklindedir.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)"
+              ],
+              "warnings": []
             },
             {
               "number": 13,
@@ -9145,7 +9147,7 @@
                 },
                 {
                   "label": "C",
-                  "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SP",
+                  "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SPC) ile başlanmalıdır.",
                   "isCorrect": true
                 },
                 {
@@ -9162,9 +9164,10 @@
               "answer": "C",
               "explanation": "Güncel kılavuzlar (ESC 2024 / ESH 2023), spesifik endikasyonu olmayan ve frail olmayan çoğu hipertansiyon hastasında tedaviye monoterapi yerine başlangıçta düşük doz ikili kombinasyon ile (tercihen hasta uyumunu artırmak için tek hap kombinasyonu - SPC) başlanmasını önermektedir. Standart ilk adım ACEİ/ARB + Kalsiyum kanal blokeri veya Tiyazid/Tiyazid benzeri diüretik şeklindedir.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)"
+              ],
+              "warnings": []
             },
             {
               "number": 13,
@@ -9188,7 +9191,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "stabil plak rüptürü B) Akut viral miyokardite bağlı lenfositik infiltrasyon C) Akut, şiddetli fiziksel veya emosyonel strese bağlı masif katekolamin deşarjı ve miyokardiyal toksisite",
+                  "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi",
                   "isCorrect": false
                 },
                 {
@@ -9200,10 +9203,10 @@
               "answer": "C",
               "explanation": "Takotsubo (Stres) Kardiyomiyopatisi, genellikle postmenopozal kadınlarda ani ve şiddetli bir emosyonel/fiziksel stresör sonrası aşırı katekolamin deşarjının miyokard (özellikle apeks) üzerinde oluşturduğu toksik etki ve mikrovasküler spazm sonucu gelişir. Koroner anjiyografi normaldir, ancak EKG STEMI'yi taklit eder. Miyokard infarktüsünün aksine, bu hastalarda kalp fonksiyonları haftalar içinde genellikle tamamen düzelir.",
               "reference": "",
-              "warnings": [
-                "D şıkkına başka şıkkın metni sızmış",
-                "D şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 14,
@@ -9628,7 +9631,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "stabil plak rüptürü B) Akut viral miyokardite bağlı lenfositik infiltrasyon C) Akut, şiddetli fiziksel veya emosyonel strese bağlı masif katekolamin deşarjı ve miyokardiyal toksisite",
+                  "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi",
                   "isCorrect": false
                 },
                 {
@@ -9640,10 +9643,10 @@
               "answer": "C",
               "explanation": "Takotsubo (Stres) Kardiyomiyopatisi, genellikle postmenopozal kadınlarda ani ve şiddetli bir emosyonel/fiziksel stresör sonrası aşırı katekolamin deşarjının miyokard (özellikle apeks) üzerinde oluşturduğu toksik etki ve mikrovasküler spazm sonucu gelişir. Koroner anjiyografi normaldir, ancak EKG STEMI'yi taklit eder. Miyokard infarktüsünün aksine, bu hastalarda kalp fonksiyonları haftalar içinde genellikle tamamen düzelir.",
               "reference": "",
-              "warnings": [
-                "D şıkkına başka şıkkın metni sızmış",
-                "D şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 6,
@@ -9842,7 +9845,7 @@
                 },
                 {
                   "label": "C",
-                  "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOA",
+                  "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.",
                   "isCorrect": true
                 },
                 {
@@ -9859,9 +9862,10 @@
               "answer": "C",
               "explanation": "Hastada romatizmal Orta-Ciddi Mitral Darlığı ve buna eşlik eden yeni başlayan Atriyal Fibrilasyon mevcuttur. Bu durum 'Valvüler Atriyal Fibrilasyon' olarak tanımlanır. Valvüler AF'de (orta/ciddi MD veya mekanik kapak protezi) inme riski çok yüksektir ve DOAC'lar (Apiksaban, Rivaroksaban vb.) kullanılamaz; sadece Vitamin K antagonisti olan Warfarin endikedir.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)"
+              ],
+              "warnings": []
             },
             {
               "number": 12,
@@ -10569,7 +10573,7 @@
                 },
                 {
                   "label": "C",
-                  "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOA",
+                  "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.",
                   "isCorrect": true
                 },
                 {
@@ -10586,9 +10590,10 @@
               "answer": "C",
               "explanation": "Hastada romatizmal Orta-Ciddi Mitral Darlığı ve buna eşlik eden yeni başlayan Atriyal Fibrilasyon mevcuttur. Bu durum 'Valvüler Atriyal Fibrilasyon' olarak tanımlanır. Valvüler AF'de (orta/ciddi MD veya mekanik kapak protezi) inme riski çok yüksektir ve DOAC'lar (Apiksaban, Rivaroksaban vb.) kullanılamaz; sadece Vitamin K antagonisti olan Warfarin endikedir.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)"
+              ],
+              "warnings": []
             },
             {
               "number": 12,
@@ -10689,17 +10694,17 @@
                 },
                 {
                   "label": "E",
-                  "text": "veya uzun süreli antikoagülasyon beklenmeden erken kardiyoversiyon denenebilir. C) AF süresi 48 saati aşmadığı sürece tüm hastalara TEE yapılmalıdır. D) İlk seçenek olarak AV düğüm ablasyonu uygulanmalıdır.",
+                  "text": "Ritim kontrolü denenmeden yalnızca hız kontrolü uygulanmalı, kardiyoversiyon düşünülmemelidir.",
                   "isCorrect": false
                 }
               ],
               "answer": "B",
               "explanation": "2024 ESC Atriyal Fibrilasyon kılavuzu, önceki '48 saat' olan erken kardiyoversiyon güvenli zaman penceresini '24 saate' düşürmüştür. Başlangıç zamanı kesin olarak bilinen ve 24 saatten kısa süreli AF'si olan düşük riskli hastalarda, TEE veya 3 haftalık antikoagülasyon beklenmeden kardiyoversiyon (veya spontan dönüşüm için bekle-gör yaklaşımı) uygulanabilir.",
               "reference": "",
-              "warnings": [
-                "E şıkkına başka şıkkın metni sızmış",
-                "E şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "E (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 15,
@@ -11340,7 +11345,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "C) Geçici Pacemaker",
+                  "text": "Kalıcı çift odacıklı (DDD) kalp pili implantasyonu",
                   "isCorrect": false
                 },
                 {
@@ -11352,9 +11357,10 @@
               "answer": "B",
               "explanation": "İskemik etiyolojisi olan (MI'dan en az 40 gün geçmiş), optimal medikal tedaviye rağmen LVEF ≤ %35 olan ve semptomatik (NYHA II-III) hastalarda ani kardiyak ölümün primer koruması için İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması endikedir. Hastanın QRS süresi dar olduğu için CRT endikasyonu yoktur.",
               "reference": "",
-              "warnings": [
-                "D şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 13,
@@ -11481,12 +11487,12 @@
                 },
                 {
                   "label": "C",
-                  "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (IC",
+                  "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması",
                   "isCorrect": true
                 },
                 {
                   "label": "D",
-                  "text": "takılması",
+                  "text": "Giyilebilir kardiyoverter defibrilatör (yelek) ile üç ay izlem sonrası yeniden değerlendirme",
                   "isCorrect": false
                 },
                 {
@@ -11498,9 +11504,11 @@
               "answer": "C",
               "explanation": "Yapısal kalp hastalığı (iskemik kardiyomiyopati) zemininde akut/geri dönüşümlü bir neden olmaksızın gelişen kardiyak arrest veya sürdürülen VT/VF öyküsü olan hastalarda, ani kardiyak ölümün tekrarlamasını önlemek amacıyla 'sekonder korunma' için İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması güçlü (Sınıf I) bir endikasyondur.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)",
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 17,
@@ -11632,7 +11640,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "stabil plak rüptürü B) Akut viral miyokardite bağlı lenfositik infiltrasyon C) Akut, şiddetli fiziksel veya emosyonel strese bağlı masif katekolamin deşarjı ve miyokardiyal toksisite",
+                  "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi",
                   "isCorrect": false
                 },
                 {
@@ -11644,10 +11652,10 @@
               "answer": "C",
               "explanation": "Takotsubo (Stres) Kardiyomiyopatisi, genellikle postmenopozal kadınlarda ani ve şiddetli bir emosyonel/fiziksel stresör sonrası aşırı katekolamin deşarjının miyokard (özellikle apeks) üzerinde oluşturduğu toksik etki ve mikrovasküler spazm sonucu gelişir. Koroner anjiyografi normaldir, ancak EKG STEMI'yi taklit eder. Miyokard infarktüsünün aksine, bu hastalarda kalp fonksiyonları haftalar içinde genellikle tamamen düzelir.",
               "reference": "",
-              "warnings": [
-                "D şıkkına başka şıkkın metni sızmış",
-                "D şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             }
           ]
         },
@@ -11743,12 +11751,12 @@
                 },
                 {
                   "label": "C",
-                  "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (IC",
+                  "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması",
                   "isCorrect": true
                 },
                 {
                   "label": "D",
-                  "text": "takılması",
+                  "text": "Giyilebilir kardiyoverter defibrilatör (yelek) ile üç ay izlem sonrası yeniden değerlendirme",
                   "isCorrect": false
                 },
                 {
@@ -11760,9 +11768,11 @@
               "answer": "C",
               "explanation": "Yapısal kalp hastalığı (iskemik kardiyomiyopati) zemininde akut/geri dönüşümlü bir neden olmaksızın gelişen kardiyak arrest veya sürdürülen VT/VF öyküsü olan hastalarda, ani kardiyak ölümün tekrarlamasını önlemek amacıyla 'sekonder korunma' için İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması güçlü (Sınıf I) bir endikasyondur.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)",
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 4,
@@ -12038,7 +12048,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "C) Geçici Pacemaker",
+                  "text": "Kalıcı çift odacıklı (DDD) kalp pili implantasyonu",
                   "isCorrect": false
                 },
                 {
@@ -12050,9 +12060,10 @@
               "answer": "B",
               "explanation": "İskemik etiyolojisi olan (MI'dan en az 40 gün geçmiş), optimal medikal tedaviye rağmen LVEF ≤ %35 olan ve semptomatik (NYHA II-III) hastalarda ani kardiyak ölümün primer koruması için İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması endikedir. Hastanın QRS süresi dar olduğu için CRT endikasyonu yoktur.",
               "reference": "",
-              "warnings": [
-                "D şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 12,
@@ -12184,7 +12195,7 @@
                 },
                 {
                   "label": "D",
-                  "text": "stabil plak rüptürü B) Akut viral miyokardite bağlı lenfositik infiltrasyon C) Akut, şiddetli fiziksel veya emosyonel strese bağlı masif katekolamin deşarjı ve miyokardiyal toksisite",
+                  "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi",
                   "isCorrect": false
                 },
                 {
@@ -12196,10 +12207,10 @@
               "answer": "C",
               "explanation": "Takotsubo (Stres) Kardiyomiyopatisi, genellikle postmenopozal kadınlarda ani ve şiddetli bir emosyonel/fiziksel stresör sonrası aşırı katekolamin deşarjının miyokard (özellikle apeks) üzerinde oluşturduğu toksik etki ve mikrovasküler spazm sonucu gelişir. Koroner anjiyografi normaldir, ancak EKG STEMI'yi taklit eder. Miyokard infarktüsünün aksine, bu hastalarda kalp fonksiyonları haftalar içinde genellikle tamamen düzelir.",
               "reference": "",
-              "warnings": [
-                "D şıkkına başka şıkkın metni sızmış",
-                "D şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 16,
@@ -12439,12 +12450,12 @@
                 },
                 {
                   "label": "C",
-                  "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (IC",
+                  "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması",
                   "isCorrect": true
                 },
                 {
                   "label": "D",
-                  "text": "takılması",
+                  "text": "Giyilebilir kardiyoverter defibrilatör (yelek) ile üç ay izlem sonrası yeniden değerlendirme",
                   "isCorrect": false
                 },
                 {
@@ -12456,9 +12467,11 @@
               "answer": "C",
               "explanation": "Yapısal kalp hastalığı (iskemik kardiyomiyopati) zemininde akut/geri dönüşümlü bir neden olmaksızın gelişen kardiyak arrest veya sürdürülen VT/VF öyküsü olan hastalarda, ani kardiyak ölümün tekrarlamasını önlemek amacıyla 'sekonder korunma' için İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması güçlü (Sınıf I) bir endikasyondur.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)",
+                "D (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 3,
@@ -12703,17 +12716,17 @@
                 },
                 {
                   "label": "E",
-                  "text": "veya uzun süreli antikoagülasyon beklenmeden erken kardiyoversiyon denenebilir. C) AF süresi 48 saati aşmadığı sürece tüm hastalara TEE yapılmalıdır. D) İlk seçenek olarak AV düğüm ablasyonu uygulanmalıdır.",
+                  "text": "Ritim kontrolü denenmeden yalnızca hız kontrolü uygulanmalı, kardiyoversiyon düşünülmemelidir.",
                   "isCorrect": false
                 }
               ],
               "answer": "B",
               "explanation": "2024 ESC Atriyal Fibrilasyon kılavuzu, önceki '48 saat' olan erken kardiyoversiyon güvenli zaman penceresini '24 saate' düşürmüştür. Başlangıç zamanı kesin olarak bilinen ve 24 saatten kısa süreli AF'si olan düşük riskli hastalarda, TEE veya 3 haftalık antikoagülasyon beklenmeden kardiyoversiyon (veya spontan dönüşüm için bekle-gör yaklaşımı) uygulanabilir.",
               "reference": "",
-              "warnings": [
-                "E şıkkına başka şıkkın metni sızmış",
-                "E şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "E (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 10,
@@ -13894,7 +13907,7 @@
                 },
                 {
                   "label": "C",
-                  "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SP",
+                  "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SPC) ile başlanmalıdır.",
                   "isCorrect": true
                 },
                 {
@@ -13911,9 +13924,10 @@
               "answer": "C",
               "explanation": "Güncel kılavuzlar (ESC 2024 / ESH 2023), spesifik endikasyonu olmayan ve frail olmayan çoğu hipertansiyon hastasında tedaviye monoterapi yerine başlangıçta düşük doz ikili kombinasyon ile (tercihen hasta uyumunu artırmak için tek hap kombinasyonu - SPC) başlanmasını önermektedir. Standart ilk adım ACEİ/ARB + Kalsiyum kanal blokeri veya Tiyazid/Tiyazid benzeri diüretik şeklindedir.",
               "reference": "",
-              "warnings": [
-                "C şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "C (tamamlandi)"
+              ],
+              "warnings": []
             },
             {
               "number": 3,
@@ -14107,12 +14121,12 @@
                 },
                 {
                   "label": "B",
-                  "text": "Apiksaban veya Rivaroksaban (DOA",
+                  "text": "Apiksaban veya Rivaroksaban (DOAC) başlanmalıdır.",
                   "isCorrect": false
                 },
                 {
                   "label": "C",
-                  "text": "başlanmalıdır.",
+                  "text": "Düşük molekül ağırlıklı heparin ile bir ay tedavi sonrası antikoagülasyon kesilmelidir.",
                   "isCorrect": false
                 },
                 {
@@ -14129,9 +14143,11 @@
               "answer": "D",
               "explanation": "Hastada orta derece romatizmal mitral darlığı ve AF birlikteliği vardır. Bu tablo 'Valvüler AF' olarak tanımlanır. Valvüler AF hastalarında inme riski çok yüksektir ve Direkt Oral Antikoagülanlar (DOAC) bu grupta kontrendikedir. CHA2DS2-VA skoruna bakılmaksızın antikoagülasyon için tek seçenek Vitamin K antagonisti olan Varfarin'dir.",
               "reference": "",
-              "warnings": [
-                "B şıkkı yarıda kesilmiş"
-              ]
+              "fixedOptions": [
+                "B (tamamlandi)",
+                "C (yeniden-yazildi)"
+              ],
+              "warnings": []
             },
             {
               "number": 9,

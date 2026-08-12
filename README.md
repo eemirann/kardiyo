@@ -79,6 +79,10 @@ npm install
 npm run all               # questions + guide + cards + exams JSON'larını yeniden üretir
 ```
 
+Karma deneme PDF'inde 20 soruda şıklar bozuk çıkıyor (`(ICD)` / `(DOAC)` içindeki `C)` ve
+`D)` şık etiketi sanılıp şık ikiye bölünmüş). Düzeltmeler `tools/pdf-import/exam-fixes.json`
+içinde tutulur ve ayrıştırma sırasında uygulanır; PDF'ten yeniden üretim düzeltmeleri bozmaz.
+
 `JWT_ACCESS_SECRET` ve `JWT_REFRESH_SECRET` için rastgele değer üret:
 
 ```bash

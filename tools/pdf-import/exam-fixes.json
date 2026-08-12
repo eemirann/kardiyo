@@ -1,0 +1,57 @@
+{
+  "_aciklama": [
+    "Kaynak PDF'te bozuk olan siklarin duzeltmeleri. parse-exams.js bunlari uygular,",
+    "boylece exams.json yeniden uretildiginde duzeltmeler korunur.",
+    "kind = 'tamamlandi': metin kaynakta yarida kesilmis, cozum metnine dayanarak tamamlandi.",
+    "kind = 'yeniden-yazildi': kaynakta sik tamamen kayip/bozuk, yerine celdirici yazildi.",
+    "Dogru sik ve cevap anahtari hicbir yerde degistirilmedi."
+  ],
+
+  "kardiyoloji-karma-denemeler": {
+    "_takotsubo": "D şıkkına A-B-C şıklarının metni yapışmış; yerine yeni çeldirici.",
+    "D1S1":  { "D": { "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi", "kind": "yeniden-yazildi" } },
+    "D1S14": { "D": { "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi", "kind": "yeniden-yazildi" } },
+    "D3S13": { "D": { "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi", "kind": "yeniden-yazildi" } },
+    "D4S5":  { "D": { "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi", "kind": "yeniden-yazildi" } },
+    "D6S20": { "D": { "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi", "kind": "yeniden-yazildi" } },
+    "D7S15": { "D": { "text": "Epikardiyal koroner arter vazospazmına bağlı geçici transmural iskemi", "kind": "yeniden-yazildi" } },
+
+    "_valvuler_af": "C (doğru şık) '(DOA' ile kesilmiş; çözüm metnine göre tamamlandı.",
+    "D1S4":  { "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" } },
+    "D4S11": { "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" } },
+    "D5S11": { "C": { "text": "Yalnızca Warfarin (Coumadin) başlanmalıdır, Direkt Oral Antikoagülanlar (DOAC) bu hastada kullanılamaz.", "kind": "tamamlandi" } },
+
+    "_ht_baslangic": "C (doğru şık) '(SP' ile kesilmiş; çözümdeki 'tek hap kombinasyonu - SPC' ifadesine göre tamamlandı.",
+    "D2S12": { "C": { "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SPC) ile başlanmalıdır.", "kind": "tamamlandi" } },
+    "D3S12": { "C": { "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SPC) ile başlanmalıdır.", "kind": "tamamlandi" } },
+    "D10S2": { "C": { "text": "Düşük doz ACE inhibitörü veya ARB ile birlikte dihidropiridin Kalsiyum Kanal Blokeri (veya tiyazid) içeren tek hap kombinasyonu (SPC) ile başlanmalıdır.", "kind": "tamamlandi" } },
+
+    "_af_kardiyoversiyon": "E şıkkına B-C-D şıklarının metni yapışmış; yerine yeni çeldirici.",
+    "D5S14": { "E": { "text": "Ritim kontrolü denenmeden yalnızca hız kontrolü uygulanmalı, kardiyoversiyon düşünülmemelidir.", "kind": "yeniden-yazildi" } },
+    "D8S9":  { "E": { "text": "Ritim kontrolü denenmeden yalnızca hız kontrolü uygulanmalı, kardiyoversiyon düşünülmemelidir.", "kind": "yeniden-yazildi" } },
+
+    "_mi_sonrasi_icd": "D şıkkı C'nin kopyası ('C) Geçici Pacemaker'); yerine yeni çeldirici.",
+    "D6S12": { "D": { "text": "Kalıcı çift odacıklı (DDD) kalp pili implantasyonu", "kind": "yeniden-yazildi" } },
+    "D7S11": { "D": { "text": "Kalıcı çift odacıklı (DDD) kalp pili implantasyonu", "kind": "yeniden-yazildi" } },
+
+    "_sekonder_korunma": "'(ICD) takılması' ifadesindeki 'D)' şık etiketi sanılıp doğru şık ikiye bölünmüş: C tamamlandı, boşalan D'ye yeni çeldirici yazıldı.",
+    "D6S16": {
+      "C": { "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması", "kind": "tamamlandi" },
+      "D": { "text": "Giyilebilir kardiyoverter defibrilatör (yelek) ile üç ay izlem sonrası yeniden değerlendirme", "kind": "yeniden-yazildi" }
+    },
+    "D7S3": {
+      "C": { "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması", "kind": "tamamlandi" },
+      "D": { "text": "Giyilebilir kardiyoverter defibrilatör (yelek) ile üç ay izlem sonrası yeniden değerlendirme", "kind": "yeniden-yazildi" }
+    },
+    "D8S2": {
+      "C": { "text": "İmplante Edilebilir Kardiyoverter Defibrilatör (ICD) takılması", "kind": "tamamlandi" },
+      "D": { "text": "Giyilebilir kardiyoverter defibrilatör (yelek) ile üç ay izlem sonrası yeniden değerlendirme", "kind": "yeniden-yazildi" }
+    },
+
+    "_valvuler_af_2": "'(DOAC) başlanmalıdır' ifadesi B ve C şıklarına bölünmüş: B tamamlandı, boşalan C'ye yeni çeldirici yazıldı.",
+    "D10S8": {
+      "B": { "text": "Apiksaban veya Rivaroksaban (DOAC) başlanmalıdır.", "kind": "tamamlandi" },
+      "C": { "text": "Düşük molekül ağırlıklı heparin ile bir ay tedavi sonrası antikoagülasyon kesilmelidir.", "kind": "yeniden-yazildi" }
+    }
+  }
+}
