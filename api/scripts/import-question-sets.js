@@ -31,13 +31,24 @@ async function run() {
     await client.query('BEGIN');
 
     if (clean) {
-      // Sinavlarda kullanilmayan sorular: eski seed ve onceki ice aktarmalardan kalanlar
-      const { rows } = await client.query(
+      // 1) Setlerden gelmeyen ve hicbir denemede kullanilmayan sorular (eski seed ve
+      //    onceki ice aktarmalarin artiklari) silinir.
+      const { rows: deleted } = await client.query(
         `DELETE FROM questions q
-          WHERE NOT EXISTS (SELECT 1 FROM exam_questions eq WHERE eq.question_id = q.id)
+          WHERE q.source_key IS NULL
+            AND NOT EXISTS (SELECT 1 FROM exam_questions eq WHERE eq.question_id = q.id)
           RETURNING id`
       );
-      console.log(`Temizlik: sınava bağlı olmayan ${rows.length} soru silindi.`);
+      // 2) Yalnizca denemelerde kullanilan sorular soru bankasi listelerinden cikarilir;
+      //    sinavlar bu sorulari sunmaya devam eder (sinav sunumu is_active'e bakmaz).
+      const { rows: hidden } = await client.query(
+        `UPDATE questions SET is_active = FALSE, updated_at = now()
+          WHERE source_key IS NULL AND is_active
+          RETURNING id`
+      );
+      console.log(
+        `Temizlik: ${deleted.length} soru silindi, ${hidden.length} deneme sorusu bankadan gizlendi.`
+      );
     }
 
     const { rows: topicRows } = await client.query('SELECT id, slug FROM topics');
@@ -63,9 +74,14 @@ async function run() {
           `<p>${esc(q.explanation)}</p>` +
           (q.reference ? `<p><em>Notlarda nereden çalışılmalı: ${esc(q.reference)}</em></p>` : '');
 
+        // Eslestirme govdeye degil kaynaktaki yerine gore: setlerde ayni soru
+        // yas/cinsiyet degistirilerek (bazen birebir) tekrar ettigi icin govde
+        // esleştirmesi 50 soruluk setleri eksik birakiyordu.
+        const sourceKey = `${set.topicSlug}#${q.number}`;
+
         const { rows: existing } = await client.query(
-          'SELECT id FROM questions WHERE topic_id = $1 AND md5(body) = md5($2)',
-          [tid, body]
+          'SELECT id FROM questions WHERE source_key = $1',
+          [sourceKey]
         );
 
         let qid;
@@ -73,16 +89,17 @@ async function run() {
           qid = existing[0].id;
           await client.query('DELETE FROM question_options WHERE question_id = $1', [qid]);
           await client.query(
-            `UPDATE questions SET type=$2, difficulty=$3, body=$4, explanation=$5, updated_at=now()
+            `UPDATE questions SET topic_id=$2, type=$3, difficulty=$4, body=$5, explanation=$6,
+                    is_active=TRUE, updated_at=now()
               WHERE id=$1`,
-            [qid, typeOf(q), difficultyOf(q), body, explanation]
+            [qid, tid, typeOf(q), difficultyOf(q), body, explanation]
           );
           updated += 1;
         } else {
           const { rows } = await client.query(
-            `INSERT INTO questions (topic_id, type, difficulty, body, explanation, created_by)
-             VALUES ($1,$2,$3,$4,$5,$6) RETURNING id`,
-            [tid, typeOf(q), difficultyOf(q), body, explanation, adminId]
+            `INSERT INTO questions (topic_id, type, difficulty, body, explanation, created_by, source_key)
+             VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id`,
+            [tid, typeOf(q), difficultyOf(q), body, explanation, adminId, sourceKey]
           );
           qid = rows[0].id;
           added += 1;
