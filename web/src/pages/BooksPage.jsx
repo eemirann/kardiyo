@@ -65,8 +65,16 @@ export function BooksPage() {
                 <p className="mt-2 flex-1 text-body-md text-secondary">{b.description}</p>
               )}
               <div className="mt-4 flex gap-4 text-caption text-secondary">
-                <span>{b.chapterCount} bölüm</span>
-                <span>{b.sectionCount} konu</span>
+                {b.pdfUrl ? (
+                  <span className="flex items-center gap-1">
+                    <Icon name="picture_as_pdf" size={16} /> PDF kılavuz
+                  </span>
+                ) : (
+                  <>
+                    <span>{b.chapterCount} bölüm</span>
+                    <span>{b.sectionCount} konu</span>
+                  </>
+                )}
               </div>
               {b.readCount > 0 && (
                 <div className="mt-3">
@@ -83,6 +91,56 @@ export function BooksPage() {
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+/**
+ * PDF kilavuz okuyucusu. Dosya web/public/kilavuzlar altindan sunuluyor;
+ * tarayicinin yerlesik PDF goruntuleyicisi kullanildigi icin ek kutuphane yok.
+ * Mobilde gomulu goruntuleyici cogu tarayicida calismadigindan indirme/yeni sekme
+ * baglantisi her zaman gorunur duruyor.
+ */
+function PdfBook({ book }) {
+  return (
+    <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+      <Link to="/kitaplar" className="text-caption text-secondary hover:text-primary">
+        ← Konu anlatımları
+      </Link>
+
+      <div className="mt-3 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h1 className="text-headline-lg text-on-surface">{book.title}</h1>
+          {book.subtitle && <p className="mt-1 text-body-md text-secondary">{book.subtitle}</p>}
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <a href={book.pdfUrl} target="_blank" rel="noreferrer" className="btn-outline">
+            <Icon name="open_in_new" size={18} /> Yeni sekmede aç
+          </a>
+          <a href={book.pdfUrl} download className="btn-primary">
+            <Icon name="download" size={18} /> İndir
+          </a>
+        </div>
+      </div>
+
+      {book.description && <p className="mt-3 text-body-md text-secondary">{book.description}</p>}
+
+      <div className="card mt-6 overflow-hidden p-0">
+        <object data={book.pdfUrl} type="application/pdf" className="h-[80vh] w-full">
+          <div className="p-8 text-center">
+            <p className="text-body-md text-secondary">
+              Tarayıcın PDF'i sayfa içinde gösteremiyor.
+            </p>
+            <a href={book.pdfUrl} target="_blank" rel="noreferrer" className="btn-primary mt-4">
+              <Icon name="picture_as_pdf" size={18} /> PDF'i aç
+            </a>
+          </div>
+        </object>
+      </div>
+
+      <div className="mt-6">
+        <AdSlot code="book_bottom" />
+      </div>
     </div>
   );
 }
@@ -107,6 +165,9 @@ export function BookTocPage() {
       </div>
     );
   if (!data) return <PageLoader />;
+
+  // PDF kilavuz: bolum listesi yerine dogrudan okuyucu gosterilir
+  if (data.book.pdfUrl) return <PdfBook book={data.book} />;
 
   const allSections = data.chapters.flatMap((c) => c.sections);
   const readCount = allSections.filter((s) => s.isRead).length;

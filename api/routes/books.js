@@ -38,6 +38,7 @@ router.get(
         subtitle: b.subtitle,
         description: b.description,
         coverUrl: b.cover_url,
+        pdfUrl: b.pdf_url,
         isPremium: b.is_premium,
         locked: b.is_premium && !premium,
         chapterCount: b.chapter_count,
@@ -85,6 +86,7 @@ router.get(
         subtitle: book.subtitle,
         description: book.description,
         coverUrl: book.cover_url,
+        pdfUrl: book.pdf_url,
       },
       chapters: chapters.map((ch) => ({
         id: ch.id,

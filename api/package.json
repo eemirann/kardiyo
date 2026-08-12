@@ -12,6 +12,8 @@
     "test": "jest --runInBand --forceExit",
     "import-content": "node scripts/import-content.js",
     "import-exams": "node scripts/import-exams.js",
+    "import-guides": "node scripts/import-guides.js",
+    "import-question-sets": "node scripts/import-question-sets.js",
     "set-admin-password": "node scripts/set-admin-password.js"
   },
   "license": "ISC",
