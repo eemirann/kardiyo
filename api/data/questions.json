@@ -1,0 +1,1702 @@
+[
+  {
+    "number": 1,
+    "stem": "65 yaşında HFrEF tanılı erkek hasta, eforla gelen nefes darlığı şikayetiyle başvuruyor. LVEF %30 olan ve halihazırda Ramipril 10 mg/gün kullanan hastanın tedavisine sakubitril/ valsartan (ARNI) eklenmesi planlanıyor. Bu geçiş sırasında hayatı tehdit edici anjiyoödem riskini minimize etmek için uygulanması gereken en doğru strateji aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Ramipril ile birlikte düşük doz ARNI başlanması",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Ramipril kesilip ertesi gün sabah ARNI başlanması",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Ramipril kesildikten sonra en az 36 saatlik arınma (washout) süresi beklenmesi",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "ARNI başlanmadan önce profilaktik kortikosteroid verilmesi",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Önce valsartan monoterapi başlanıp 1 hafta sonra sakubitril eklenmesi",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "ACEİ (örn. Ramipril) tedavisinden ARNI (Sakubitril/Valsartan) tedavisine geçişte en az 36 saatlik arınma (washout) süresi zorunludur. Sakubitril bir neprilizin inhibitörüdür ve bradikinin yıkımını azaltır. ACE inhibitörleri de bradikinin yıkımını azalttığından, eş zamanlı veya yakın kullanımda ölümcül anjiyoödem riski belirgin artar.",
+    "reference": "Bölüm 1.1 HFrEF - Klinik Pratik / Kritik Hata"
+  },
+  {
+    "number": 2,
+    "stem": "Kalp yetmezliği olan 72 yaşındaki KOAH hastasına beta-bloker başlanması planlanmaktadır. Solunum fonksiyon testlerinde geri dönüşümlü bronkospazmı olan bu hastada, beta-1 selektivitesi yüksek olan ve ek olarak endotel nitrik oksit salınımını artırarak vazodilatör etki gösteren ajan aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Metoprolol süksinat",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Karvedilol",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Propranolol",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Nebivolol",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Bisoprolol",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "Nebivolol, en yüksek Beta-1 selektivitesine sahip beta-blokerlerden biridir ve KOAH/astım gibi durumlarda daha güvenlidir. Ayrıca beta-3 reseptör agonizması veya doğrudan L-arjinin/NO yolağı üzerinden nitrik oksit salınımını artırarak vazodilatasyon yapar.",
+    "reference": "Bölüm 1.1 HFrEF - Beta-blokerler Arası Farklar"
+  },
+  {
+    "number": 3,
+    "stem": "İleri evre HFrEF nedeniyle standart dört sütun tedavisi alan 58 yaşındaki erkek hasta, bilateral ağrılı meme büyümesi (jinekomasti) ve cinsel isteksizlik şikayetleriyle başvuruyor. Hastanın laboratuvar değerlerinde K+ 4.6 mEq/L, eGFR 65 mL/dk saptanıyor. Bu yan etkiye neden olan ilacın etki mekanizması ve bu durumda yapılması gereken en uygun ilaç değişikliği aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Neprilizin inhibisyonu - Sakubitril/Valsartan kesilip Ramipril'e dönülmeli",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Miyokardiyal Na/K ATPaz inhibisyonu - Digoksin dozu azaltılmalı",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Non-selektif mineralokortikoid blokajı - Spironolakton kesilip Eplerenon başlanmalı",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "SGLT2 inhibisyonu - Dapagliflozin kesilip Empagliflozin başlanmalı",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Beta reseptör blokajı - Metoprolol kesilip Karvedilol başlanmalı",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Spironolakton, mineralokortikoid reseptöre ek olarak androjen ve progesteron reseptörlerine de bağlanır. Bu durum jinekomasti ve menstrüel düzensizliklere yol açar. Eplerenon mineralokortikoid reseptöre çok daha selektiftir ve bu yan etkileri belirgin ölçüde azdır.",
+    "reference": "Bölüm 1.1 HFrEF - Spironolakton vs Eplerenon"
+  },
+  {
+    "number": 4,
+    "stem": "Diyabetik olmayan 60 yaşındaki bir hastada HFrEF tedavisine dapagliflozin ekleniyor. Hastanın bu kararı sorgulaması üzerine, hekim bu ilacın kalp yetmezliğindeki faydasının kan şekerini düşürmesinden bağımsız olduğunu açıklıyor. SGLT2 inhibitörlerinin diyabetik olmayan hastalarda kalp yetmezliğindeki ana kardiyokoruyucu mekanizması aşağıdakilerden hangisi ile açıklanır?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Kardiyak if kanallarını bloke ederek kalp hızını düşürmesi",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Miyokardiyal enerji substratının glukozdan keton cisimciklerine kayması ve miyosit Na+/H+ değiştiricisinin inhibisyonu",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Atriyal natriüretik peptid (ANP) sentezini doğrudan artırması",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Kardiyak miyozin ile aktin arasındaki çapraz köprü oluşumunu doğrudan inhibe etmesi",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Anjiyotensin reseptörlerini kompetitif olarak bloke etmesi",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "SGLT2 inhibitörleri, glukozüriye ek olarak miyokardiyal metabolizmayı daha verimli olan keton cisimciklerine kaydırır, kardiyomiyosit Na+/H+ (NHE1) değiştiricisini inhibe ederek hücre içi kalsiyum aşırı yüklenmesini önler ve doğrudan antifibrotik etkiler gösterir.",
+    "reference": "Bölüm 1.1 HFrEF - SGLT2 İnhibitörleri"
+  },
+  {
+    "number": 5,
+    "stem": "Akut dekompanse kalp yetmezliği nedeniyle yatırılan ve klinik olarak stabil hale gelen hastanın taburculuk planı yapılmaktadır. STRONG-HF çalışması sonuçlarına ve güncel ESC kılavuzlarına göre bu hastada nörohormonal antagonist (dört sütun) tedavisine başlama ve titrasyon stratejisi nasıl olmalıdır?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Önce ACEİ başlanmalı, tolere edilirse 1 ay sonra beta-bloker eklenmeli",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Sadece diüretiklerle taburcu edilmeli, poliklinik kontrolünde ACEİ başlanmalı",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Kontrendikasyon yoksa taburculuk öncesi/sonrası ilk hafta 4 ilaç düşük doz başlanıp, 2-4 hafta içinde hedef dozlara hızla titre edilmeli",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Düşük doz dörtlü tedavi başlanıp, titrasyon için en az 3-6 ay beklenmeli",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Hastaya sadece ARNI ve SGLT2i verilmeli, diğerleri stabil fazda eklenmeli",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "STRONG-HF çalışması ve güncel ESC 2021/2023 kılavuzları, dekompanse KY sonrası klasik ardışık basamaklı strateji yerine, paralel olarak (kontrendikasyon yoksa) tüm sütun ajanlarının hızla (ilk 2-4 haftada) hedef dozlara çıkarılmasını önermektedir.",
+    "reference": "Bölüm 1.1 HFrEF - Braunwald Klinik Pratik Köşesi"
+  },
+  {
+    "number": 6,
+    "stem": "68 yaşındaki bir HFrEF hastasında, tedaviye mineralokortikoid reseptör antagonisti (MRA) eklenmesi düşünülüyor. Hastanın laboratuvar değerlerinde eGFR 25 mL/dk ve serum potasyumu 5.7 mEq/L olarak saptanıyor. Bu klinik senaryo için en uygun medikal karar aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Spironolakton 25 mg başlanıp potasyum takibi yapılmalıdır",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Spironolakton eGFR < 30 mL/dk ve K+ > 5.0 mEq/L olduğundan kontrendikedir, başlanmamalıdır",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Eplerenon başlanıp K+ seviyesini düşürmek için diüretik dozu artırılmalıdır",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "ARNI tedavisi kesilip sadece MRA başlanmalıdır",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "MRA ile birlikte intravenöz kalsiyum glukonat verilmelidir",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "MRA ajanları (spironolakton, eplerenon), serum K+ düzeyi > 5.0 mEq/L ve/veya eGFR < 30 mL/dk olan hastalarda ciddi hiperkalemi riski nedeniyle çok dikkatli kullanılmalı, K+ > 5.5 mEq/L olduğunda ise kesilmelidir. Bu hastada başlanması kontrendikedir.",
+    "reference": "Bölüm 1.1 HFrEF - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 7,
+    "stem": "Dekompanse kalp yetmezliği olan 70 yaşındaki hasta, günde 160 mg intravenöz furosemid almasına rağmen günlük idrar çıkışı 500 mL'de kalıyor (diüretik direnci). Bu hastada nefronun farklı bir segmentini hedef alarak 'sekansiyel nefron blokajı' yapmak ve sinerjistik natriürez sağlamak için tedaviye eklenmesi gereken en uygun ajan aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Spironolakton",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Dapagliflozin",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Tiyazid veya Metolazon",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Asetazolamid",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Tolvaptan",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Loop diüretiklerine sekonder gelişen hipertrofik distal kıvrımlı tübüldeki kompanzatuvar sodyum geri emilimini bloke etmek için tedaviye distal tübülü hedefleyen tiyazid grubu (veya metolazon) eklenmesi sekansiyel nefron blokajı olarak adlandırılır ve diüretik direncini kırar.",
+    "reference": "Bölüm 1.2 Diüretik Direnci ve Braunwald Klinik Pratik Köşesi"
+  },
+  {
+    "number": 8,
+    "stem": "ADVOR çalışması temel alınarak, loop diüretiklerine dirençli akut dekompanse kalp yetmezliği hastalarında proksimal tübülde karbonik anhidraz inhibisyonu yaparak dekonjesyon başarısını artıran ajan aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Eplerenon",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Asetazolamid",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Empagliflozin",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Bumetanid",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Amilorid",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "ADVOR çalışması, akut dekompanse KY'de loop diüretiğine proksimal tübülde etki eden karbonik anhidraz inhibitörü olan asetazolamidin eklenmesinin dekonjesyonu (sıvı atılımını) anlamlı derecede artırdığını göstermiştir.",
+    "reference": "Bölüm 1.2 Diüretik Direnci - Braunwald Klinik Pratik Köşesi"
+  },
+  {
+    "number": 9,
+    "stem": "HFrEF tanılı hasta, tolere edebildiği maksimum metoprolol süksinat (200 mg/gün), sakubitril/valsartan, spironolakton ve dapagliflozin almaktadır. Hastanın ritmi sinüs ritmi olup, dinlenik kalp hızı 78/dk olarak ölçülüyor. Hasta yorgunluk ve nefes darlığından şikayetçi (NYHA II). Bu aşamada kalp hızını düşürmek için tedaviye eklenmesi gereken en uygun ajan aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Verapamil",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Diltiazem",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "İvabradin",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Digoksin",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Amiodaron",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Semptomatik HFrEF hastalarında, optimal doz beta-blokere rağmen sinüs ritminde kalp hızı ≥70/dk ise, sinoatriyal düğümdeki If kanallarını bloke ederek kalp hızını selektif olarak düşüren İvabradin eklenmesi endikedir (Sınıf IIa).",
+    "reference": "Bölüm 1.3 İvabradin, Digoksin ve Diğer Ek Ajanlar"
+  },
+  {
+    "number": 10,
+    "stem": "İvabradin kullanan bir hasta, gece karanlıkta veya ani ışık değişimlerinde gözünün önünde parlak ışık çakmaları (fosfen) hissettiğini belirtiyor. Bu yan etkinin patofizyolojik mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Optik sinirde demiyelinizasyon",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Retinada bulunan ve kardiyak if kanallarına benzeyen iH kanallarının inhibisyonu",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Korneada mikrodepozit birikimi",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Artmış sistemik nitrik oksit üretimine bağlı retina vazodilatasyonu",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Maküla luteada neovaskülarizasyon uyarımı",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "İvabradin, kardiyak sinoatriyal düğümdeki If kanallarını bloke eder. Retinada bulunan ve ışık adaptasyonundan sorumlu olan iH (hyperpolarization-activated) kanalları, If kanallarına yapısal olarak çok benzerdir. İvabradinin bu kanalları da inhibe etmesi fosfen (görsel parlama) şikayetine yol açar.",
+    "reference": "Bölüm 1.3 İvabradin"
+  },
+  {
+    "number": 11,
+    "stem": "Atriyal fibrilasyon ve HFrEF'i olan hasta, hız kontrolü için digoksin kullanmaktadır. Son zamanlarda gelişen ventriküler aritmileri baskılamak amacıyla hastaya amiodaron başlanıyor. Farmakokinetik etkileşim açısından, amiodaron başlandıktan sonra digoksin dozunda nasıl bir düzenleme yapılmalıdır?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Digoksin dozu 2 katına çıkarılmalıdır",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Değişiklik gerekmez, amiodaron ve digoksin güvenle kombine edilir",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Amiodaron P-glikoprotein inhibisyonu ile digoksin klerensini azalttığından, digoksin dozu ampirik olarak %30-50 azaltılmalıdır",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Digoksin tamamen kesilmelidir",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Digoksin dozu değiştirilmeden sadece potasyum replasmanı yapılmalıdır",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Amiodaron (aynı zamanda verapamil, kinidin gibi ajanlar), böbrekte P-glikoprotein pompasını inhibe ederek digoksinin renal atılımını azaltır. Bu kombinasyonda digoksin toksisitesini önlemek için digoksin dozunun %30-50 oranında düşürülmesi zorunludur.",
+    "reference": "Bölüm 1.3 Digoksin - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 12,
+    "stem": "HFrEF tedavisi alan hasta acil servise bulantı, kusma, sarı-yeşil görme (ksantopsi) ve EKG'de ventriküler ektopik atımlar şikayetiyle başvuruyor. Hastanın digoksin ve yüksek doz furosemid kullandığı öğreniliyor. Bu hastada digoksin toksisitesini hücresel düzeyde en çok kolaylaştıran elektrolit bozukluğu aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Hiperkalemi",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Hiponatremi",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Hiperkalsemi",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Hipokalemi",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Hipermagnezemi",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "Digoksin, kardiyomiyosit membranındaki Na/K ATPaz pompasının K+ bağlanan bölgesine yarışmalı olarak bağlanır. Hipokalemi varlığında potasyum ile yarış azalacağından, digoksinin pompaya bağlanması kolaylaşır ve toksisite riski normal kan düzeylerinde bile belirgin artar.",
+    "reference": "Bölüm 1.3 Digoksin - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 13,
+    "stem": "İleri böbrek yetmezliği (eGFR 15 mL/dk) ve hiperkalemisi olan siyahi bir HFrEF hastasında, RAAS antagonistleri (ACEİ, ARB, ARNI) kullanılamamaktadır. Bu hastada mortalite faydası sağlamak üzere tedaviye eklenmesi önerilen vazodilatör kombinasyonu aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Amlodipin ve Doksazosin",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Hidralazin ve İzosorbid Dinitrat",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Minoksidil ve Klonidin",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Verapamil ve Nitrogliserin",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Sildenafil ve Bosentan",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "A-HeFT çalışması, siyah ırk kökenli HFrEF hastalarında Hidralazin ve İzosorbid Dinitrat kombinasyonunun mortalite yararı sağladığını göstermiştir. Ayrıca ciddi böbrek yetmezliği nedeniyle ACEİ/ARB/ARNI tolere edemeyen hastalarda da ana vazodilatör alternatifidir.",
+    "reference": "Bölüm 1.3 Vazodilatör Kombinasyonu"
+  },
+  {
+    "number": 14,
+    "stem": "VICTORIA çalışmasında çalışılan ve kalp yetmezliğinde çözünür guanilat siklazı doğrudan uyararak NO'dan bağımsız cGMP üretimini artıran, yüksek riskli hastalarda hospitalizasyonu azaltan ajan aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mavakamten",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Verisiguat",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Sakubitril",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Omekamtiv mekarbil",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Tafamidis",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Verisiguat, NO eksikliğinden bağımsız olarak çözünür guanilat siklazı (sGC) doğrudan uyarır, cGMP yolunu aktive ederek vazodilatasyon ve anti-remodelling etki sağlar.",
+    "reference": "Bölüm 1.3 Vazodilatör Kombinasyonu ve Guanilat Siklaz Uyarıcı"
+  },
+  {
+    "number": 15,
+    "stem": "ESC 2024 Hipertansiyon Kılavuzu'na göre, komplikasyonsuz 55 yaşındaki bir hastada (Kan basıncı 155/95 mmHg) başlanması gereken ideal ilk basamak tedavi stratejisi aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Yüksek doz ACEİ monoterapisi",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Sadece diyet ve egzersiz modifikasyonu",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Beta-bloker monoterapisi",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "ACEİ/ARB + Kalsiyum Kanal Blokeri veya Diüretik içeren düşük doz Tek Hap Kombinasyonu (SPC)",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Santral etkili alfa agonist (Klonidin)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "ESC 2024 ve ESH 2023 kılavuzları, monoterapi yerine hasta uyumunu artıran ve sinerjistik etki sağlayan tek hap kombinasyonları (SPC - Single Pill Combination) ile tedaviye başlanmasını güçlü bir şekilde önermektedir. Standart başlangıç ACEİ/ARB + KKB veya diüretiktir.",
+    "reference": "Bölüm 2.1 Başlangıç Tedavi Stratejisi - SPC"
+  },
+  {
+    "number": 16,
+    "stem": "60 yaşında bir hasta, optimal dozlarda Amlodipin, Valsartan ve Hidroklorotiyazid kullanmasına rağmen ofis kan basıncı ölçümleri 160/95 mmHg olarak izleniyor (dirençli hipertansiyon). PATHWAY-2 çalışması ışığında, dışlama kriterleri (sekonder HT vb.) değerlendirildikten sonra tedaviye dördüncü ajan olarak eklenmesi en uygun olan ilaç hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Doksazosin",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Bisoprolol",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Spironolakton",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Klonidin",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Minoksidil",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "PATHWAY-2 çalışması, dirençli hipertansiyonda rölatif hiperaldosteronizm patofizyolojisi nedeniyle, spironolaktonun 4. ajan olarak beta-blokerler ve alfa-blokerlere kıyasla çok daha üstün kan basıncı düşüşü sağladığını göstermiştir.",
+    "reference": "Bölüm 2.2 Dirençli Hipertansiyon ve Spironolakton"
+  },
+  {
+    "number": 17,
+    "stem": "Acil servise yırtılır tarzda sırt ağrısı ile getirilen 62 yaşındaki erkek hastaya Tip B Aort Diseksiyonu tanısı konuyor. Hastanın kan basıncı 200/115 mmHg, kalp hızı 115/dk olarak ölçülüyor. Tedavide medikal yönetim sırasında ölümcül olabilecek bir malpraktisten kaçınmak için uyulması gereken ilk hedef ve ilaç sırası aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Önce Nitroprussid ile KB 120'nin altına çekilmeli, ardından kalp hızı kontrolü için Esmolol verilmelidir",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Önce Esmolol ile kalp hızı <60/dk'ya çekilmeli, ardından gerekirse vazodilatör başlanmalıdır",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Doğrudan hidralazin IV bolus yapılmalıdır",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Yalnızca sublingual nifedipin verilerek takip edilmelidir",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Nitrogliserin infüzyonu tek başına yeterlidir",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Aort diseksiyonunda vazodilatörler (nitroprussid vb.) ilk ajan olarak verilirse, sekonder refleks taşikardi gelişir ve sol ventrikül kontraktilitesi (dP/dt) artar. Bu artan makaslama (shearing) kuvveti aort diseksiyonunu hızla ilerletir. Bu nedenle önce HER ZAMAN Beta-bloker (Esmolol) ile kalp hızı düşürülmeli, ardından vazodilatör verilmelidir.",
+    "reference": "Bölüm 2.3 Hipertansif Aciller - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 18,
+    "stem": "Ultra kısa etkili, kan esterazları tarafından metabolize edildiği için karaciğer ve böbrek yetmezliğinden etkilenmeyen dihidropiridin grubu kalsiyum kanal blokeri olup, hipertansif acillerde hızlı titrasyon amacıyla kullanılan intravenöz ajan aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Nikardipin",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Klevidipin",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Esmolol",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Labetalol",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Fenoldopam",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Klevidipin (Clevidipine), plazma esterazları ile dakikalar içinde metabolize olan ultra kısa etkili bir dihidropiridin KKB'dir. Organ fonksiyonlarından bağımsız klerensi nedeniyle güvenlidir.",
+    "reference": "Bölüm 2.3 Hipertansif Aciller - IV Ajanlar"
+  },
+  {
+    "number": 19,
+    "stem": "28 yaşındaki gebe hasta, 30. gebelik haftasında kan basıncı yüksekliği (165/105 mmHg) nedeniyle kadın doğum kliniğinden kardiyolojiye refere ediliyor. Bu hastanın tedavisinde fetal renal displazi, oligohidramnios ve kafatası kemikleşme kusurlarına yol açtığı için KESİNLİKLE KONTRENDİKE olan ilaç grubu aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Metildopa",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Nifedipin",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Labetalol",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "ACE inhibitörleri / ARB'ler",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Hidralazin",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "ACE inhibitörleri ve ARB'ler gebelikte kesinlikle kontrendikedir. Fetal RAAS inhibisyonu fetal anüri, oligohidramnios, akciğer hipoplazisi ve iskelet anomalilerine (Potter dizisi) neden olur. Metildopa, Labetalol ve uzun etkili Nifedipin gebelikte güvenlidir.",
+    "reference": "Bölüm 2.4 Özel Popülasyonlarda Antihipertansif Seçimi"
+  },
+  {
+    "number": 20,
+    "stem": "Feokromositoma tanısı alan hastanın preoperatif hazırlığı yapılmaktadır. Kan basıncı 190/110 mmHg, kalp hızı 125/dk olan bu hastada antihipertansif ajanların uygulanma sırası nasıl olmalıdır?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Önce propranolol ile alfa blokaj, sonra fenoksibenzamin ile beta blokaj",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Önce doksazosin/fenoksibenzamin ile alfa blokaj, sonra metoprolol ile beta blokaj",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Eş zamanlı olarak ACEİ ve diüretik başlanmalı",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Sadece kalsiyum kanal blokeri verilmeli",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Önce beta blokaj yapılıp taşikardi kırılmalı, sonra alfa blokaj eklenmeli",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Feokromositomada KESİN KURAL: Önce Alfa Blokaj (Doksazosin/Fenoksibenzamin), sonra Beta Blokaj. Eğer beta-bloker önce verilirse, alfa reseptörlerin vazokonstriktif etkisi karşılıksız kalır ve vazodilatör beta-2 reseptörler de bloke olduğundan paradoksal, ölümcül hipertansif kriz gelişir.",
+    "reference": "Bölüm 2.4 Feokromositoma - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 21,
+    "stem": "Koroner arter hastalığı sekonder korumasında kullanılan aspirinin plazma yarı ömrü yaklaşık 20 dakika olmasına rağmen, antitrombosit etkisinin 7-10 gün (trombositin ömrü boyunca) sürmesinin hücresel mekanizması nedir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "P2Y12 reseptörünü irreversibl antagonize etmesi",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Trombositlerin çekirdeksiz olması nedeniyle inaktive edilen COX-1 enziminin yerine yenisini sentezleyememesi",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Araşidonik asit sentezini DNA düzeyinde baskılaması",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Fosfodiesteraz enzimini irreversibl inhibe etmesi",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "GP IIb/IIIa reseptörünün konformasyonunu kalıcı değiştirmesi",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Aspirin, trombosit COX-1 enzimini geri dönüşümsüz (irreversibl) olarak asetiller. Trombositler anüklear (çekirdeksiz) hücre parçacıkları oldukları için yeni COX-1 sentezleyemezler; bu nedenle etki trombositin yaşam süresi (7-10 gün) boyunca devam eder.",
+    "reference": "Bölüm 3.1 Antiplatelet Tedavi"
+  },
+  {
+    "number": 22,
+    "stem": "Akut koroner sendrom geçiren ve perkütan koroner girişim (PKG) uygulanan Doğu Asya kökenli bir hastada, klopidogrel başlanmasına rağmen 3. günde stent trombozu gelişiyor. Klopidogrelin terapötik başarısızlığına neden olan yavaş metabolizör fenotipine en sık yol açan genetik polimorfizm hangi enzimi etkiler?",
+    "options": [
+      {
+        "label": "A",
+        "text": "CYP3A4",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "CYP2D6",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "CYP2C19",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "CYP1A2",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Glukuronil transferaz",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Klopidogrel bir ön-ilaçtır ve karaciğerde iki basamaklı oksidasyon ile aktif formuna dönüşür. Bu dönüşümde en kritik enzim CYP2C19'dur. CYP2C19 polimorfizmi (kayıp fonksiyon allelleri), ilacın aktifleşememesine ve stent trombozuna neden olur.",
+    "reference": "Bölüm 3.1 Antiplatelet Tedavi"
+  },
+  {
+    "number": 23,
+    "stem": "78 yaşında, 55 kg ağırlığında kadın hasta akut anterior STEMI tablosuyla acil servise getiriliyor. Özgeçmişinde 2 yıl önce geçirilmiş iskemik inme (TİA) öyküsü bulunuyor. Primer PKG planlanan bu hastada, TRITON-TIMI 38 çalışması bulgularına göre KESİNLİKLE KONTRENDİKE olan antiplatelet ajan hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Klopidogrel",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Tikagrelor",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Aspirin",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Prasugrel",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Kanjrelor",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "Prasugrel, geçirilmiş inme veya TİA öyküsü olan hastalarda intrakraniyal kanama riskini ciddi oranda artırdığından (net zarar gösterilmiştir) KESİNLİKLE kontrendikedir. Ayrıca ≥75 yaş ve <60 kg olan hastalarda da yüksek kanama riski nedeniyle kullanımı önerilmez/doz azaltımı gerekir. Bu üçlü kriter sınavların vazgeçilmezidir.",
+    "reference": "Bölüm 3.1 Antiplatelet Tedavi - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 24,
+    "stem": "Akut koroner sendrom nedeniyle yeni nesil P2Y12 inhibitörü başlanan bir hastada, taburculuk sonrası ilk haftada kardiyak dekompansasyon veya akciğer bulgusu olmaksızın eforla gelen nefes darlığı (dispne) şikayeti gelişiyor. Bu yan etkiye neden olan ajan ve mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Prasugrel - Bronkospazm",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Klopidogrel - Pulmoner fibrozis",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Tikagrelor - Adenozin hücresel geri alım inhibisyonu",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Aspirin - Lökotrien kayması (samter triadı)",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Abciximab - Alveoler hemoraji",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Tikagrelor, reversibl bir P2Y12 allosterik antagonistidir. Ek bir mekanizma olarak adenozin geri alımını (ENT1 transporter blokajı) inhibe eder. Artan doku adenozin düzeyleri pulmoner C-liflerini uyararak kalp yetmezliğinden bağımsız 'dispne' hissine yol açar.",
+    "reference": "Bölüm 3.1 Antiplatelet Tedavi"
+  },
+  {
+    "number": 25,
+    "stem": "Primer PKG sırasında dev bir trombüs yükü saptanan ve 'no-reflow' fenomeni gelişen hastada, kateter laboratuvarında kurtarma (bailout) tedavisi olarak kullanılabilecek, trombosit agregasyonunun son ortak yolunu bloke eden intravenöz ajan grubu aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Faktör Xa inhibitörleri (Fondaparinuks)",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "GP IIb/IIIa inhibitörleri (Tirofiban, Eptifibatid, Abciximab)",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Reversibl P2Y12 inhibitörleri (Kanjrelor)",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Sentetik tPA analogları (Tenekteplaz)",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Direkt trombin inhibitörleri (Bivalirudin)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Glikoprotein IIb/IIIa inhibitörleri, trombosit aktivasyon yolu ne olursa olsun (COX veya P2Y12), fibrinojenin bağlandığı ve çapraz bağların kurulduğu nihai yüzey reseptörünü bloke eder. Güçlü antiplatelet etki sağlarlar ancak rutin değil, ağır trombüs/no-reflow durumunda kurtarma tedavisi olarak kullanılırlar.",
+    "reference": "Bölüm 3.1 GP IIb/IIIa İnhibitörleri"
+  },
+  {
+    "number": 26,
+    "stem": "STEMI nedeniyle primer perkütan girişime alınan hastaya, kateterizasyon masasında sentetik bir pentasakkarit olan Fondaparinuks yapıldığı öğreniliyor. ESC kılavuzlarına göre, bu hastada PKG sırasında kateter içi trombosisi önlemek için ek olarak verilmesi gereken medikal ajan hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Klopidogrel yükleme dozu",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Abciximab infüzyonu",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "İntravenöz Anfraksiyone Heparin (UFH) bolusu",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Düşük molekül ağırlıklı heparin (DMAH) sc bolus",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Tirofiban infüzyonu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Fondaparinuks selektif ve sadece Faktör Xa üzerinden etki eden bir ajandır (trombin/Faktör IIa inhibisyonu yoktur). PKG sırasında kateter lümenindeki plastik yüzeylerin uyardığı temas aktivasyonunu (kontakt yolağı) yeterince baskılayamaz, bu yüzden kateter trombozuna yol açar. Bu nedenle işlem anında tek başına kullanılamaz, mutlaka UFH bolusu ile desteklenmelidir.",
+    "reference": "Bölüm 3.2 Antikoagülanlar (AKS'de)"
+  },
+  {
+    "number": 27,
+    "stem": "Kronik stabil anjina pektoris tanısı olan 65 yaşındaki hasta, son bir haftadır kullandığı günde 3 kez izosorbid mononitrat tedavisine rağmen anjina ataklarının sıklaştığını belirtiyor. Hastanın tansiyonu normal seyretmektedir. Nitrat tedavisinin etkinliğinin kaybolmasını (nitrat toleransı) önlemek için klinik pratikte uygulanması gereken en doğru strateji nedir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "İlacın dozunu iki katına çıkarmak",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Tedaviye kalsiyum kanal blokeri eklemek",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "İlacı tamamen kesip beta-bloker monoterapisine geçmek",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Günde 8-12 saatlik nitratsız veya düşük nitratlı bir aralık bırakmak",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Mononitrat yerine dinitrat formuna geçiş yapmak",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "Sürekli nitrat maruziyeti, guanilat siklaz enziminin desensitizasyonu ve doku serbest radikal artışı ile 24-48 saat içinde tolerans (etki kaybı) geliştirir. Bunu önlemek için hastanın uykuda olduğu gece saatlerine denk gelecek şekilde 8-12 saatlik 'nitratsız aralık' (nitrate-free interval) bırakılması zorunludur.",
+    "reference": "Bölüm 3.3 Anti-İskemik Ajanlar - Braunwald Klinik Pratik Köşesi"
+  },
+  {
+    "number": 28,
+    "stem": "Akut inferior STEMI tanısı ile acil servise getirilen hastaya göğüs ağrısı için sublingual nitrogliserin veriliyor. Birkaç dakika sonra hastanın kan basıncı aniden 70/40 mmHg'ye düşüyor. EKG'sinde V4R derivasyonunda 2 mm ST elevasyonu saptanıyor. Akciğerleri dinlemekle bazallerde ral duyulmayan ve boyun venleri dolgun olan bu hastada hipotansiyonun ana mekanizması nedir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Pulmoner ödem gelişimi",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Sağ ventrikül enfarktüsünde hastanın ön yüke (preload) bağımlı olması ve nitratın venodilatasyon yapması",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Koroner vazospazmın şiddetlenmesi",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Nitratın doğrudan negatif inotropik etki göstermesi",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Senkopla sonuçlanan vagal reaksiyon",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "İnferior MI'a sıklıkla sağ ventrikül MI eşlik eder. Sağ ventrikül disfonksiyonunda, sol ventrikülü doldurabilmek için yüksek sağ atriyal venöz basınca (ön yüke) ihtiyaç vardır. Nitratlar güçlü venodilatör olduklarından ön yükü aniden düşürür ve kardiyak debiyi sıfırlayarak derin şoka yol açarlar. RV MI'da nitrat kesinlikle kontrendikedir.",
+    "reference": "Bölüm 3.3 Anti-İskemik Ajanlar - Kontrendikasyon"
+  },
+  {
+    "number": 29,
+    "stem": "Acil servise STEMI ile başvuran bir hastada, primer PKG yapılamayacağı (transfer süresi >120 dk) anlaşıldığı için fibrinolitik tedavi planlanıyor. Hasta 10 saat önce erektil disfonksiyon için sildenafil kullandığını ifade ediyor. Fibrinolitik öncesi ağrı kontrolü için sublingual nitrogliserin verilmesi planlanırken hekim sildenafil öyküsünü öğreniyor. Bu iki ilacın kombinasyonu neden KESİNLİKLE kontrendikedir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Fibrinolitik ajanın etkisini bloke etmesi",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Ölümcül, refrakter hipotansiyon",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Paradoksal koroner vazokonstriksiyon",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Anjiyoödem riskinde artış",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Ventriküler fibrilasyon eşiğinde düşüş",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Sildenafil bir PDE-5 inhibitörüdür ve cGMP yıkımını engeller. Nitratlar ise hücre içine girip NO salarak cGMP üretimini artırır. İkisi birleştiğinde masif cGMP birikimi sonucu dirençli ve ölümcül vazodilatasyon/hipotansiyon gelişir. Son 24-48 saatte PDE5i kullananlarda nitrat KESİNLİKLE KONTRENDİKEDİR.",
+    "reference": "Bölüm 3.3 Anti-İskemik Ajanlar - Kritik Hata"
+  },
+  {
+    "number": 30,
+    "stem": "Kırsal bölge hastanesinde akut STEMI teşhisi konan hastaya sevk öncesi saha koşullarında lytic (pıhtı eritici) tedavi verilmesine karar veriliyor. İnfüzyon pompası kurma süresini kısaltmak için, ağırlığa göre hesaplanıp 5-10 saniye içinde tek bir intravenöz bolus şeklinde uygulanabilen modifiye doku plazminojen aktivatörü aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Alteplaz (tPA)",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Streptokinaz",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Ürokinaz",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Tenekteplaz (TNK-tPA)",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Reteplaz",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "Tenekteplaz (TNK-PA), alteplaza göre fibrine çok daha spesifik, plazminojen aktivatör inhibitör-1'e (PAI-1) daha dirençli ve yarı ömrü daha uzun bir modifiye moleküldür. Bu özellikleri onun tek bolus (5-10 sn) halinde verilmesine olanak tanır, bu da acil saha kullanımında büyük avantajdır.",
+    "reference": "Bölüm 3.4 Fibrinolitikler"
+  },
+  {
+    "number": 31,
+    "stem": "STEMI nedeniyle kırsal bir merkezde trombolitik tedavi kararı alınan hastanın anamnezi derinleştiriliyor. Aşağıdaki durumlardan hangisinin varlığı, fibrinolitik (trombolitik) tedavi için MUTLAK bir kontrendikasyondur?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Aktif peptik ülser",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Oral antikoagülan kullanımı",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Gebelik",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "4 yıl önce geçirilmiş spontan intrakraniyal hemoraji öyküsü",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Kontrolsüz hipertansiyon (185/110 mmHg)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "Herhangi bir zamanda (ister 1 ay ister 20 yıl önce olsun) intrakraniyal hemoraji (kanama) öyküsü, fibrinolitik tedavi için mutlak kontrendikasyondur. Diğer seçenekler (peptik ülser, OAK kullanımı, gebelik, kontrolsüz HT) rölatif (göreceli) kontrendikasyonlardır.",
+    "reference": "Bölüm 3.4 Fibrinolitikler - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 32,
+    "stem": "Ailesel hiperkolesterolemisi olan ve daha önce MI geçirmiş hasta, maksimal tolere edilebilir doz statin ve ezetimib kombinasyonu kullanmasına rağmen LDL-K değeri 120 mg/ dL (hedef <55 mg/dL) olarak saptanıyor. Tedaviye subkütan enjeksiyon formunda eklenmesi planlanan ve hepatosit yüzeyindeki LDL reseptörlerinin yıkımını engelleyerek etki gösteren ajan grubu aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Safra asidi bağlayıcı reçineler",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "PCSK9 inhibitörleri (Evolokumab, Alirokumab)",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Fibratlar",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Bempedoik asit",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Niasin",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "PCSK9 proteini normalde LDL reseptörlerine bağlanarak onların lizozomda yıkılmasını sağlar. PCSK9 inhibitörleri (evolokumab, alirokumab) bu proteini nötralize eder; reseptörler yüzeye geri döner (recycling) ve kandan LDL temizlenmesi dramatik şekilde artar.",
+    "reference": "Bölüm 3.5 Lipid Düşürücü Tedavi"
+  },
+  {
+    "number": 33,
+    "stem": "55 yaşındaki kadın hasta, romatizmal mitral darlığı sekeli nedeniyle 3 yıl önce mekanik mitral kapak replasmanı ameliyatı geçirmiş. Takiplerinde yeni başlayan atriyal fibrilasyon (valvüler AF) saptanıyor. İnme profilaksisi için reçete edilmesi GEREKEN VE ZORUNLU OLAN tek antikoagülan ajan aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Rivaroksaban",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Dabigatran",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Varfarin (Coumadin)",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Apiksaban",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Aspirin + Klopidogrel ikilisi",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Mekanik protez kalp kapağı olan (veya orta-ciddi romatizmal mitral darlığı olan) atriyal fibrilasyon (valvüler AF) hastalarında antikoagülasyon SADECE Varfarin (Vitamin K antagonisti) ile yapılabilir. Bu hastalarda YDOAK'lar (DOAC'lar) KESİNLİKLE KONTRENDİKEDİR.",
+    "reference": "Bölüm 4.1 Kalp Kapak Hastalıklarında Farmakoterapi - TUS/USMLE Vurgusu"
+  },
+  {
+    "number": 34,
+    "stem": "Mekanik kalp kapak hastalarında dabigatranın etkinliğini varfarin ile karşılaştıran RE- ALIGN çalışması, artmış tromboembolik olaylar ve kanamalar nedeniyle erken sonlandırılmıştır. DOAC'ların (Yeni Nesil Oral Antikoagülanlar) mekanik kapakta varfarinden daha başarısız olmasının en olası patofizyolojik mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mekanik kapakların DOAC moleküllerini mekanik olarak parçalaması",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Yapay kapak yüzeyindeki yoğun temas-aktivasyonlu koagülasyon kaskadını, tek bir faktörü (IIa veya Xa) hedefleyen DOAC'ların yeterince baskılayamaması",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "DOAC'ların yarı ömürlerinin varfarinden çok daha uzun olması",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Varfarinin antiplatelet etkisinin de bulunması",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Mekanik kapaklı hastalarda sitokrom P450 aktivitesinin artması",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Mekanik kapak, koagülasyon kaskadının kontakt (temas) yolağını masif şekilde aktive eder. Varfarin faktör II, VII, IX ve X'u (çoklu basamak) inhibe ederken, DOAC'lar sadece tek bir faktörü inhibe eder ve bu lokal yoğun trombin jenerasyonunu yenemez.",
+    "reference": "Bölüm 4.1 Mekanik Protez Kapak ve Valvüler AF - TUS/USMLE Vurgusu"
+  },
+  {
+    "number": 35,
+    "stem": "Derin ven trombozu tedavisi için varfarin (Coumadin) başlanan bir hastada, ilk birkaç gün içinde varfarinin antikoagülan etkisinden önce prokoagülan (hiperkoagülabl) bir pencere oluştuğu ve köprüleme amaçlı heparin/DMAH verilmemesi durumunda varfarin nekrozu gelişebileceği bilinmektedir. Bu hiperkoagülabl dönemin sebebi aşağıdakilerden hangisinin yarı ömrünün diğerlerinden daha kısa olmasıdır?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Faktör II (Trombin)",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Faktör VII",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Faktör X",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Protein C",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Antitrombin III",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "Varfarin, Vitamin K bağımlı faktörleri (II, VII, IX, X) ve aynı zamanda doğal antikoagülanlar olan Protein C ve S'nin aktivasyonunu engeller. Protein C'nin yarı ömrü (yaklaşık 8 saat) Faktör II ve X'dan çok daha kısa olduğu için, önce antikoagülan protein tükenir ve geçici protrombotik durum oluşur.",
+    "reference": "Bölüm 4.1 Antikoagülasyon - Güvenlik"
+  },
+  {
+    "number": 36,
+    "stem": "Çocukluk çağında geçirilmiş Akut Romatizmal Ateş öyküsü ve hafif düzeyde romatizmal mitral kapak tutulumu olan 25 yaşındaki hastanın sekonder profilaksisinde kullanılması gereken ideal rejim ve mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Günlük oral amoksisilin - Bakteriyel replikasyonun doğrudan inhibisyonu",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Ayda bir intramüsküler Benzatin Penisilin G - A grubu streptokok rekürrensini önleyerek moleküler mimikri kaynaklı otoimmün kapak hasarını durdurma",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Haftalık azitromisin - Bakteriyel ribozom inhibisyonu",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Her diş işleminden önce klindamisin - Streptococcus viridans profilaksisi",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Sadece ateşli hastalıklarda seftriakson - Hücre duvar sentez inhibisyonu",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Romatizmal kalp hastalığı sekonder profilaksisinde, yeni bir A grubu beta-hemolitik streptokok (S. pyogenes) enfeksiyonunu ve buna sekonder gelişecek moleküler mimikriyi (çapraz otoimmün reaksiyon) önlemek için 3-4 haftada bir uzun etkili depo penisilin (Benzatin Penisilin G) kullanılır.",
+    "reference": "Bölüm 4.3 Romatizmal Ateş Sekonder Profilaksisi"
+  },
+  {
+    "number": 37,
+    "stem": "Enfektif endokardit (EE) teşhisi konulan hastanın tedavisi medikal olarak planlanıyor. Kılavuzlara göre, standart bir idrar yolu enfeksiyonundan farklı olarak, EE tedavisinin mutlaka 4-6 hafta süreli, yüksek doz ve bakterisidal (bakteriyostatik değil) intravenöz ajanlarla yapılmasının biyolojik/patofizyolojik gerekçesi nedir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Etken bakterilerin her zaman çok ilaca dirençli izolatlar olması",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Kalp kapaklarında makrofaj aktivitesinin normalden çok yüksek olması",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Vejetasyon içindeki bakterilerin fibrin-trombosit matriksine gömülü, biyofilm benzeri yapı içinde ve düşük metabolik hızda (dormant) olmaları",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Oral antibiyotiklerin kalp kasına penetre olamaması",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Endokardit etkenlerinin çoğunun hücre içi (intrasellüler) patojen olması",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Enfektif endokardit vejetasyonları avasküler yapılardır. Bakteriler yoğun bir fibrin ve trombosit ağı (biyofilm) içine gömülü olup, metabolik olarak durağan (dormant) fazdadırlar. Konağın lökositleri buraya ulaşamaz; bu nedenle uzun süreli, kapiller difüzyonla penetre olacak kadar yüksek dozlu, bakterisidal IV ajanlar şarttır.",
+    "reference": "Bölüm 5.1 Enfektif Endokardit - Tedavi Felsefesi"
+  },
+  {
+    "number": 38,
+    "stem": "Metisiline duyarlı Staphylococcus aureus (MSSA) kaynaklı akut doğal kapak endokarditi olan hastada, güncel kılavuzlara göre başlanması gereken en uygun hedefe yönelik birinci basamak antibiyotik rejimi aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Vankomisin monoterapisi",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Nafsilin/Oksasilin (Anti-stafilokokal penisilin)",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Daptomisin + Rifampisin",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Seftriakson + Azitromisin",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Ampisilin + Gentamisin",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "MSSA endokarditinde altın standart tedavi anti-stafilokokal penisilinlerdir (Oksasilin veya Nafsilin). MSSA'da vankomisin, oksasilin kadar etkili (bakterisidal) değildir, bu nedenle MSSA tespit edildiğinde vankomisinden nafsilin/oksasiline de-eskalasyon yapılmalıdır.",
+    "reference": "Bölüm 5.2 Ampirik ve Hedefe Yönelik Rejimler"
+  },
+  {
+    "number": 39,
+    "stem": "Mekanik aort kapak endokarditi nedeniyle opere edilen hastanın vejetasyon kültüründe Enterococcus faecalis ürüyor. Enterokokların penisiline karşı düşük afiniteli PBP'leri nedeniyle monoterapide bakterisidal etki sağlanamadığından, sinerji yaratmak ve hücre duvarı sentezini/aminoglikozid penetrasyonunu kırmak için kullanılması gereken kombinasyon tedavisi aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Ampisilin + Seftriakson (veya Gentamisin)",
+        "isCorrect": true
+      },
+      {
+        "label": "B",
+        "text": "Vankomisin + Rifampisin",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Daptomisin + Klindamisin",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Seftriakson monoterapisi",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Oksasilin + Rifampisin",
+        "isCorrect": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "Enterokok endokarditinde sadece Ampisilin bakteriyostatik kalır. Bakterisidal etkinlik için Ampisilin + Gentamisin (sinerjistik aminoglikozid alımı) veya daha modern/daha az nefrotoksik bir rejim olan Ampisilin + Seftriakson (farklı PBP'lerin blokajı ile sinerji) kombine edilmelidir.",
+    "reference": "Bölüm 5.2 Ampirik ve Hedefe Yönelik Rejimler"
+  },
+  {
+    "number": 40,
+    "stem": "Coxiella burnetii'ye bağlı kültür-negatif Q Ateşi endokarditi tanısı konulan bir hastada, 18 ay sürecek olan doksisiklin tedavisine hidroksiklorokin (Plaquenil) ekleniyor. Hidroksiklorokinin bu hastalıkta tedaviye eklenme amacı ve mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Otoimmün reaksiyonu baskılamak",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Doksisiklinin böbreklerden atılımını yavaşlatmak",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Fagolizozomal pH'ı artırarak, asidik ortamda yaşayan C. burnetii'ye karşı doksisiklinin bakterisidal etkisini güçlendirmek",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "İlaç kaynaklı fotosensitiviteyi önlemek",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Bakteriyel biyofilmi doğrudan eritmek",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Coxiella burnetii hücre içi, zorunlu makrofaj fagolizozomunda asidik pH'da çoğalan bir organizmadır. Asidik ortam doksisiklinin etkinliğini azaltır. Hidroksiklorokin, lizozomal pH'ı artırarak (alkalinize ederek) doksisiklini bakterisidal hale getirir.",
+    "reference": "Bölüm 5.3 Kültür-Negatif Endokarditte Özel Yaklaşım"
+  },
+  {
+    "number": 41,
+    "stem": "ESC 2023 kılavuzlarına göre, aşağıdaki hastalardan hangisine yüksek riskli bir diş çekimi işlemi öncesinde (işlemden 30-60 dk önce) tek doz 2 gr oral Amoksisilin ile enfektif endokardit profilaksisi verilmesi GEREKLİDİR?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Biküspit aort kapağı olan 40 yaşındaki erkek",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Mitral kapak prolapsusu ve hafif regürjitasyonu olan 30 yaşındaki kadın",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Geçirilmiş enfektif endokardit öyküsü olan 55 yaşındaki hasta",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Hipertrofik kardiyomiyopatisi olan 20 yaşındaki atlet",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Koroner arter by-pass (CABG) öyküsü olan 65 yaşındaki diyabetik hasta",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "2023 ESC güncellemesine göre, endokardit profilaksisi yalnızca 'en yüksek riskli' gruba verilir: Protez kapaklılar, daha önce EE geçirenler, düzeltilmemiş siyanotik konjenital kalp hastaları ve kapak regürjitasyonu olan kalp nakli alıcıları. Biküspit aort, MVP, HOKMP veya KAH'ta profilaksi önerilmez.",
+    "reference": "Bölüm 5.4 Antibiyotik Profilaksisi - TUS/USMLE Vurgusu"
+  },
+  {
+    "number": 42,
+    "stem": "Genç yaşta efor senkopu ile getirilen hastanın ekokardiyografisinde asimetrik septal hipertrofi ve sistolik anterior motion (SAM) ile karakterize Hipertrofik Obstrüktif Kardiyomiyopati (HOKMP) saptanıyor. Kan basıncı 130/80 mmHg olan bu hastada senkop/ani ölüm riskini artırabileceği için KESİNLİKLE KONTRENDİKE olan ilaç grubu aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Beta-blokerler",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Non-dihidropiridin kalsiyum kanal blokerleri (Verapamil)",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Disopiramid",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Vazodilatörler (ACEİ/ARB, Dihidropiridin KKB) ve yüksek doz diüretikler",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Kardiyak miyozin inhibitörleri (Mavakamten)",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "HOKMP'de dinamik sol ventrikül çıkış yolu (LVOT) obstrüksiyonu vardır. Ön yükü (venöz dönüşü) azaltan diüretikler/nitratlar veya art yükü azaltan vazodilatörler (ACEİ, DHP-KKB) ventrikül kavitesini küçülterek obstrüksiyonu şiddetlendirir ve ölümcül senkopa yol açar. Digoksin gibi pozitif inotroplar da obstrüksiyonu artırır.",
+    "reference": "Bölüm 6.1 HOKMP - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 43,
+    "stem": "Semptomatik HOKMP hastasında obstrüksiyonu azaltmak ve diyastolik dolum süresini uzatmak için seçilmesi gereken ilk basamak medikal tedavi aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mavakamten",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Bisoprolol / Metoprolol (Beta-blokerler)",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Ramipril",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Digoksin",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Furosemid",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "HOKMP tedavisinde temel taş, negatif inotropik ve negatif kronotropik etki sağlayan Beta- blokerlerdir. Bu ajanlar kalbin kasılma gücünü azaltarak obstrüksiyonu hafifletir, kalp hızını düşürerek hipertrofik ve sert olan sol ventriküle diyastolde dolması için zaman kazandırır.",
+    "reference": "Bölüm 6.1 HOKMP İlk Basamak Tedavi"
+  },
+  {
+    "number": 44,
+    "stem": "Beta-bloker monoterapisine rağmen semptomatik (NYHA III) kalan HOKMP hastasında, miyozin ve aktin arasındaki çapraz köprü (cross-bridge) oluşumunu doğrudan hücresel düzeyde inhibe ederek hiperkontraktiliteyi düzelten Sınıf IIa onaylı yeni ajan aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tafamidis",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Mavakamten",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "Omekamtiv mekarbil",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Verisiguat",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Sakubitril",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Mavakamten (Camzyos), miyoza özgü ilk oral kardiyak miyozin inhibitörüdür. Aktin ve miyozin kafaları arasındaki patolojik, aşırı çapraz köprü oluşumunu doğrudan inhibe ederek hiperkontraktiliteyi (HOKMP'nin kök nedeni) düzeltir.",
+    "reference": "Bölüm 6.1 HOKMP - Mavakamten"
+  },
+  {
+    "number": 45,
+    "stem": "Nefes darlığı, karpal tünel sendromu öyküsü ve EKG'de düşük voltaj bulguları olan 75 yaşındaki hastaya Transtiretin Kardiyak Amiloidoz (ATTR-CA) tanısı konuluyor. Bu hastalığın patofizyolojisine yönelik, transtiretin tetramerini stabilize ederek yanlış katlanmayı ve amiloid fibril birikimini yavaşlatan ilk onaylı oral spesifik tedavi ajanı aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Patisiran",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Bortezomib",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Tafamidis",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Kolşisin",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "İnotersen",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Tafamidis, vahşi tip veya mutant transtiretin (TTR) tetramerini stabilize eden oral bir moleküldür. Tetramerin monomerlere ayrılmasını (disosiyasyon) engeller, böylece amiloidojenik yanlış katlanmayı kökeninden durdurur.",
+    "reference": "Bölüm 6.3 Restriktif Kardiyomiyopati - Amiloidoz-Özgü Tedavi"
+  },
+  {
+    "number": 46,
+    "stem": "Yoğun emosyonel stres sonrası akut göğüs ağrısı, EKG'de anterior ST elevasyonu ile gelen 65 yaşındaki kadın hastanın koroner anjiyografisi normal saptanıyor. Ekokardiyografide apikal balonlaşma (Takotsubo kardiyomiyopatisi) görülüyor. Takiplerde hastada kardiyojenik şok ve dinamik LVOT obstrüksiyonu gelişirse, KESİNLİKLE UZAK DURULMASI gereken ajan sınıfı hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Beta-blokerler",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "İntravenöz sıvılar",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Vazopressörler (Norepinefrin)",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "İnotropik ajanlar (Dobutamin, Epinefrin)",
+        "isCorrect": true
+      },
+      {
+        "label": "E",
+        "text": "Kısa etkili anksiyolitikler",
+        "isCorrect": false
+      }
+    ],
+    "answer": "D",
+    "explanation": "Takotsubo sendromunda bazal segmentlerde hiperkontraktiliteye bağlı dinamik LVOT obstrüksiyonu gelişebilir. Dobutamin gibi inotropik ajanlar kalp kasılmasını daha da artırarak obstrüksiyonu ölümcül boyutlara taşır. Bu durumda inotroplar kontrendikedir; mekanik destek veya sadece vazopressörler (obstrüksiyon şiddetini artırmadan KB sağlamak için) tercih edilir.",
+    "reference": "Bölüm 6.4 Takotsubo Kardiyomiyopatisi - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 47,
+    "stem": "İdiopatik akut perikardit tanısıyla İbuprofen ve Kolşisin başlanan hastada, poliklinik kontrolünde hekim ilaç kesim (doz azaltma) zamanlamasını belirlemek istemektedir. Güncel kılavuzlara ve Braunwald klinik yaklaşımına göre İbuprofen tedavisinin kademeli azaltımına ne zaman başlanmalıdır?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Semptomlar tamamen geçer geçmez",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "İbuprofen başlandıktan tam 14 gün sonra",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Yalnızca semptomlar düzeldikten VE C-Reaktif Protein (CRP) tamamen normalleştikten sonra",
+        "isCorrect": true
+      },
+      {
+        "label": "D",
+        "text": "Ekokardiyografide perikardiyal sıvı tamamen kaybolduğunda",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Sedimantasyon hızı yarı yarıya düştüğünde",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Perikarditte anti-enflamatuvar (İbuprofen/Aspirin) ajanların dozu, hastanın semptomları geçse bile, laboratuvar olarak aktif enflamasyonun bittiğinin kanıtı olan CRP değeri tamamen normalleşene kadar tam dozda tutulmalıdır. Erken kesilmesi/azaltılması nüks (tekrarlayan perikardit) riskini ciddi artırır.",
+    "reference": "Bölüm 7.1 Akut Perikardit - Braunwald Klinik Pratik Köşesi"
+  },
+  {
+    "number": 48,
+    "stem": "Son iki yıl içinde üç kez tekrarlayan akut perikardit (rekürren perikardit) atağı geçiren ve kortikosteroide bağımlı hale gelmiş bir hastada, enflamazom aktivasyonunu ve otoenflamatuvar döngüyü kırmak amacıyla ESC 2025 kılavuzuna göre kullanılabilecek interlökin-1 (IL-1) inhibitörü aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tocilizumab",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "Anakinra",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "İnfliksimab",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Sekukinumab",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Rituksimab",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Rekürren perikardit patofizyolojisinde NLRP3 enflamazom hiperaktivasyonu ve IL-1 aracılı otoenflamasyon yatar. Kolşisine dirençli veya steroide bağımlı hastalarda IL-1 reseptör antagonistleri (Anakinra veya Rilonasept) steroid bağımlılığını kırmak için endikedir.",
+    "reference": "Bölüm 7.3 Dirençli Tekrarlayan Perikardit - TUS/USMLE Vurgusu"
+  },
+  {
+    "number": 49,
+    "stem": "Miyokard enfarktüsü geçirmiş (iskemik yapısal kalp hastalığı olan) ve Holter izleminde sık ventriküler erken atımları (PVC) saptanan bir hastaya, bu aritmileri baskılamak amacıyla yanlışlıkla Sınıf IC antiaritmik olan Flekainid reçete ediliyor. Bu kararın ölümcül olabileceğini (mortaliteyi artırdığını) gösteren ve antiaritmik pratiğini kökten değiştiren klasik çalışma aşağıdakilerden hangisidir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "DIG çalışması",
+        "isCorrect": false
+      },
+      {
+        "label": "B",
+        "text": "CAST çalışması",
+        "isCorrect": true
+      },
+      {
+        "label": "C",
+        "text": "A-HeFT çalışması",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "DOSE çalışması",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "RE-ALIGN çalışması",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "CAST (Cardiac Arrhythmia Suppression Trial) çalışması, MI sonrası yapısal kalp hastalığı olanlarda Sınıf IC ajanların (Flekainid, Enkainid) ekstrasistolleri başarıyla baskılamasına rağmen proaritmik etkileriyle ölümcül ventriküler taşikardi/fibrilasyonu tetikleyip mortaliteyi anlamlı artırdığını net olarak göstermiştir.",
+    "reference": "Bölüm 8.1 Sınıf I Sodyum Kanal Blokerleri - Kritik Hata / Malpraktis Önlemi"
+  },
+  {
+    "number": 50,
+    "stem": "Atriyal fibrilasyonda ritim kontrolü amacıyla idame Amiodaron tedavisi başlanan hastanın takiplerinde; pulmoner fibrozis, hipertiroidi/hipotiroidi, hepatotoksisite ve kornea mikrodepozitleri gibi multi-organ toksisiteleri açısından periyodik izlem planlanıyor. Amiodaronun özellikle tiroid fonksiyonlarını etkilemesinin (toksisitesinin) ardındaki temel kimyasal özellik nedir?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Molekülün %37'sinin ağırlıkça İyot (I) atomundan oluşması",
+        "isCorrect": true
+      },
+      {
+        "label": "B",
+        "text": "TSH reseptörlerine doğrudan antagonist olarak bağlanması",
+        "isCorrect": false
+      },
+      {
+        "label": "C",
+        "text": "Periferik T4'ten T3'e dönüşümü kalıcı olarak artırması",
+        "isCorrect": false
+      },
+      {
+        "label": "D",
+        "text": "Sodyum kanallarını bloke ederek iyot pompalamasını durdurması",
+        "isCorrect": false
+      },
+      {
+        "label": "E",
+        "text": "Tiroid foliküllerinde apoptozu doğrudan tetiklemesi",
+        "isCorrect": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "Amiodaron molekül yapısı gereği yüksek oranda (%37 oranında) iyot içerir. Bir tablet 200 mg amiodaron, günlük iyot ihtiyacının çok üstünde serbest iyot salınımına neden olur. Bu durum Wolff- Chaikoff etkisiyle hipotiroidiye veya Jod-Basedow fenomeni/destrüktif tiroidit mekanizmasıyla hipertiroidiye yol açar. TSH takibi zorunludur. • 11- Kardiyovaskuler_Farmakoloji_Detayli_watermark.pdf (Kullanıcının ilettiği özet notlar ve kılavuz derlemeleri) • McDonagh TA, et al. 2021 ESC Guidelines for the diagnosis and treatment of heart failure (+2023 Focused Update). Eur Heart J. • Katzung BG. Basic & Clinical Pharmacology, güncel baskı. • Braunwald E. Heart Disease: A Textbook of Cardiovascular Medicine, güncel baskı. • Echt DS, et al. CAST Trial: Mortality and Morbidity in Patients Receiving Encainide, Flecainide. N Engl J Med. • Wiviott SD, et al. TRITON-TIMI 38: Prasugrel versus Clopidogrel. N Engl J Med.",
+    "reference": "Bölüm 8.3 Sınıf III Potasyum Kanal Blokerleri - Kritik Hata / Multi-organ Toksisite"
+  }
+]

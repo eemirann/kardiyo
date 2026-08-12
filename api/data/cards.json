@@ -1,0 +1,602 @@
+[
+  {
+    "front": "Sakubitril/Valsartan — Türkiye'deki ticari adı?",
+    "back": "Sütun: ARNI · Ticari Ad (TR): Entresto",
+    "kind": "Ticari ad",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) · Tablo 1.1 — Dört Sütun İlaçları"
+  },
+  {
+    "front": "Ramipril, Enalapril, Perindopril, Lisinopril — Türkiye'deki ticari adı?",
+    "back": "Sütun: ACEİ · Ticari Ad (TR): Delix/Arpil, Enapril, Coversyl, Lisinopril preparatları",
+    "kind": "Ticari ad",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) · Tablo 1.1 — Dört Sütun İlaçları"
+  },
+  {
+    "front": "Valsartan, Losartan, Kandesartan — Türkiye'deki ticari adı?",
+    "back": "Sütun: ARB · Ticari Ad (TR): Diovan, Cozaar, Atacand",
+    "kind": "Ticari ad",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) · Tablo 1.1 — Dört Sütun İlaçları"
+  },
+  {
+    "front": "Bisoprolol, Karvedilol, Metoprolol süksinat, Nebivolol — Türkiye'deki ticari adı?",
+    "back": "Sütun: Beta-bloker · Ticari Ad (TR): Concor, Dilatrend, Beloc Zok, Nebilet",
+    "kind": "Ticari ad",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) · Tablo 1.1 — Dört Sütun İlaçları"
+  },
+  {
+    "front": "Spironolakton, Eplerenon — Türkiye'deki ticari adı?",
+    "back": "Sütun: MRA · Ticari Ad (TR): Aldactone, Inspra",
+    "kind": "Ticari ad",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) · Tablo 1.1 — Dört Sütun İlaçları"
+  },
+  {
+    "front": "Dapagliflozin, Empagliflozin — Türkiye'deki ticari adı?",
+    "back": "Sütun: SGLT2i · Ticari Ad (TR): Forxiga, Jardiance",
+    "kind": "Ticari ad",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) · Tablo 1.1 — Dört Sütun İlaçları"
+  },
+  {
+    "front": "ARNI (Sakubitril/Valsartan) — etki mekanizması?",
+    "back": "Sakubitril bir ön-ilaçtır; aktif metaboliti LBQ657, neprilizin (nötral endopeptidaz, NEP) enzimini inhibe eder. Neprilizin normal koşullarda natriüretik peptidleri (ANP, BNP, CNP) ve ayrıca bradikinin, adrenomedullin, substance P gibi vazoaktif peptidleri parçalar. İnhibisyon sonucu bu peptidlerin düzeyi artar; natriüretik peptidler partikül-bağlı guanilat siklaz reseptörü (NPR-A) üzerinden hücre içi cGMP artışına, bu da protein kinaz G aktivasyonu yoluyla vazodilatasyon, natriürez, RAAS ve sempatik sistem antagonizmasına, ayrıca antifibrotik/antihipertrofik etkiye yol açar. Valsartan bileşeni, eş zamanlı olarak AT1 reseptör blokajı ile anjiyotensin II'nin zararlı etkilerini engeller (NEP inhibisyonu tek başına anjiyotensin II düzeyini de artıracağından, ARB kombinasyonu zorunludur).",
+    "kind": "Etki Mekanizması ve Reseptör/Hücresel Hedefler",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "ACEİ — etki mekanizması?",
+    "back": "Anjiyotensin dönüştürücü enzim (ACE, kininaz II) inhibisyonu ile hem anjiyotensin I'in anjiyotensin II'ye dönüşümü engellenir hem de bradikininin yıkımı azalır (bradikinin birikimi — kuru öksürük ve anjiyoödemin mekanistik temeli).",
+    "kind": "Etki Mekanizması ve Reseptör/Hücresel Hedefler",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "Beta-blokerler — etki mekanizması?",
+    "back": "β1 reseptör blokajı ile kronik katekolamin aşırı uyarımının kardiyotoksik etkileri (miyosit apoptozu/nekrozu, β-reseptör down-regülasyonu, aritmojenez, artan miyokardiyal O2 tüketimi) engellenir.",
+    "kind": "Etki Mekanizması ve Reseptör/Hücresel Hedefler",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) — Beta-blokerler Arası Farklar (İnce nokta)",
+    "back": "Bisoprolol ve metoprolol süksinat selektif β1 antagonistleridir. Karvedilol ise β1, β2 ve α1 reseptörlerini bloke eden non-selektif bir ajandır; α1 blokajı ek vazodilatasyon sağlar, ayrıca antioksidan özellikleri tanımlanmıştır. Nebivolol yüksek β1 selektivitesine ek olarak endotel nitrik oksit salınımını artırarak vazodilatör etki gösterir. Bu farklılıklar klinik seçimde (örn. eşlik eden PAH'ta karvedilolden kaçınma, KOAH'ta yüksek β1 selektivitesi tercih) rol oynayabilir.",
+    "kind": "İnce nokta",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "MRA (Mineralokortikoid Reseptör Antagonistleri) — etki mekanizması?",
+    "back": "Aldosteronun mineralokortikoid reseptöre bağlanmasını kompetitif olarak engeller; distal nefronda Na⁺-K⁺ değişimini azaltarak Na⁺-su retansiyonunu önler, ayrıca miyokardiyal/vasküler fibrozis ve enflamasyonu azaltan doğrudan antifibrotik etkiler gösterir.",
+    "kind": "Etki Mekanizması ve Reseptör/Hücresel Hedefler",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) — Spironolakton VS Eplerenon",
+    "back": "Spironolakton, mineralokortikoid reseptöre ek olarak androjen ve progesteron reseptörlerine de bağlanır — bu, jinekomasti, cinsel isteksizlik ve menstrüel düzensizlik gibi yan etkilerin nedenidir. Eplerenon, mineralokortikoid reseptöre çok daha selektiftir ve bu yan etkileri belirgin daha az sıklıkta gösterir, ancak maliyeti daha yüksektir.",
+    "kind": "Kavram",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "SGLT2 İnhibitörleri — etki mekanizması?",
+    "back": "Proksimal tübülün S1 segmentinde sodyum-glukoz kotransporter-2'yi (SGLT2) inhibe ederek glukozüri ve natriürez sağlar. Kalp yetmezliğindeki yararın glisemik etkiden bağımsız olduğu gösterilmiştir (diyabetik olmayan hastalarda da fayda); önerilen mekanizmalar arasında miyokardiyal enerji substratının keton cisimciklerine kayması (daha verimli oksijen kullanımı), kardiyomiyosit Na⁺/H⁺ değiştiricisinin inhibisyonu yoluyla hücre içi Na⁺ ve Ca²⁺ homeostazının düzelmesi, ve doğrudan antifibrotik/anti-enflamatuvar etkiler yer alır.",
+    "kind": "Etki Mekanizması ve Reseptör/Hücresel Hedefler",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) — Klinik pratik",
+    "back": "ESC 2021/2023 ve ACC/AHA/HFSA 2022 kılavuzları, dört sütunun sıralı değil paralel başlatılmasını önerir. Klasik \"önce ACEİ, sonra beta-bloker, sonra MRA, en son diğerleri\" basamaklı yaklaşımı artık terk edilmiştir. STRONG-HF çalışması, akut dekompanse KY sonrası taburculuk öncesi/sonrası hızlı, yüksek yoğunluklu titrasyon stratejisinin (ilk 2 hafta içinde hedef/tolere edilen dozlara ulaşma hedefiyle, sık — haftalık — kontrollerle) 180 günlük ölüm/HF nedenli yeniden yatış birleşik son noktasını standart bakıma göre anlamlı azalttığını göstermiştir. Pratikte: kontrendikasyon yoksa ilk hafta içinde dört ilacın tamamı düşük dozda başlanır, sonraki 2-4 haftada sık kontrollerle (KB, kalp hızı, K⁺, kreatinin) hedef/tolere edilen dozlara titre edilir. Tüm sütunlar semptomatik HFrEF (LVEF ≤%40) için Sınıf I endikasyondur.",
+    "kind": "Klinik pratik",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "Sakubitril — doz / titrasyon?",
+    "back": "Başlangıç Dozu: 49/51 mg 2x1 (düşük riskte 24/26 · Hedef Doz: 97/103 mg 2x1 · Laboratuvar İzlemi: 2-4 haftada bir KB, K⁺, kreatinin",
+    "kind": "Doz",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) · Tablo 1.2 — Titrasyon Şeması"
+  },
+  {
+    "front": "Ramipril — doz / titrasyon?",
+    "back": "Başlangıç Dozu: 1.25–2.5 mg 1x1 · Hedef Doz: 5 mg 2x1 (veya 10 mg · Laboratuvar İzlemi: Başlangıç + her doz artışından 1-2 hafta sonra K⁺/",
+    "kind": "Doz",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) · Tablo 1.2 — Titrasyon Şeması"
+  },
+  {
+    "front": "HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i) — Kritik hata",
+    "back": "ACEİ/ARB'den ARNI'ye geçişte en az 36 saatlik arınma (washout) süresi zorunludur. Bu süre gözetilmezse, hem ACEİ/ARB'nin hem de sakubitrilin (neprilizin inhibisyonu yoluyla bradikinin birikimini artırarak) eş zamanlı etkisi anjiyoödem riskini ciddi biçimde artırır — özellikle ACEİ kullanan hastalarda risk daha yüksektir. ARNI ile ACEİ/ARB'nin asla eş zamanlı reçete edilmemesi gerekir. Anjiyoödem öyküsü olan hastalarda ARNI kontrendikedir. MRA başlarken K⁺ >5.0 mEq/L veya eGFR <30 mL/ dk ise dikkatli olunmalı; K⁺ >5.5 mEq/L'de doz azaltımı/kesilmesi gerekir. SGLT2i'lerde nadir ama ciddi bir risk olan öglisemik diyabetik ketoasidoz, cerrahi/akut hastalık döneminde ilacın geçici kesilmesini gerektirebilir.",
+    "kind": "Kritik hata",
+    "chapter": 1,
+    "section": "1.1",
+    "reference": "Bölüm 1.1 — HFrEF \"Dört Sütun\" Tedavisi (ARNI/ACEİ/ARB · Beta-bloker · MRA · SGLT2i)"
+  },
+  {
+    "front": "Diüretik Tedavisi ve Diüretik Direnci — Klinik pratik",
+    "back": "Akut dekompansasyonda IV furosemid tercih edilir (oral biyoyararlanım %10-100 arası değişken). DOSE çalışması, IV bolus ile sürekli infüzyon arasında birincil sonlanım noktalarında anlamlı fark göstermemiştir; yüksek doz strateji (ev dozunun 2.5 katı) düşük doza göre daha hızlı semptomatik iyileşme sağlamış, geçici kreatinin yükselmesi klinik olarak önemli bulunmamıştır. Diüretik KardiyovaskülerFarmakolojiKılavuzu-10 ADIMDA KARDİYOLOJİ direnci geliştiğinde, distal nefronda kompanzatuvar Na⁺ reabsorpsiyonunu bloke etmek için loop diüretiğine düşük doz tiyazid/ metolazon eklenmesi (sekansiyel nefron blokajı) sinerjistik natriürez sağlar. ADVOR çalışması, akut dekompanse KY'de loop diüretiğine asetazolamid (proksimal tübülde karbonik anhidraz inhibisyonu) eklenmesinin dekonjesyon başarısını artırdığını göstermiştir — üçüncü bir nefron segmentinin bloke edilmesi mantığına dayanır.",
+    "kind": "Klinik pratik",
+    "chapter": 1,
+    "section": "1.2",
+    "reference": "Bölüm 1.2 — Diüretik Tedavisi ve Diüretik Direnci"
+  },
+  {
+    "front": "Endikasyon — nedir?",
+    "back": "Sinüs ritminde, optimal beta-bloker dozuna rağmen kalp hızı ≥70/dk kalan semptomatik HFrEF hastalarında (Sınıf IIa). AF/atriyal aritmide etkisizdir (yalnızca sinüs düğümünde etkili). 4. Doz: 5 mg 2x1 başlangıç, hedef 7.5 mg 2x1. 5.",
+    "kind": "Kavram",
+    "chapter": 1,
+    "section": "1.3",
+    "reference": "Bölüm 1.3 — İvabradin, Digoksin ve Diğer Ek Ajanlar"
+  },
+  {
+    "front": "Yan etki — nedir?",
+    "back": "Fosfen (görsel parlama hissi, retina If-benzeri kanallarındaki etkiye bağlı), bradikardi.",
+    "kind": "Kavram",
+    "chapter": 1,
+    "section": "1.3",
+    "reference": "Bölüm 1.3 — İvabradin, Digoksin ve Diğer Ek Ajanlar"
+  },
+  {
+    "front": "İvabradin, Digoksin ve Diğer Ek Ajanlar — Kritik hata",
+    "back": "Digoksin, amiodaron, verapamil ve kinidin ile birlikte kullanıldığında P-glikoprotein aracılı renal atılımın azalması nedeniyle plazma düzeyi belirgin yükselir — bu kombinasyonlarda digoksin dozunun ampirik olarak %30-50 azaltılması ve düzey takibi gereklidir. Hipokalemi, digoksin bağlanma bölgelerinde K⁺ ile yarışı azaltarak toksisiteyi (aritmiler, bulantı, sarı-yeşil görme/ ksantopsi) belirgin kolaylaştırır.",
+    "kind": "Kritik hata",
+    "chapter": 1,
+    "section": "1.3",
+    "reference": "Bölüm 1.3 — İvabradin, Digoksin ve Diğer Ek Ajanlar"
+  },
+  {
+    "front": "Hidralazin/İzosorbid Dinitrat — nedir?",
+    "back": "Hidralazin doğrudan arteriyolar düz kas gevşemesi (mekanizma tam netleşmemiş, muhtemelen NO üretimini artırır), izosorbid dinitrat venöz + arteriyel NO donörüdür. A-HeFT çalışması, standart tedaviye ek olarak siyah ırk kökenli HFrEF hastalarında mortalite yararı göstermiştir; ACEİ/ARB/ARNI'yi tolere edemeyen (örn. ciddi böbrek yetmezliği) hastalarda alternatif olarak da kullanılabilir.",
+    "kind": "Kavram",
+    "chapter": 1,
+    "section": "1.3",
+    "reference": "Bölüm 1.3 — İvabradin, Digoksin ve Diğer Ek Ajanlar"
+  },
+  {
+    "front": "Verisiguat (çözünür guanilat siklaz uyarıcısı) — nedir?",
+    "back": "NO'dan bağımsız olarak çözünür guanilat siklazı doğrudan uyararak cGMP üretimini artırır; VICTORIA çalışmasında yüksek riskli, yakın zamanda dekompanse olmuş HFrEF hastalarında KV ölüm/HF yatışını azaltmıştır; belirgin semptomatik hipotansiyon olmadan başlanabilecek ek bir seçenektir.",
+    "kind": "Kavram",
+    "chapter": 1,
+    "section": "1.3",
+    "reference": "Bölüm 1.3 — İvabradin, Digoksin ve Diğer Ek Ajanlar"
+  },
+  {
+    "front": "Başlangıç Tedavi Stratejisi — Tek Hap Kombinasyonu (SPC) — Sınav vurgusu",
+    "back": "ESC 2024/ESH 2023 kılavuzları, çoğu hastada tedaviye monoterapi yerine düşük doz ikili kombinasyon ile başlanmasını önerir — tercihen tek hap kombinasyonu (single pill combination, SPC). Standart ilk kombinasyon ACEİ veya ARB + kalsiyum kanal blokeri (veya + tiyazid/tiyazid benzeri diüretik) şeklindedir. Bu yaklaşım, farklı mekanizmaların (RAAS blokajı + vasküler düz kas Ca²⁺ kanal blokajı veya distal tübüler Na⁺-Cl⁻ blokajı) sinerjistik etkisiyle daha hızlı KB kontrolü sağlar ve tablet sayısının azalması ilaç uyumunu belirgin artırır.",
+    "kind": "Sınav vurgusu",
+    "chapter": 2,
+    "section": "2.1",
+    "reference": "Bölüm 2.1 — Başlangıç Tedavi Stratejisi — Tek Hap Kombinasyonu (SPC)"
+  },
+  {
+    "front": "Valsartan/Hidroklorotiyazid — Türkiye'deki ticari adı?",
+    "back": "Ticari Ad (TR): Co-Diovan",
+    "kind": "Ticari ad",
+    "chapter": 2,
+    "section": "2.1",
+    "reference": "Bölüm 2.1 — Başlangıç Tedavi Stratejisi — Tek Hap Kombinasyonu (SPC) · Tablo 2.1 — Sabit Doz Kombinasyon Preparatları (TR)"
+  },
+  {
+    "front": "Perindopril/İndapamid — Türkiye'deki ticari adı?",
+    "back": "Ticari Ad (TR): Preterax, Bipreterax",
+    "kind": "Ticari ad",
+    "chapter": 2,
+    "section": "2.1",
+    "reference": "Bölüm 2.1 — Başlangıç Tedavi Stratejisi — Tek Hap Kombinasyonu (SPC) · Tablo 2.1 — Sabit Doz Kombinasyon Preparatları (TR)"
+  },
+  {
+    "front": "Dirençli Hipertansiyon ve Spironolakton — Klinik pratik",
+    "back": "PATHWAY-2 çalışması, dirençli hipertansiyonda spironolaktonun dördüncü ajan olarak, doksazosin ve bisoprololden anlamlı derecede üstün KB düşüşü sağladığını göstermiştir — bu üstünlük, bu hasta grubunda sıklıkla saptanmamış rölatif hiperaldosteronizm zeminiyle açıklanmaktadır. Ampirik dördüncü ajan seçimi bu nedenle genellikle spironolaktondur; eklemeden önce ilaç uyumsuzluğu, beyaz önlük etkisi (ABPM ile dışlama) ve sekonder nedenlerin (özellikle primer aldosteronizm) araştırılması gerekir.",
+    "kind": "Klinik pratik",
+    "chapter": 2,
+    "section": "2.2",
+    "reference": "Bölüm 2.2 — Dirençli Hipertansiyon ve Spironolakton"
+  },
+  {
+    "front": "Hipertansif Aciller — IV Ajanlar — Kritik hata",
+    "back": "Aort diseksiyonu şüphesinde tedavi sırası kritik önemdedir: önce kalp hızı (beta-bloker ile <60/dk), sonra kan basıncı (<120 mmHg sistolik) hedeflenmelidir. Beta-bloker öncesi yalnızca vazodilatör (nitroprussid, nikardipin) verilirse, refleks taşikardi ve artan dP/dt (aortik duvar üzerindeki kesme kuvveti) diseksiyonu ilerletebilir — bu, ölümcül olabilecek klasik bir tedavi hatasıdır.",
+    "kind": "Kritik hata",
+    "chapter": 2,
+    "section": "2.3",
+    "reference": "Bölüm 2.3 — Hipertansif Aciller — IV Ajanlar"
+  },
+  {
+    "front": "Güvenli ajanlar — nedir?",
+    "back": "metildopa, labetalol, nifedipin (uzun etkili). ACEİ/ARB gebelikte kesinlikle kontrendikedir — fetal renal displazi, oligohidramnios, kafatası kemikleşme kusurları dahil ciddi teratojenik etkiler gösterirler; gebelik planlayan/ gebe kalma potansiyeli olan kadınlarda kullanılmamalıdır.",
+    "kind": "Kavram",
+    "chapter": 2,
+    "section": "2.4",
+    "reference": "Bölüm 2.4 — Özel Popülasyonlarda Antihipertansif Seçimi"
+  },
+  {
+    "front": "Özel Popülasyonlarda Antihipertansif Seçimi — Kritik hata",
+    "back": "Feokromositomaya bağlı hipertansiyonda önce alfa blokajı (fenoksibenzamin veya doksazosin), sonra beta blokajı başlanmalıdır. Beta-bloker alfa blokajından önce verilirse, karşılıksız kalan α1-aracılı vazokonstriksiyon nedeniyle paradoksal hipertansif kriz gelişebilir — bu sıra ihlali potansiyel olarak ölümcül bir klinik hatadır.",
+    "kind": "Kritik hata",
+    "chapter": 2,
+    "section": "2.4",
+    "reference": "Bölüm 2.4 — Özel Popülasyonlarda Antihipertansif Seçimi"
+  },
+  {
+    "front": "Aspirin (Coraspin, Ecopirin) — nedir?",
+    "back": "trombosit COX-1'ini irreversibl asetiller, tromboksan A2 sentezini bloke eder (trombosit ömrü boyunca — ~7-10 gün — etki sürer, çünkü trombositler çekirdeksizdir ve yeni COX-1 sentezleyemez). Klopidogrel (Plavix)/",
+    "kind": "Kavram",
+    "chapter": 3,
+    "section": "3.1",
+    "reference": "Bölüm 3.1 — Antiplatelet Tedavi"
+  },
+  {
+    "front": "Prasugrel (Efient) — nedir?",
+    "back": "irreversibl P2Y12 reseptör antagonistleri; her ikisi de ön-ilaçtır, hepatik aktivasyon gerektirir. Klopidogrel aktivasyonu büyük ölçüde CYP2C19 üzerinden gerçekleşir — bu enzimin genetik polimorfizmi (yavaş metabolizör fenotip, Doğu Asya popülasyonunda daha sık) değişken/yetersiz antiplatelet yanıta yol açabilir. Prasugrel aktivasyonu daha az polimorfizme bağımlıdır, daha hızlı ve öngörülebilir etki sağlar. Tikagrelor (Brilique): ön-ilaç değildir, P2Y12 reseptörüne reversibl, allosterik bağlanma gösterir; adenozin geri alımını da inhibe ettiğinden dispne yan etkisi görülebilir.",
+    "kind": "Kavram",
+    "chapter": 3,
+    "section": "3.1",
+    "reference": "Bölüm 3.1 — Antiplatelet Tedavi"
+  },
+  {
+    "front": "Aspirin — doz / titrasyon?",
+    "back": "Yükleme Dozu: 150-300 mg · İdame Dozu: 75-100 mg/gün · Özel Not: Tüm AKS'de temel",
+    "kind": "Doz",
+    "chapter": 3,
+    "section": "3.1",
+    "reference": "Bölüm 3.1 — Antiplatelet Tedavi · Tablo 3.1 — P2Y12 İnhibitörleri Karşılaştırması"
+  },
+  {
+    "front": "Klopidogrel — doz / titrasyon?",
+    "back": "Yükleme Dozu: 300-600 mg · İdame Dozu: 75 mg/gün · Özel Not: Yavaş metabolizör riski (CYP2C19)",
+    "kind": "Doz",
+    "chapter": 3,
+    "section": "3.1",
+    "reference": "Bölüm 3.1 — Antiplatelet Tedavi · Tablo 3.1 — P2Y12 İnhibitörleri Karşılaştırması"
+  },
+  {
+    "front": "Prasugrel — doz / titrasyon?",
+    "back": "Yükleme Dozu: 60 mg · İdame Dozu: 10 mg/gün (5 mg <60 kg) · Özel Not: Yalnızca PKG kararı sonrası verilir",
+    "kind": "Doz",
+    "chapter": 3,
+    "section": "3.1",
+    "reference": "Bölüm 3.1 — Antiplatelet Tedavi · Tablo 3.1 — P2Y12 İnhibitörleri Karşılaştırması"
+  },
+  {
+    "front": "Tikagrelor — doz / titrasyon?",
+    "back": "Yükleme Dozu: 180 mg · İdame Dozu: 90 mg 2x1 · Özel Not: Dispne (adenozin ile ilişkili), ventriküler pauzalar",
+    "kind": "Doz",
+    "chapter": 3,
+    "section": "3.1",
+    "reference": "Bölüm 3.1 — Antiplatelet Tedavi · Tablo 3.1 — P2Y12 İnhibitörleri Karşılaştırması"
+  },
+  {
+    "front": "Antiplatelet Tedavi — Kritik hata",
+    "back": "Prasugrel, geçirilmiş TİA/inme öyküsü olan hastalarda kesinlikle kontrendikedir (TRITON-TIMI 38 çalışmasında bu grupta net zarar gösterilmiştir). ≥75 yaş ve <60 kg hastalarda genellikle önerilmez veya doz azaltımı (5 mg) gerektirir — bu gruplarda kanama riski belirgin artar. Bu üç kriter (TİA/inme öyküsü, ≥75 yaş, <60 kg) sınavlarda sık sorulan mutlak/rölatif kontrendikasyon triadıdır.",
+    "kind": "Kritik hata",
+    "chapter": 3,
+    "section": "3.1",
+    "reference": "Bölüm 3.1 — Antiplatelet Tedavi"
+  },
+  {
+    "front": "Anti-İskemik Ajanlar — Klinik pratik",
+    "back": "Uzun etkili nitrat kullanımında (izosorbid mononitrat/dinitrat — Isoket, Monoket) nitrat toleransını önlemek için günlük 8-12 saatlik nitratsız aralık bırakılmalıdır (genellikle gece) — aksi halde birkaç gün içinde etkinlik belirgin azalır (guanilat siklaz enziminin desensitizasyonu ve serbest radikal artışı mekanizmalarıyla). Akut kullanımda (SL/IV) tolerans sorun değildir.",
+    "kind": "Klinik pratik",
+    "chapter": 3,
+    "section": "3.3",
+    "reference": "Bölüm 3.3 — Anti-İskemik Ajanlar"
+  },
+  {
+    "front": "Tenekteplaz (TNK-tPA) — doz / titrasyon?",
+    "back": "Doz: Ağırlığa göre tek IV bolus (30-50 mg) · Uygulama: Tek seferde 5-10 saniyede — saha/acil koşullarında pratik",
+    "kind": "Doz",
+    "chapter": 3,
+    "section": "3.4",
+    "reference": "Bölüm 3.4 — Fibrinolitikler · Tablo 3.3 — Fibrinolitik Ajanlar"
+  },
+  {
+    "front": "Alteplaz (tPA) — doz / titrasyon?",
+    "back": "Doz: 100 mg, 90 dk içinde bölünmüş infüzyon · Uygulama: Daha karmaşık uygulama protokolü",
+    "kind": "Doz",
+    "chapter": 3,
+    "section": "3.4",
+    "reference": "Bölüm 3.4 — Fibrinolitikler · Tablo 3.3 — Fibrinolitik Ajanlar"
+  },
+  {
+    "front": "Fibrinolitikler — Kritik hata",
+    "back": "Mutlak kontrendikasyonlar: Herhangi bir zamanda intrakraniyal hemoraji öyküsü, bilinen yapısal serebrovasküler lezyon/ malignite, son 3 ay içinde iskemik inme (son 4.5 saat hariç), aktif kanama, son 3 ayda ciddi kafa/yüz travması, aort diseksiyonu şüphesi. Rölatif kontrendikasyonlar: kontrolsüz HT (≥180/110), >3 ay önce geçirilmiş inme, aktif peptik ülser, gebelik, oral antikoagülan kullanımı. STEMI'de fibrinolitik verilecekse, birincil PKG'nin 120 dakika içinde yapılamayacağı ve semptom başlangıcının <12 saat olduğu doğrulanmalıdır.",
+    "kind": "Kritik hata",
+    "chapter": 3,
+    "section": "3.4",
+    "reference": "Bölüm 3.4 — Fibrinolitikler"
+  },
+  {
+    "front": "Varfarin (Coumadin) — nedir?",
+    "back": "Vitamin K epoksit redüktazı (VKORC1) inhibe ederek, vitamin K bağımlı pıhtılaşma faktörlerinin (II, VII, IX, X) ve Protein C/S'nin karboksilasyonunu (dolayısıyla fonksiyonel aktivasyonunu) engeller.",
+    "kind": "Kavram",
+    "chapter": 4,
+    "section": "4.1",
+    "reference": "Bölüm 4.1 — Mekanik Protez Kapak ve Valvüler AF'de Antikoagülasyon"
+  },
+  {
+    "front": "Mekanik Protez Kapak ve Valvüler AF'de Antikoagülasyon — Sınav vurgusu",
+    "back": "Mekanik protez kapak veya orta-ciddi mitral darlığı ile birlikte atriyal fibrilasyon (\"valvüler AF\") varlığında antikoagülasyon YALNIZCA Varfarin ile yapılmalıdır — DOAC'lar (apiksaban, rivaroksaban, dabigatran, edoksaban) bu hasta gruplarında kesinlikle kontrendikedir. RE-ALIGN çalışması, mekanik kapaklı hastalarda dabigatranın varfarine kıyasla hem tromboembolik olay hem de kanama açısından daha kötü sonuçlarla ilişkili olduğunu göstererek bu çalışmanın erken sonlandırılmasına yol açmıştır — mekanizma olarak, DOAC'ların yalnızca dolaşımdaki tek bir faktörü (trombin veya Xa) hedeflemesinin, protez kapak yüzeyindeki yoğun, temas-aktivasyonlu koagülasyon kaskadını yeterince baskılayamaması öne sürülmektedir.",
+    "kind": "Sınav vurgusu",
+    "chapter": 4,
+    "section": "4.1",
+    "reference": "Bölüm 4.1 — Mekanik Protez Kapak ve Valvüler AF'de Antikoagülasyon"
+  },
+  {
+    "front": "Benzatin Penisilin G — nedir?",
+    "back": "Grup A streptokok (*S. pyogenes*) enfeksiyonunun rekürrensini önleyerek, moleküler mimikri yoluyla gelişen otoimmün kapak hasarının (özellikle mitral darlığa ilerlemenin) tekrarını engeller. Doz: 1.2 milyon Ü IM, her 3-4 haftada bir; kapak tutulumu olan hastalarda süre uzatılır (bazı rehberlerde yaşam boyu veya en az 10 yıl/40 yaşına kadar).",
+    "kind": "Kavram",
+    "chapter": 4,
+    "section": "4.3",
+    "reference": "Bölüm 4.3 — Romatizmal Ateş Sekonder Profilaksisi"
+  },
+  {
+    "front": "Tedavi Felsefesi — Klinik pratik",
+    "back": "Vejetasyon içindeki bakteriler, fibrin-trombosit matriksi içine gömülü, metabolik olarak görece durağan (dormant), yavaş bölünen bir popülasyondur ve biyofilm benzeri bu yapı hem konak bağışıklık sisteminden hem de antibiyotik penetrasyonundan bakterileri korur. Bu nedenle standart enfeksiyonlardan farklı olarak EE tedavisi haftalarca süren (genellikle 4-6 hafta), yüksek doz, mutlaka bakterisidal (bakteriyostatik değil) ve IV olmalıdır — oral geçiş veya kısa süreli tedavi relaps riskini ciddi artırır.",
+    "kind": "Klinik pratik",
+    "chapter": 5,
+    "section": "5.1",
+    "reference": "Bölüm 5.1 — Tedavi Felsefesi"
+  },
+  {
+    "front": "Vankomisin + Gentamisin — Türkiye'deki ticari adı?",
+    "back": "Klinik Senaryo: Ampirik (native kapak, · Doz: Vanko: 15-20 mg/kg IV 2x1 (düzey hedefli); · Ticari Ad (TR): Vancomycin MIP +",
+    "kind": "Ticari ad",
+    "chapter": 5,
+    "section": "5.2",
+    "reference": "Bölüm 5.2 — Ampirik ve Hedefe Yönelik Rejimler · Tablo 5.1 — EE Antibiyotik Rejimleri"
+  },
+  {
+    "front": "Genta: 3 mg/kg/gün bölünmüş dozda — Türkiye'deki ticari adı?",
+    "back": "Klinik Senaryo: akut) · Doz: Genta",
+    "kind": "Ticari ad",
+    "chapter": 5,
+    "section": "5.2",
+    "reference": "Bölüm 5.2 — Ampirik ve Hedefe Yönelik Rejimler · Tablo 5.1 — EE Antibiyotik Rejimleri"
+  },
+  {
+    "front": "Nafsilin/Oksasilin — Türkiye'deki ticari adı?",
+    "back": "Klinik Senaryo: MSSA (Metisiline · Doz: Oksasilin 2g IV 6x1 · Ticari Ad (TR): Stafilex",
+    "kind": "Ticari ad",
+    "chapter": 5,
+    "section": "5.2",
+    "reference": "Bölüm 5.2 — Ampirik ve Hedefe Yönelik Rejimler · Tablo 5.1 — EE Antibiyotik Rejimleri"
+  },
+  {
+    "front": "Vankomisin veya Daptomisin — Türkiye'deki ticari adı?",
+    "back": "Klinik Senaryo: MRSA (Metisiline · Doz: Daptomisin 6-10 mg/kg IV 1x1 · Ticari Ad (TR): Vancomycin MIP /",
+    "kind": "Ticari ad",
+    "chapter": 5,
+    "section": "5.2",
+    "reference": "Bölüm 5.2 — Ampirik ve Hedefe Yönelik Rejimler · Tablo 5.1 — EE Antibiyotik Rejimleri"
+  },
+  {
+    "front": "Penisilin G veya Seftriakson ± — Türkiye'deki ticari adı?",
+    "back": "Klinik Senaryo: Streptokoklar (penisiline · Doz: Seftriakson 2g IV 1x1 · Ticari Ad (TR): Rocephin",
+    "kind": "Ticari ad",
+    "chapter": 5,
+    "section": "5.2",
+    "reference": "Bölüm 5.2 — Ampirik ve Hedefe Yönelik Rejimler · Tablo 5.1 — EE Antibiyotik Rejimleri"
+  },
+  {
+    "front": "duyarlı) — Türkiye'deki ticari adı?",
+    "back": "Rejim: Gentamisin (sinerji, kısa süreli)",
+    "kind": "Ticari ad",
+    "chapter": 5,
+    "section": "5.2",
+    "reference": "Bölüm 5.2 — Ampirik ve Hedefe Yönelik Rejimler · Tablo 5.1 — EE Antibiyotik Rejimleri"
+  },
+  {
+    "front": "Ampisilin + Gentamisin (veya — Türkiye'deki ticari adı?",
+    "back": "Klinik Senaryo: Enterokok · Doz: Ampisilin 2g IV 4-6x1 · Ticari Ad (TR): Ampisina",
+    "kind": "Ticari ad",
+    "chapter": 5,
+    "section": "5.2",
+    "reference": "Bölüm 5.2 — Ampirik ve Hedefe Yönelik Rejimler · Tablo 5.1 — EE Antibiyotik Rejimleri"
+  },
+  {
+    "front": "Tedavi — nedir?",
+    "back": "Amfoterisin B (lipozomal formülasyon tercih edilir) ± flusitozin, veya ekinokandinler (kaspofungin); fungal EE'de cerrahi kapak replasmanı sıklıkla zorunludur — medikal tedavi tek başına yetersiz kalır.",
+    "kind": "Kavram",
+    "chapter": 5,
+    "section": "5.3",
+    "reference": "Bölüm 5.3 — Kültür-Negatif ve Fungal Endokarditte Özel Yaklaşım"
+  },
+  {
+    "front": "Antibiyotik Profilaksisi — Sınav vurgusu",
+    "back": "2023 ESC güncellemesi, profilaksiyi yalnızca en yüksek riskli hastalarla sınırlar: protez kapak/protez materyalle onarılmış kapak öyküsü, geçirilmiş infektif endokardit, belirli düzeltilmemiş konjenital kalp hastalıkları, kalp nakli sonrası kapak regürjitasyonu. Bu hastalarda yalnızca yüksek riskli diş girişimleri (diş eti manipülasyonu, periapikal bölge işlemleri, mukozal perforasyon) öncesi: • Amoksisilin 2 g oral, işlemden 30-60 dk önce tek doz • Penisilin alerjisinde: Klindamisin 600 mg veya Azitromisin 500 mg oral tek doz Genel popülasyonda ve orta/düşük riskli hastalarda rutin profilaksi önerilmez.",
+    "kind": "Sınav vurgusu",
+    "chapter": 5,
+    "section": "5.4",
+    "reference": "Bölüm 5.4 — Antibiyotik Profilaksisi"
+  },
+  {
+    "front": "Hipertrofik Obstrüktif Kardiyomiyopati (HOKMP) — Kritik hata",
+    "back": "HOKMP'de vazodilatörler (ACEİ/ARB, dihidropiridin KKB), yüksek doz diüretikler ve digoksin kesinlikle kontrendikedir/ kaçınılmalıdır. Bu ajanların tümü, ön yükü veya art yükü azaltarak ya da kontraktiliteyi artırarak (digoksin) dinamik LVOT obstrüksiyonunu şiddetlendirir ve senkop/ani ölüm riskini artırabilir. Bu, HOKMP farmakoterapisinin en kritik ve en sık sınav sorusu olan \"kırmızı çizgisidir.\"",
+    "kind": "Kritik hata",
+    "chapter": 6,
+    "section": "6.1",
+    "reference": "Bölüm 6.1 — Hipertrofik Obstrüktif Kardiyomiyopati (HOKMP)"
+  },
+  {
+    "front": "Non-DHP KKB, L-tipi Ca²⁺ kanal blokajı → negatif inotropi (beta-bloker kontrendike — Türkiye'deki ticari adı?",
+    "back": "İlaç: Verapamil · Ticari Ad (TR): Isoptin",
+    "kind": "Ticari ad",
+    "chapter": 6,
+    "section": "6.1",
+    "reference": "Bölüm 6.1 — Hipertrofik Obstrüktif Kardiyomiyopati (HOKMP) · Tablo 6.1 — HOKMP Farmakoterapisi"
+  },
+  {
+    "front": "Dilate Kardiyomiyopati (DKMP) — Klinik pratik",
+    "back": "LMNA mutasyonu taşıyan DKMP hastalarında, EF henüz standart ICD eşiğine (≤%35) ulaşmamış olsa bile, bu genotipin taşıdığı yüksek ani ölüm riski nedeniyle daha erken ICD değerlendirmesi yapılmalıdır — EF'den bağımsız bir aritmik risk söz konusudur.",
+    "kind": "Klinik pratik",
+    "chapter": 6,
+    "section": "6.2",
+    "reference": "Bölüm 6.2 — Dilate Kardiyomiyopati (DKMP)"
+  },
+  {
+    "front": "Restriktif Kardiyomiyopati — Amiloidoz-Özgü Tedavi — Kritik hata",
+    "back": "Kardiyak amiloidozda standart HFrEF/HFpEF tedavisi (ACEİ/ARB, beta-bloker) dikkatle ve düşük dozda uygulanmalıdır — otonomik disfonksiyon nedeniyle ciddi hipotansiyona yol açabilirler. Digoksin, amiloid fibrillerine bağlanarak toksisite ve aritmi riskini artırdığından göreceli kontrendikedir.",
+    "kind": "Kritik hata",
+    "chapter": 6,
+    "section": "6.3",
+    "reference": "Bölüm 6.3 — Restriktif Kardiyomiyopati — Amiloidoz-Özgü Tedavi"
+  },
+  {
+    "front": "Takotsubo Kardiyomiyopatisi — Kritik hata",
+    "back": "Takotsubo kardiyomiyopatisinde dinamik LVOT obstrüksiyonu gelişmişse, inotropik ajanlardan (dobutamin vb.) kesinlikle kaçınılmalıdır — kontraktiliteyi artırarak obstrüksiyonu şiddetlendirir ve hemodinamik kötüleşmeye yol açabilir. Kardiyojenik şok gelişirse, obstrüksiyon varlığında vazopressörler (norepinefrin gibi) tercih edilmeli, gerekirse mekanik dolaşım desteği (IABP, Impella) düşünülmelidir.",
+    "kind": "Kritik hata",
+    "chapter": 6,
+    "section": "6.4",
+    "reference": "Bölüm 6.4 — Takotsubo Kardiyomiyopatisi"
+  },
+  {
+    "front": "NSAİİ/Aspirin — nedir?",
+    "back": "COX inhibisyonu → prostaglandin sentezinin azalması → anti-enflamatuvar etki. Kolşisin: mikrotübül polimerizasyonunu inhibe ederek nötrofil kemotaksisi ve NLRP3 enflamazom aktivasyonunu baskılar.",
+    "kind": "Kavram",
+    "chapter": 7,
+    "section": "7.1",
+    "reference": "Bölüm 7.1 — Akut Perikardit İlk Basamak Tedavi"
+  },
+  {
+    "front": "İbuprofen — doz / titrasyon?",
+    "back": "Doz: 600–800 mg günde 3 kez · Süre: Semptom + CRP normalleşene kadar, sonra kademeli azaltım",
+    "kind": "Doz",
+    "chapter": 7,
+    "section": "7.1",
+    "reference": "Bölüm 7.1 — Akut Perikardit İlk Basamak Tedavi · Tablo 7.1 — Akut Perikardit Dozları"
+  },
+  {
+    "front": "Aspirin — doz / titrasyon?",
+    "back": "Doz: 750–1000 mg günde 3 kez (post-MI perikarditte tercih edilir) · Süre: Aynı şekilde kademeli azaltım",
+    "kind": "Doz",
+    "chapter": 7,
+    "section": "7.1",
+    "reference": "Bölüm 7.1 — Akut Perikardit İlk Basamak Tedavi · Tablo 7.1 — Akut Perikardit Dozları"
+  },
+  {
+    "front": "Kolşisin — doz / titrasyon?",
+    "back": "Doz: ≥70 kg → 0.5 mg 2x1; <70 kg → 0.5 mg 1x1 · Süre: 3 aya kadar (nüks önleme)",
+    "kind": "Doz",
+    "chapter": 7,
+    "section": "7.1",
+    "reference": "Bölüm 7.1 — Akut Perikardit İlk Basamak Tedavi · Tablo 7.1 — Akut Perikardit Dozları"
+  },
+  {
+    "front": "Akut Perikardit İlk Basamak Tedavi — Klinik pratik",
+    "back": "NSAİİ/aspirin dozu, sabit bir süre yerine CRP tam normalleşene kadar tam dozda tutulmalı, ardından 1-2 haftalık aralıklarla kademeli azaltılmalıdır — CRP normalleşmeden erken doz azaltımı nüks riskini artırır. Kolşisin ise NSAİİ kesildikten sonra da (toplamda 3 aya kadar) devam ettirilerek nüks riski yaklaşık yarıya indirilir.",
+    "kind": "Klinik pratik",
+    "chapter": 7,
+    "section": "7.1",
+    "reference": "Bölüm 7.1 — Akut Perikardit İlk Basamak Tedavi"
+  },
+  {
+    "front": "Endikasyon — nedir?",
+    "back": "NSAİİ/aspirin kontrendike (gebelik, aktif GİS kanama, böbrek yetmezliği) veya etkisizse, ya da spesifik otoimmün etiyoloji varsa. Doz: Prednizolon düşük-orta doz (0.2–0.5 mg/kg/gün) — yüksek doz (1 mg/kg/gün) kronik seyri ve ilaç bağımlılığını artırdığından önerilmez. Mutlaka kolşisinle birlikte kullanılır.",
+    "kind": "Kavram",
+    "chapter": 7,
+    "section": "7.2",
+    "reference": "Bölüm 7.2 — İkinci Basamak — Kortikosteroidler"
+  },
+  {
+    "front": "Dirençli Tekrarlayan Perikardit — IL-1 İnhibitörleri — Sınav vurgusu",
+    "back": "ESC 2025 güncellemesi, kolşisine dirençli veya kortikosteroide bağımlı hale gelen tekrarlayan perikarditte IL-1 inhibitörlerine (Anakinra, Rilonasept) Sınıf II önerisi getirmiştir. Anakinra (günlük SC), rilonaseptten (haftalık SC) daha uzun süredir klinik kullanımda olan bir IL-1 reseptör antagonistidir. Bu ajanlar, özellikle otoenflamatuvar fenotip (yüksek CRP, MR'da aktif enflamasyon kanıtı) gösteren hastalarda, uzun süreli kortikosteroid bağımlılığından kaçınmayı sağlar.",
+    "kind": "Sınav vurgusu",
+    "chapter": 7,
+    "section": "7.3",
+    "reference": "Bölüm 7.3 — Dirençli Tekrarlayan Perikardit — IL-1 İnhibitörleri"
+  },
+  {
+    "front": "Sınıf I — Sodyum Kanal Blokerleri — Kritik hata",
+    "back": "Sınıf IC ajanlar (Flekainid, Propafenon), yapısal kalp hastalığı veya iskemik kalp hastalığı olan hastalarda kesinlikle kontrendikedir.CAST çalışması, post-MI hastalarda flekainid/enkainidin ventriküler ektopiyi baskılamasına rağmen mortaliteyi artırdığını göstermiş ve bu bulgu antiaritmik ilaç geliştirme felsefesini kökten değiştirmiştir (proaritmik risk, özellikle iskemik/ skarlı miyokardda). Sınıf IC ajanlar yalnızca yapısal olarak normal kalpte kullanılmalıdır.",
+    "kind": "Kritik hata",
+    "chapter": 8,
+    "section": "8.1",
+    "reference": "Bölüm 8.1 — Sınıf I — Sodyum Kanal Blokerleri"
+  },
+  {
+    "front": "Sınıf III — Potasyum Kanal Blokerleri — Multi-organ Toksisite (Kritik hata)",
+    "back": "Amiodaronun multi-organ toksisite profili klinik pratikte sıkça göz ardı edilir: tiroid (hem hipo hem hipertiroidi — yüksek iyot içeriği nedeniyle; tedavi öncesi ve düzenli TSH takibi zorunlu), akciğer (pulmoner fibrozis — geri dönüşümsüz olabilir, bazal ve periyodik akciğer grafisi/DLCO önerilir), karaciğer (transaminaz yükselmesi), göz (kornea mikrodepozitleri — genellikle görsel bozukluk yapmaz), cilt (fotosensitivite, mavi-gri renk değişikliği). Uzun süreli kullanımda bu organ sistemlerinin düzenli izlenmesi zorunludur.",
+    "kind": "Kritik hata",
+    "chapter": 8,
+    "section": "8.3",
+    "reference": "Bölüm 8.3 — Sınıf III — Potasyum Kanal Blokerleri"
+  },
+  {
+    "front": "Diğer Antiaritmik/Destek Ajanlar — Sınav vurgusu",
+    "back": "Adenozin (Adenocor), A1 reseptörleri üzerinden AV düğümde geçici, tam AV blok oluşturarak reentran devreyi (AVNRT/AVRT) kırar — etki süresi saniyeler mertebesindedir (yarı ömür <10 saniye, hızlı eritrosit/endotel alımı ile metabolize olur). Hastaya uygulama öncesi geçici göğüs sıkışması, kızarma ve \"ölüyormuş gibi hissetme\" hissi konusunda bilgi verilmelidir. Antidromik AVRT/pre-eksite AF şüphesinde kullanılmamalıdır — AV düğüm bloğu, iletiyi tamamen aksesuar yola kaydırıp VF'yi tetikleyebilir.",
+    "kind": "Sınav vurgusu",
+    "chapter": 8,
+    "section": "8.5",
+    "reference": "Bölüm 8.5 — Diğer Antiaritmik/Destek Ajanlar"
+  },
+  {
+    "front": "Strateji Seçimi — nedir?",
+    "back": "2024 ESC AF-CARE çerçevesinde ritim kontrolü (kateter ablasyonu artık paroksismal AF'de Sınıf I ilk basamak), semptomatik ve uygun hastalarda hız kontrolüne tercih edilebilir; hız kontrolü (beta-bloker, digoksin, diltiazem/ verapamil [EF>%40]) semptom yönetiminin temelidir.",
+    "kind": "Kavram",
+    "chapter": 8,
+    "section": "8.6",
+    "reference": "Bölüm 8.6 — AF'de Hız vs Ritim Kontrolü ve İnme Önleme Farmakoterapisi"
+  },
+  {
+    "front": "CHA₂DS₂-VASc (klasik) — Bileşenler / Klinik Kullanım?",
+    "back": "Bileşenler: KKY, HT, Yaş≥75(2p), DM, İnme/ · Klinik Kullanım: ≥2 puan (erkek) → OAK güçlü önerilir; DOAC tercih",
+    "kind": "Tablo",
+    "chapter": 8,
+    "section": "8.6",
+    "reference": "Bölüm 8.6 — AF'de Hız vs Ritim Kontrolü ve İnme Önleme Farmakoterapisi · Tablo 8.3 — İnme Önleme Skorlama-Farmakoterapi Entegrasyonu"
+  },
+  {
+    "front": "CHA₂DS₂-VA (2024, cinsiyet — Bileşenler / Klinik Kullanım?",
+    "back": "Bileşenler: TİA(2p), Vasküler hastalık, Yaş 65-74 · Klinik Kullanım: edilir (valvüler AF hariç)",
+    "kind": "Tablo",
+    "chapter": 8,
+    "section": "8.6",
+    "reference": "Bölüm 8.6 — AF'de Hız vs Ritim Kontrolü ve İnme Önleme Farmakoterapisi · Tablo 8.3 — İnme Önleme Skorlama-Farmakoterapi Entegrasyonu"
+  },
+  {
+    "front": "HAS-BLED — Bileşenler / Klinik Kullanım?",
+    "back": "Bileşenler: HT, Anormal böbrek/KC fonksiyonu, · Klinik Kullanım: ≥3 puan → yüksek kanama riski; OAK'ı kesmek için değil,",
+    "kind": "Tablo",
+    "chapter": 8,
+    "section": "8.6",
+    "reference": "Bölüm 8.6 — AF'de Hız vs Ritim Kontrolü ve İnme Önleme Farmakoterapisi · Tablo 8.3 — İnme Önleme Skorlama-Farmakoterapi Entegrasyonu"
+  },
+  {
+    "front": "AF'de Hız vs Ritim Kontrolü ve İnme Önleme Farmakoterapisi — Klinik pratik",
+    "back": "HAS-BLED skorunun yüksek çıkması antikoagülasyonu kesmek için bir gerekçe değildir — asıl amaç, düzeltilebilir kanama risk faktörlerinin (kontrolsüz HT, labil INR, birlikte NSAİİ/antiplatelet kullanımı) belirlenip düzeltilmesi ve hastanın daha sık klinik/ laboratuvar takibe alınmasıdır. İnme riski (CHA₂DS₂-VA) genellikle kanama riskinden ağır basar.",
+    "kind": "Klinik pratik",
+    "chapter": 8,
+    "section": "8.6",
+    "reference": "Bölüm 8.6 — AF'de Hız vs Ritim Kontrolü ve İnme Önleme Farmakoterapisi"
+  },
+  {
+    "front": "AF'de Hız vs Ritim Kontrolü ve İnme Önleme Farmakoterapisi — Kılavuz Genelinde Tekrarlanan Kritik Prensipler",
+    "back": "• KY'de dört sütun paralel başlatılır; ARNI geçişinde 36 saat washout zorunludur. • Hipertansif acillerde ve feokromositomada ilaç sırası (önce KH/alfa blokajı, sonra KB/beta blokajı) hayati önemdedir. • Prasugrel'de TİA/inme + yaş≥75 + kilo<60kg triadı mutlak/rölatif kontrendikasyondur. • Valvüler AF ve mekanik kapakta antikoagülasyon yalnızca varfarindir — DOAC kontrendikedir. • EE tedavisi haftalarca süren, yüksek doz, bakterisidal IV antibiyoterapi gerektirir. • HOKMP'de vazodilatör/diüretik/digoksin, Takotsubo'da LVOTO varsa inotrop kontrendikedir. • Sınıf IC antiaritmikler yapısal/iskemik kalp hastalığında kontrendikedir (CAST çalışması). • Amiodaronun multi-organ toksisitesi (tiroid, akciğer, KC, göz, cilt) düzenli izlem gerektirir.",
+    "kind": "Kavram",
+    "chapter": 8,
+    "section": "8.6",
+    "reference": "Bölüm 8.6 — AF'de Hız vs Ritim Kontrolü ve İnme Önleme Farmakoterapisi"
+  }
+]

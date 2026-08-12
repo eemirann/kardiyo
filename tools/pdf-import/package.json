@@ -1,0 +1,12 @@
+{
+  "name": "kardiyo-pdf-import",
+  "private": true,
+  "description": "OKU klasorundeki PDF'leri yapisal JSON'a cevirir (api/data/ icin)",
+  "scripts": {
+    "questions": "node parse-questions.js",
+    "guide": "node parse-guide.js",
+    "cards": "node generate-cards.js",
+    "all": "node parse-questions.js && node parse-guide.js && node generate-cards.js"
+  },
+  "dependencies": { "pdf-parse": "1.1.1" }
+}
