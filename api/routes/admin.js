@@ -278,6 +278,8 @@ const examSchema = z.object({
   title: z.string().min(3).max(200).trim(),
   description: z.string().max(1000).nullish(),
   topicId: z.coerce.number().int().positive().nullish(),
+  category: z.string().max(120).nullish(), // liste sayfasindaki alt baslik
+  sortOrder: z.coerce.number().int().default(0),
   durationMinutes: z.coerce.number().int().min(1).max(600).default(30),
   isPremium: z.boolean().default(false),
   isActive: z.boolean().default(true),
@@ -292,7 +294,7 @@ router.get(
               (SELECT COUNT(*)::int FROM exam_questions eq WHERE eq.exam_id = e.id) AS question_count,
               (SELECT COUNT(*)::int FROM exam_sessions es WHERE es.exam_id = e.id) AS session_count
          FROM exams e LEFT JOIN topics t ON t.id = e.topic_id
-        ORDER BY e.created_at DESC`
+        ORDER BY e.sort_order, e.title`
     );
     res.json({ exams: rows });
   })
@@ -316,18 +318,21 @@ async function upsertExam(client, data, id = null) {
   if (id) {
     const { rows } = await client.query(
       `UPDATE exams SET title=$2, description=$3, topic_id=$4, duration_minutes=$5,
-              is_premium=$6, is_active=$7 WHERE id=$1 RETURNING id`,
+              is_premium=$6, is_active=$7, category=$8, sort_order=$9 WHERE id=$1 RETURNING id`,
       [id, data.title, data.description ?? null, data.topicId ?? null,
-       data.durationMinutes, data.isPremium, data.isActive]
+       data.durationMinutes, data.isPremium, data.isActive,
+       data.category || null, data.sortOrder]
     );
     if (!rows[0]) throw notFound('Sinav bulunamadi.');
     await client.query('DELETE FROM exam_questions WHERE exam_id = $1', [id]);
   } else {
     const { rows } = await client.query(
-      `INSERT INTO exams (title, description, topic_id, duration_minutes, is_premium, is_active)
-       VALUES ($1,$2,$3,$4,$5,$6) RETURNING id`,
+      `INSERT INTO exams (title, description, topic_id, duration_minutes, is_premium,
+                          is_active, category, sort_order)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`,
       [data.title, data.description ?? null, data.topicId ?? null,
-       data.durationMinutes, data.isPremium, data.isActive]
+       data.durationMinutes, data.isPremium, data.isActive,
+       data.category || null, data.sortOrder]
     );
     examId = rows[0].id;
   }

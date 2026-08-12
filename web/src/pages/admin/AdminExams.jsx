@@ -8,6 +8,8 @@ const empty = {
   title: '',
   description: '',
   topicId: '',
+  category: '',
+  sortOrder: 0,
   durationMinutes: 30,
   isPremium: false,
   isActive: true,
@@ -44,6 +46,9 @@ export default function AdminExams() {
     api.get('/admin/questions?limit=200').then((d) => setQuestions(d.questions)).catch(() => {});
   }, []);
 
+  // Formdaki kategori kutusu, hâlihazırda kullanılan kategorileri önerir
+  const categories = [...new Set(exams.map((e) => e.category).filter(Boolean))];
+
   const openEdit = async (exam) => {
     try {
       const d = await api.get(`/admin/exams/${exam.id}`);
@@ -53,6 +58,8 @@ export default function AdminExams() {
           title: d.exam.title,
           description: d.exam.description || '',
           topicId: d.exam.topic_id || '',
+          category: d.exam.category || '',
+          sortOrder: d.exam.sort_order ?? 0,
           durationMinutes: d.exam.duration_minutes,
           isPremium: d.exam.is_premium,
           isActive: d.exam.is_active,
@@ -75,6 +82,8 @@ export default function AdminExams() {
       const payload = {
         ...editing.form,
         topicId: editing.form.topicId ? Number(editing.form.topicId) : null,
+        category: editing.form.category || null,
+        sortOrder: Number(editing.form.sortOrder) || 0,
         durationMinutes: Number(editing.form.durationMinutes),
       };
       if (editing.id) await api.put(`/admin/exams/${editing.id}`, payload);
@@ -138,6 +147,9 @@ export default function AdminExams() {
               <tr key={e.id} className="hover:bg-surface-container-low">
                 <td className="px-4 py-3">
                   <div className="text-body-md text-on-surface">{e.title}</div>
+                  <div className="text-caption text-secondary">
+                    {e.category || 'Kategorisiz'} · sıra {e.sort_order}
+                  </div>
                   {e.is_premium && <span className="text-caption text-primary">Premium</span>}
                 </td>
                 <td className="px-4 py-3 text-body-md text-secondary">{e.topic_name || 'Karma'}</td>
@@ -206,6 +218,34 @@ export default function AdminExams() {
                   onChange={(e) =>
                     setEditing({ ...editing, form: { ...editing.form, durationMinutes: e.target.value } })
                   }
+                />
+              </Field>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-[1fr_140px]">
+              <Field
+                label="Alt kategori"
+                hint="Deneme listesinde bu başlık altında gruplanır. Boşsa 'Diğer denemeler'e düşer."
+              >
+                <input
+                  className="input"
+                  list="deneme-kategorileri"
+                  value={editing.form.category}
+                  onChange={(e) => setEditing({ ...editing, form: { ...editing.form, category: e.target.value } })}
+                  placeholder="Kardiyoloji Karma Denemeler"
+                />
+                <datalist id="deneme-kategorileri">
+                  {categories.map((c) => (
+                    <option key={c} value={c} />
+                  ))}
+                </datalist>
+              </Field>
+              <Field label="Sıra" hint="Küçük olan önce.">
+                <input
+                  type="number"
+                  className="input"
+                  value={editing.form.sortOrder}
+                  onChange={(e) => setEditing({ ...editing, form: { ...editing.form, sortOrder: e.target.value } })}
                 />
               </Field>
             </div>

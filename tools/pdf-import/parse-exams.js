@@ -25,6 +25,7 @@ const SETS = [
     key: 'kardiyovaskuler-farmakoloji-denemeleri',
     file: `${OKU}/Kardiyovaskuler Klinik Farmakoloji 10 Deneme 200 Soru.pdf`,
     title: 'Kardiyovasküler Klinik Farmakoloji — Deneme {n}',
+    category: 'Kardiyovasküler Klinik Farmakoloji', // deneme listesinde alt baslik
     description:
       'TUS / USMLE tarzı, 20 soruluk kardiyovasküler klinik farmakoloji denemesi. ' +
       'Sekiz konu bloğundan dengeli dağılım, her soruda ayrıntılı çözüm.',
@@ -54,6 +55,7 @@ const SETS = [
     key: 'kardiyoloji-karma-denemeler',
     file: `${OKU}/Kardiyoloji_10_Karma_Deneme_Sınavı_V2.pdf`,
     title: 'Kardiyoloji Karma Deneme {n}',
+    category: 'Kardiyoloji Karma Denemeler',
     description:
       'Patofizyoloji, klinik yönetim ve kılavuz odaklı çözümleriyle 20 soruluk karma ' +
       'kardiyoloji denemesi.',
@@ -278,6 +280,7 @@ async function parseSet(cfg) {
   return {
     key: cfg.key,
     title: cfg.title,
+    category: cfg.category,
     description: cfg.description,
     topicSlug: cfg.topicSlug,
     durationMinutes: cfg.durationMinutes,

@@ -22,6 +22,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const { rows } = await query(
       `SELECT e.id, e.title, e.description, e.duration_minutes, e.is_premium,
+              e.category, e.sort_order,
               t.name AS topic_name, t.slug AS topic_slug,
               (SELECT COUNT(*)::int FROM exam_questions eq WHERE eq.exam_id = e.id) AS question_count,
               (SELECT MAX(es.score) FROM exam_sessions es
@@ -29,7 +30,7 @@ router.get(
          FROM exams e
          LEFT JOIN topics t ON t.id = e.topic_id
         WHERE e.is_active
-        ORDER BY e.created_at DESC`,
+        ORDER BY e.sort_order, e.title`,
       [req.user?.id || null]
     );
     res.json({
@@ -39,6 +40,8 @@ router.get(
         description: e.description,
         durationMinutes: e.duration_minutes,
         isPremium: e.is_premium,
+        category: e.category,
+        sortOrder: e.sort_order,
         topicName: e.topic_name,
         topicSlug: e.topic_slug,
         questionCount: e.question_count,

@@ -128,19 +128,20 @@ async function upsertQuestion(client, q, topicId, adminId) {
 }
 
 /** Sinavi basligina gore ekler ya da gunceller, id dondurur. */
-async function upsertExam(client, { title, description, topicId, durationMinutes }) {
+async function upsertExam(client, { title, description, topicId, durationMinutes, category, sortOrder }) {
   const { rows: found } = await client.query('SELECT id FROM exams WHERE title = $1', [title]);
   if (found[0]) {
     await client.query(
-      'UPDATE exams SET description=$2, topic_id=$3, duration_minutes=$4 WHERE id=$1',
-      [found[0].id, description, topicId, durationMinutes]
+      `UPDATE exams SET description=$2, topic_id=$3, duration_minutes=$4,
+              category=$5, sort_order=$6 WHERE id=$1`,
+      [found[0].id, description, topicId, durationMinutes, category, sortOrder]
     );
     return found[0].id;
   }
   const { rows } = await client.query(
-    `INSERT INTO exams (title, description, topic_id, duration_minutes)
-     VALUES ($1,$2,$3,$4) RETURNING id`,
-    [title, description, topicId, durationMinutes]
+    `INSERT INTO exams (title, description, topic_id, duration_minutes, category, sort_order)
+     VALUES ($1,$2,$3,$4,$5,$6) RETURNING id`,
+    [title, description, topicId, durationMinutes, category, sortOrder]
   );
   return rows[0].id;
 }
@@ -200,11 +201,16 @@ async function run() {
         }
 
         const title = set.title.replace('{n}', exam.number);
+        // Seriler listede kendi basligi altinda ve deneme numarasi sirasiyla ciksin:
+        // ilk serinin sinavlari 101-110, ikincinin 201-210 ...
+        const setIndex = sets.indexOf(set);
         const examId = await upsertExam(client, {
           title,
           description: set.description,
           topicId: setTopicId,
           durationMinutes: set.durationMinutes,
+          category: set.category,
+          sortOrder: (setIndex + 1) * 100 + exam.number,
         });
         await client.query('DELETE FROM exam_questions WHERE exam_id = $1', [examId]);
         for (const [i, qid] of questionIds.entries()) {

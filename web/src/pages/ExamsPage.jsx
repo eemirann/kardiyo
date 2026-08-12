@@ -28,6 +28,23 @@ export default function ExamsPage() {
 
   useEffect(load, []);
 
+  /**
+   * Denemeler alt kategorilerine gore gruplanir; kategorisi olmayanlar en sona
+   * "Diger denemeler" basligi altina duser. API zaten sort_order'a gore sirali
+   * dondugu icin hem gruplarin hem de icindeki denemelerin sirasi korunur.
+   */
+  const groups = [];
+  for (const exam of exams) {
+    const name = exam.category || 'Diğer denemeler';
+    const last = groups[groups.length - 1];
+    if (last && last.name === name) last.exams.push(exam);
+    else {
+      const existing = groups.find((g) => g.name === name);
+      if (existing) existing.exams.push(exam);
+      else groups.push({ name, exams: [exam] });
+    }
+  }
+
   const start = async (exam) => {
     if (!user) {
       navigate('/giris', { state: { from: '/sinavlar' } });
@@ -66,8 +83,14 @@ export default function ExamsPage() {
           />
         </div>
       ) : (
-        <div className="mt-8 grid gap-gutter md:grid-cols-2 lg:grid-cols-3">
-          {exams.map((e) => (
+        groups.map((g) => (
+          <section key={g.name} className="mt-10 first:mt-8">
+            <div className="flex items-baseline gap-3 border-b border-surface-variant pb-2">
+              <h2 className="text-headline-md text-on-surface">{g.name}</h2>
+              <span className="text-caption text-secondary">{g.exams.length} deneme</span>
+            </div>
+            <div className="mt-5 grid gap-gutter md:grid-cols-2 lg:grid-cols-3">
+              {g.exams.map((e) => (
             <div key={e.id} className="card flex flex-col p-6">
               <div className="flex items-start justify-between gap-2">
                 <h2 className="text-body-lg font-semibold text-on-surface">{e.title}</h2>
@@ -105,8 +128,10 @@ export default function ExamsPage() {
                 Sınava Başla
               </button>
             </div>
-          ))}
-        </div>
+              ))}
+            </div>
+          </section>
+        ))
       )}
     </div>
   );

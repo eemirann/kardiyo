@@ -3,6 +3,7 @@
     {
       "key": "kardiyovaskuler-farmakoloji-denemeleri",
       "title": "Kardiyovasküler Klinik Farmakoloji — Deneme {n}",
+      "category": "Kardiyovasküler Klinik Farmakoloji",
       "description": "TUS / USMLE tarzı, 20 soruluk kardiyovasküler klinik farmakoloji denemesi. Sekiz konu bloğundan dengeli dağılım, her soruda ayrıntılı çözüm.",
       "topicSlug": "kardiyovaskuler-farmakoloji",
       "durationMinutes": 30,
@@ -7264,6 +7265,7 @@
     {
       "key": "kardiyoloji-karma-denemeler",
       "title": "Kardiyoloji Karma Deneme {n}",
+      "category": "Kardiyoloji Karma Denemeler",
       "description": "Patofizyoloji, klinik yönetim ve kılavuz odaklı çözümleriyle 20 soruluk karma kardiyoloji denemesi.",
       "topicSlug": null,
       "durationMinutes": 30,
