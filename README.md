@@ -19,6 +19,7 @@ kardiyo/
 - Otomatik rozetler (kurallar veritabanında, kod değişikliği gerektirmez)
 - Sıralama tablosu (tüm zamanlar / bu hafta)
 - Süreli deneme sınavı: geri sayım sunucuda, sonunda skor kartı ve yanlış analizi
+  (20 deneme × 20 soru: 10 kardiyovasküler farmakoloji + 10 karma kardiyoloji)
 - Video dersler (YouTube/Vimeo veya yüklenen dosya), izleme takibi
 - Flashcard desteleri (`/kartlar`): aralıklı tekrar (SM-2 benzeri), günlük tekrar kuyruğu,
   klavye kısayolları (boşluk çevirir, 1-4 değerlendirir)
@@ -63,11 +64,20 @@ cp .env.example .env      # DATABASE_URL ve JWT secret'larını doldur
 npm run migrate           # tabloları oluşturur
 npm run seed              # konular, örnek sorular, rozetler, admin hesabı
 npm run import-content    # farmakoloji içeriği: 50 soru, deneme, e-kitap, 75 flashcard
+npm run import-exams      # 20 deneme sınavı / 400 soru
 npm run dev               # http://localhost:4000
 ```
 
-`import-content` tekrar çalıştırılabilir: aynı içerik varsa güncellenir, çoğaltılmaz.
-Kaynak dosyalar `api/data/{questions,guide,cards}.json`.
+Her iki içe aktarma da tekrar çalıştırılabilir: aynı içerik varsa güncellenir, çoğaltılmaz
+(eşleştirme sorunun tam gövdesi ve sınavın başlığı üzerinden yapılır). Kaynak dosyalar
+`api/data/{questions,guide,cards,exams}.json`; bunlar `tools/pdf-import` altındaki
+betiklerle `OKU/` klasöründeki PDF'lerden üretilir:
+
+```bash
+cd tools/pdf-import
+npm install
+npm run all               # questions + guide + cards + exams JSON'larını yeniden üretir
+```
 
 `JWT_ACCESS_SECRET` ve `JWT_REFRESH_SECRET` için rastgele değer üret:
 

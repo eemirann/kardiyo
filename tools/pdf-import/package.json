@@ -6,7 +6,8 @@
     "questions": "node parse-questions.js",
     "guide": "node parse-guide.js",
     "cards": "node generate-cards.js",
-    "all": "node parse-questions.js && node parse-guide.js && node generate-cards.js"
+    "exams": "node parse-exams.js",
+    "all": "node parse-questions.js && node parse-guide.js && node generate-cards.js && node parse-exams.js"
   },
   "dependencies": { "pdf-parse": "1.1.1" }
 }

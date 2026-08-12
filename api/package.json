@@ -10,7 +10,8 @@
     "migrate": "node scripts/migrate.js",
     "seed": "node scripts/seed.js",
     "test": "jest --runInBand --forceExit",
-    "import-content": "node scripts/import-content.js"
+    "import-content": "node scripts/import-content.js",
+    "import-exams": "node scripts/import-exams.js"
   },
   "license": "ISC",
   "dependencies": {

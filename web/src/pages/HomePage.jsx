@@ -6,21 +6,34 @@ import { Icon } from '../components/ui';
 
 const FEATURES = [
   {
+    icon: 'menu_book',
+    title: 'İnteraktif E-Kitap',
+    text: '"10 Adımda Kardiyoloji" ve güncellenmiş ders notlarıyla konuların patofizyolojik mantığını kavrayın.',
+    to: '/kitaplar',
+  },
+  {
+    icon: 'play_circle',
+    title: 'Mikro-Öğrenme Video Seti',
+    text: 'Odaklanma sürenizi bozmayan, 10-15 dakikalık yapay zekâ destekli modüllerle klinik pratikleri öğrenin.',
+    to: '/videolar',
+  },
+  {
     icon: 'quiz',
-    title: 'Vaka Temelli Soru Bankası',
-    text: 'Gerçek klinik senaryolardan üretilmiş sorular ve her soruda patofizyolojik gerekçesiyle ayrıntılı çözüm.',
+    title: 'Vaka Odaklı Soru Bankası',
+    text: 'TUS/USMLE konseptindeki klinik senaryolu sorular ve detaylı patofizyolojik çözümlerle kendinizi test edin.',
+    to: '/konular',
   },
   {
     icon: 'style',
     title: 'Flashcard Desteleri',
-    text: 'Aralıklı tekrar algoritmasıyla çalış; her gün tekrar sırası gelen kartlar önüne gelsin.',
+    text: 'Aralıklı tekrar algoritmasıyla çalışın; her gün tekrar sırası gelen kartlar karşınıza gelsin.',
     to: '/kartlar',
   },
   {
-    icon: 'menu_book',
-    title: 'Konu Anlatımı',
-    text: 'Bölüm bölüm okunabilen kardiyoloji rehberi; okuduğun bölümler işaretlenir.',
-    to: '/kitaplar',
+    icon: 'timer',
+    title: 'Süreli Deneme Sınavları',
+    text: 'Gerçek sınav temposunda çalışın; bitiminde skor kartı, konu dağılımı ve yanlış analizi.',
+    to: '/sinavlar',
   },
   {
     icon: 'calculate',
@@ -29,19 +42,10 @@ const FEATURES = [
     to: '/hesaplayicilar',
   },
   {
-    icon: 'timer',
-    title: 'Süreli Deneme Sınavları',
-    text: 'Gerçek sınav temposunda çalış; bitiminde skor kartı, konu dağılımı ve yanlış analizi.',
-  },
-  {
-    icon: 'play_circle',
-    title: 'Video Dersler',
-    text: 'Konu anlatımları ve EKG okuma pratikleri; kaldığın yerden devam et.',
-  },
-  {
     icon: 'emoji_events',
     title: 'Puan, Rozet ve Sıralama',
-    text: 'Her doğru cevap puan kazandırır, hedefleri tamamladıkça rozet açılır, sıralamada yerini gör.',
+    text: 'Her doğru cevap puan kazandırır, hedefleri tamamladıkça rozet açılır, sıralamada yerinizi görün.',
+    to: '/siralama',
   },
 ];
 
@@ -64,14 +68,22 @@ export default function HomePage() {
         <div className="grid items-center gap-gutter md:grid-cols-2">
           <div>
             <span className="chip bg-primary/10 text-primary">
-              <Icon name="verified" size={14} /> Kılavuz temelli içerik
+              <Icon name="verified" size={14} /> ESC · AHA · UpToDate ışığında
             </span>
             <h1 className="mt-4 text-headline-lg-mobile text-on-surface md:text-display-lg">
-              Kardiyolojiyi <span className="text-primary">vakalarla</span> öğren, sınavda fark yarat.
+              Tıp eğitimini karmaşadan kurtarın,{' '}
+              <span className="text-primary">klinik düşünmeyi</span> hızlandırın.
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-secondary">
-              Soru bankası, video dersler ve süreli denemeler tek platformda. Her doğru cevabın puan
-              kazandırır; ilerlemeni rozetler ve sıralama tablosuyla takip et.
+              Yoğun komite maratonları, yüzlerce sayfalık boğucu textbook'lar ve nöbet aralarında
+              sınava hazırlanma stresi… Hepimiz aynı yollardan geçiyoruz. 10 Adımda Kardiyoloji, tam
+              bu karmaşanın ortasında ihtiyaç duyduğunuz akılcı ve nokta atışı öğrenme rehberi
+              olarak doğdu.
+            </p>
+            <p className="mt-3 max-w-xl text-body-md text-secondary">
+              Amacımız; teorik tıp bilgisini güncel uluslararası kılavuzlar ışığında süzmek ve hasta
+              başında veya sınavlarda (TUS / USMLE) doğrudan kullanabileceğiniz pratik bir klinik
+              vizyona dönüştürmektir.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               {user ? (
@@ -79,15 +91,13 @@ export default function HomePage() {
                   Çözmeye Devam Et
                 </Link>
               ) : (
-                <>
-                  <Link to="/kayit" className="btn-primary px-8 py-3">
-                    Ücretsiz Başla
-                  </Link>
-                  <Link to="/giris" className="btn-outline px-8 py-3">
-                    Giriş Yap
-                  </Link>
-                </>
+                <Link to="/kayit" className="btn-primary px-8 py-3">
+                  Ücretsiz Başla
+                </Link>
               )}
+              <Link to="/kitaplar" className="btn-outline px-8 py-3">
+                <Icon name="menu_book" size={18} /> Hemen Notlara Ulaş
+              </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-8">
               <div>
@@ -149,7 +159,7 @@ export default function HomePage() {
       {/* Ozellikler */}
       <section className="bg-surface-container-low py-16">
         <div className="mx-auto max-w-container-max-width px-margin-mobile md:px-margin-desktop">
-          <h2 className="text-headline-lg text-on-surface">Neler sunuyoruz?</h2>
+          <h2 className="text-headline-lg text-on-surface">Sitede sizi neler bekliyor?</h2>
           <div className="mt-8 grid gap-gutter sm:grid-cols-2 lg:grid-cols-4">
             {FEATURES.map((f) => {
               // Karsiligi olan bir sayfa varsa kartin tamami link olsun.
@@ -169,11 +179,34 @@ export default function HomePage() {
               );
             })}
           </div>
+
+          <p className="mt-8 text-body-lg text-on-surface">
+            Sadece ezberleyen değil, mekanizmayı anlayan ve yöneten bir hekim olma yolculuğunda
+            birlikteyiz.
+          </p>
+        </div>
+      </section>
+
+      {/* Guvenilirlik seridi */}
+      <section className="mx-auto max-w-container-max-width px-margin-mobile pt-16 md:px-margin-desktop">
+        <div className="card flex flex-wrap items-center gap-6 p-6">
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <Icon name="verified_user" size={28} />
+          </span>
+          <div className="min-w-[260px] flex-1">
+            <h2 className="text-headline-md text-on-surface">Güvenilir ve kanıtlanmış içerik</h2>
+            <p className="mt-2 text-body-md text-secondary">
+              Zenodo üzerinde 800'den fazla indirmeye ulaşarak yüzlerce tıp öğrencisi ve intörn
+              hekimin komite ve klinik süreçlerine katkı sağlayan "10 Adımda Kardiyoloji" kitabı,
+              güncellenmiş yeni versiyonu ve etkileşimli içerikleriyle şimdi tamamen tek çatı
+              altında bir sitede.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Konular */}
-      <section className="mx-auto max-w-container-max-width px-margin-mobile py-16 md:px-margin-desktop">
+      <section className="mx-auto max-w-container-max-width px-margin-mobile pb-16 pt-12 md:px-margin-desktop">
         <div className="flex items-end justify-between">
           <h2 className="text-headline-lg text-on-surface">Konu başlıkları</h2>
           <Link to="/konular" className="text-label-sm text-primary hover:underline">
@@ -198,8 +231,45 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Video dersler */}
+      <section className="bg-surface-container-low py-16">
+        <div className="mx-auto max-w-container-max-width px-margin-mobile md:px-margin-desktop">
+          <div className="grid items-center gap-gutter md:grid-cols-2">
+            <div>
+              <span className="chip bg-primary/10 text-primary">
+                <Icon name="play_circle" size={14} /> Mikro-öğrenme
+              </span>
+              <h2 className="mt-4 text-headline-lg text-on-surface">
+                Bilişsel yükü azaltan, klinik odaklı video dersler
+              </h2>
+              <p className="mt-4 text-body-lg text-secondary">
+                Saatlerce süren, sadece slayttaki yazıları okuyan monoton ders videolarını unutun.
+                Video Eğitim Seti; tıp fakültesindeki yoğun temponuza ve ideal odaklanma sürenize
+                uygun olarak mikro-öğrenme modeliyle kurgulandı.
+              </p>
+              <p className="mt-3 text-body-md text-secondary">
+                Kardiyolojinin en karmaşık patofizyolojik süreçlerini, EKG analizlerini ve güncel
+                tedavi algoritmalarını hasta başındaki bir hekim gözüyle, sıkılmadan ve interaktif
+                bir şekilde öğrenin.
+              </p>
+              <Link to="/videolar" className="btn-primary mt-8 px-8 py-3">
+                Ders Videolarını İncele
+              </Link>
+            </div>
+
+            <blockquote className="card border-l-4 border-primary p-8">
+              <Icon name="format_quote" size={32} className="text-primary" />
+              <p className="mt-2 text-headline-md leading-snug text-on-surface">
+                Ezberlemeyin, mekanizmayı kavrayın. Hasta başında ve sınavlarda kendinizden emin
+                adımlarla ilerleyin!
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
       {/* Siralama onizleme + premium */}
-      <section className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile pb-20 md:grid-cols-2 md:px-margin-desktop">
+      <section className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile pb-20 pt-16 md:grid-cols-2 md:px-margin-desktop">
         <div className="card p-6">
           <div className="flex items-center justify-between">
             <h3 className="text-headline-md text-on-surface">Sıralama tablosu</h3>
