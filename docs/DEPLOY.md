@@ -4,6 +4,18 @@ Mimari: **Neon** (veritabanı, zaten kurulu ve dolu) → **Render** (API) → **
 
 Sıra önemli: önce API'yi yayına al, adresini öğren, sonra arayüzü o adresle kur.
 
+## Canlı adresler
+
+| Katman | Adres |
+|---|---|
+| Site | https://kardiyo-eta.vercel.app |
+| API | https://kardiyo-api.onrender.com (`/health` ile kontrol edilir) |
+| Veritabanı | Neon — `ep-red-darkness-…eu-central-1.aws.neon.tech/neondb` |
+
+Render servis kimliği: `srv-d9u8n6ijobas73ejmtig` · Vercel projesi: `erb-as/kardiyo`
+
+Aşağıdaki 1-3. adımlar tamamlandı; belge yeniden kurulum ve sorun giderme için duruyor.
+
 ---
 
 ## 0. Başlamadan önce
