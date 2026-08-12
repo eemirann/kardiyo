@@ -15,7 +15,9 @@ export default function TopicsPage() {
     api
       .get('/topics')
       .then((d) => {
-        setTopics(d.topics);
+        // Soru bankasi sayfasi: sorusu olmayan konu bos sayfaya goturuyordu
+        // (yalnizca videosu olan konular video sayfasinda listeleniyor)
+        setTopics(d.topics.filter((t) => t.question_count > 0));
         setError('');
       })
       .catch((e) => setError(e.message))

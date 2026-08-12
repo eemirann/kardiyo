@@ -36,7 +36,11 @@ export function VideosPage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    api.get('/topics').then((d) => setTopics(d.topics)).catch(() => {});
+    // Video filtresi: yalnizca videosu olan konular
+    api
+      .get('/topics')
+      .then((d) => setTopics(d.topics.filter((t) => t.video_count > 0)))
+      .catch(() => {});
   }, []);
 
   useEffect(() => {

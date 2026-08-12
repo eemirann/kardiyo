@@ -55,7 +55,11 @@ export default function HomePage() {
   const [top, setTop] = useState([]);
 
   useEffect(() => {
-    api.get('/topics').then((d) => setTopics(d.topics)).catch(() => {});
+    // Ana sayfadaki kartlar soru bankasina goturuyor; sorusuz konular gosterilmez
+    api
+      .get('/topics')
+      .then((d) => setTopics(d.topics.filter((t) => t.question_count > 0)))
+      .catch(() => {});
     api.get('/leaderboard?period=all&limit=5').then((d) => setTop(d.entries)).catch(() => {});
   }, []);
 
