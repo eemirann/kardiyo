@@ -7,7 +7,12 @@
     "guide": "node parse-guide.js",
     "cards": "node generate-cards.js",
     "exams": "node parse-exams.js",
-    "all": "node parse-questions.js && node parse-guide.js && node generate-cards.js && node parse-exams.js"
+    "all": "node parse-questions.js && node parse-guide.js && node generate-cards.js && node parse-exams.js",
+    "book": "node render-book-preview.js"
   },
-  "dependencies": { "pdf-parse": "1.1.1" }
+  "dependencies": {
+    "pdf-parse": "1.1.1",
+    "pdf-to-img": "^6.2.0",
+    "sharp": "^0.35.3"
+  }
 }

@@ -84,3 +84,59 @@
     @apply inline-flex items-center gap-1 rounded px-2 py-1 text-label-sm;
   }
 }
+
+/* --------------------------------------------------------------- Kitap onizleme
+   Sayfa cevirme: cevrilen yaprak sol kenari etrafinda doner, altta yeni sayfa durur.
+   Hareket azaltma tercihi acikken animasyon yerine anlik gecis yapilir. */
+@layer components {
+  .book-stage {
+    perspective: 1600px;
+  }
+  .book-page {
+    @apply block rounded-lg border border-surface-variant bg-white shadow-level1;
+    aspect-ratio: 1 / 1.414;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .book-sheet {
+    @apply absolute inset-0 h-full w-full;
+    transform-origin: left center;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+  .book-turn-out {
+    animation: book-turn-out 520ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  .book-turn-in {
+    animation: book-turn-in 520ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+}
+
+@keyframes book-turn-out {
+  from {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 0 rgb(0 0 0 / 0);
+  }
+  to {
+    transform: rotateY(-155deg);
+    box-shadow: -18px 0 28px rgb(0 0 0 / 0.28);
+  }
+}
+
+@keyframes book-turn-in {
+  from {
+    transform: rotateY(-155deg);
+    box-shadow: -18px 0 28px rgb(0 0 0 / 0.28);
+  }
+  to {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 0 rgb(0 0 0 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-turn-out,
+  .book-turn-in {
+    animation-duration: 1ms;
+  }
+}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../api/client';
 import { useAuth } from '../context/AuthContext';
 import { Icon } from '../components/ui';
+import BookPreview from '../components/BookPreview';
 
 const FEATURES = [
   {
@@ -119,44 +120,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Ornek soru onizlemesi */}
-          <div className="card overflow-hidden">
-            <div className="flex items-center justify-between border-b border-surface-variant bg-surface-container px-6 py-4">
-              <div className="flex items-center gap-3">
-                <span className="chip bg-primary/10 text-primary">Vaka Sorusu</span>
-                <span className="text-body-lg font-semibold">Örnek</span>
-              </div>
-              <div className="flex items-center gap-2 text-secondary">
-                <Icon name="timer" size={20} />
-                <span className="text-caption">02:30</span>
-              </div>
-            </div>
-            <div className="p-6">
-              <p className="mb-5 text-body-md leading-relaxed text-on-surface">
-                65 yaşında erkek hasta, artan efor dispnesi ve ortopne ile başvuruyor. LVEF %30.
-                Ramipril ve bisoprolol kullanıyor. Mortalite faydası için eklenmesi gereken ajan?
-              </p>
-              <div className="flex flex-col gap-2">
-                {['Furosemid', 'Spironolakton', 'Digoksin', 'İvabradin'].map((opt, i) => (
-                  <div
-                    key={opt}
-                    className={`rounded-lg border px-4 py-3 text-body-md ${
-                      i === 1
-                        ? 'border-success bg-success-container text-on-success-container'
-                        : 'border-outline-variant text-on-surface'
-                    }`}
-                  >
-                    <strong className="mr-2">{'ABCD'[i]})</strong>
-                    {opt}
-                    {i === 1 && <Icon name="check_circle" size={18} className="float-right" />}
-                  </div>
-                ))}
-              </div>
-              <p className="mt-4 border-l-2 border-primary pl-3 text-caption text-secondary">
-                RALES ve EMPHASIS-HF çalışmalarında MRA'lar mortaliteyi anlamlı azaltmıştır.
-              </p>
-            </div>
-          </div>
+          {/* Kitap onizlemesi: ilk 10 sayfa, sayfa cevirme animasyonuyla */}
+          <BookPreview />
         </div>
       </section>
 
