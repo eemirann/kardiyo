@@ -11,7 +11,8 @@
     "seed": "node scripts/seed.js",
     "test": "jest --runInBand --forceExit",
     "import-content": "node scripts/import-content.js",
-    "import-exams": "node scripts/import-exams.js"
+    "import-exams": "node scripts/import-exams.js",
+    "set-admin-password": "node scripts/set-admin-password.js"
   },
   "license": "ISC",
   "dependencies": {

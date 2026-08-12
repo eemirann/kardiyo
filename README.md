@@ -89,8 +89,16 @@ içinde tutulur ve ayrıştırma sırasında uygulanır; PDF'ten yeniden üretim
 node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
 ```
 
-Seed sonrası admin girişi `.env` içindeki `ADMIN_EMAIL` / `ADMIN_PASSWORD` ile yapılır
-(varsayılan `admin@10adimdakardiyoloji.com` / `Admin1234!` — **yayına almadan önce değiştir**).
+Seed sonrası admin girişi `.env` içindeki `ADMIN_EMAIL` / `ADMIN_PASSWORD` ile yapılır.
+`.env.example` içindeki örnek şifre herkese açıktır; **yayına almadan önce mutlaka değiştir**:
+
+```bash
+npm run set-admin-password                      # .env'deki ADMIN_EMAIL hesabı
+npm run set-admin-password -- sen@ornek.com --promote   # kendi hesabını yönetici yap
+```
+
+Şifre ekranda görünmez, yalnızca bcrypt özeti veritabanına yazılır ve o hesabın açık
+oturumları kapatılır.
 
 ### 3. Web
 
