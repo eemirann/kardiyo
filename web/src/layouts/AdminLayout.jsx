@@ -9,6 +9,8 @@ const MENU = [
   { to: '/admin/konular', icon: 'category', label: 'Konular' },
   { to: '/admin/sinavlar', icon: 'timer', label: 'Sınavlar' },
   { to: '/admin/videolar', icon: 'play_circle', label: 'Videolar' },
+  { to: '/admin/kartlar', icon: 'style', label: 'Flashcard' },
+  { to: '/admin/kitaplar', icon: 'menu_book', label: 'Konu Anlatımı' },
   { to: '/admin/kullanicilar', icon: 'group', label: 'Kullanıcılar' },
   { to: '/admin/reklamlar', icon: 'campaign', label: 'Reklamlar' },
   { to: '/admin/rozetler', icon: 'military_tech', label: 'Rozetler' },

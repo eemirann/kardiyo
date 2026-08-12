@@ -8,6 +8,8 @@ const SHORTCUTS = [
   { to: '/admin/sorular', icon: 'add_circle', label: 'Yeni soru ekle' },
   { to: '/admin/videolar', icon: 'video_call', label: 'Video ekle' },
   { to: '/admin/sinavlar', icon: 'timer', label: 'Deneme sınavı oluştur' },
+  { to: '/admin/kartlar', icon: 'style', label: 'Flashcard ekle' },
+  { to: '/admin/kitaplar', icon: 'menu_book', label: 'Konu anlatımı düzenle' },
   { to: '/admin/reklamlar', icon: 'campaign', label: 'Reklam yönet' },
 ];
 
@@ -39,6 +41,14 @@ export default function AdminDashboard() {
         <StatCard icon="quiz" label="Aktif soru" value={stats.questions} to="/admin/sorular" />
         <StatCard icon="play_circle" label="Video" value={stats.videos} to="/admin/videolar" />
         <StatCard icon="timer" label="Sınav" value={stats.exams} to="/admin/sinavlar" />
+        <StatCard
+          icon="style"
+          label="Flashcard"
+          value={stats.cards}
+          hint={`${stats.card_reviews_week} tekrar (7 gün)`}
+          to="/admin/kartlar"
+        />
+        <StatCard icon="menu_book" label="Alt bölüm" value={stats.book_sections} to="/admin/kitaplar" />
         <StatCard icon="trending_up" label="Cevap (7 gün)" value={stats.attempts_week} />
         <StatCard icon="visibility" label="Reklam gösterimi" value={stats.ad_impressions_week} hint="son 7 gün" to="/admin/reklamlar" />
         <StatCard icon="ads_click" label="Reklam tıklaması" value={stats.ad_clicks_week} hint={`CTR %${ctr}`} to="/admin/reklamlar" />

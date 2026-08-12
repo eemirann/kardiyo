@@ -33,6 +33,8 @@ import AdminQuestions from './pages/admin/AdminQuestions';
 import AdminTopics from './pages/admin/AdminTopics';
 import AdminExams from './pages/admin/AdminExams';
 import AdminVideos from './pages/admin/AdminVideos';
+import AdminFlashcards from './pages/admin/AdminFlashcards';
+import AdminBooks from './pages/admin/AdminBooks';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminAds from './pages/admin/AdminAds';
 import AdminBadges from './pages/admin/AdminBadges';
@@ -115,6 +117,8 @@ export default function App() {
           <Route path="konular" element={<AdminTopics />} />
           <Route path="sinavlar" element={<AdminExams />} />
           <Route path="videolar" element={<AdminVideos />} />
+          <Route path="kartlar" element={<AdminFlashcards />} />
+          <Route path="kitaplar" element={<AdminBooks />} />
           <Route path="kullanicilar" element={<AdminUsers />} />
           <Route path="reklamlar" element={<AdminAds />} />
           <Route path="rozetler" element={<AdminBadges />} />

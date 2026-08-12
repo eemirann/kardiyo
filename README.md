@@ -30,6 +30,10 @@ kardiyo/
 **Yönetici (`/admin`)**
 - Soru CRUD + JSON ile toplu içe aktarma
 - Konu, deneme sınavı ve video yönetimi (dosya yükleme dahil)
+- Flashcard yönetimi (`/admin/kartlar`): deste CRUD, kart CRUD (deste filtresi + arama +
+  sayfalama) ve JSON ile toplu kart ekleme
+- Konu anlatımı yönetimi (`/admin/kitaplar`): kitap CRUD, bölüm/alt bölüm ağacı ve alt bölüm
+  HTML içerik düzenleyici
 - Kullanıcı yönetimi: premium ver/al (tarihli), yönetici yap, engelle
 - Reklam yönetimi: kendi banner'ların (gösterim/tıklama/CTR raporlu) veya AdSense kodu
 - Rozet tanımlama
