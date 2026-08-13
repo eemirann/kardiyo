@@ -125,6 +125,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Guvenilirlik seridi */}
+      <section className="mx-auto max-w-container-max-width px-margin-mobile py-16 md:px-margin-desktop">
+        <div className="card flex flex-wrap items-center gap-6 p-6">
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <Icon name="verified_user" size={28} />
+          </span>
+          <div className="min-w-[260px] flex-1">
+            <h2 className="text-headline-md text-on-surface">Güvenilir ve kanıtlanmış içerik</h2>
+            <p className="mt-2 text-body-md text-secondary">
+              Zenodo üzerinde 800'den fazla indirmeye ulaşarak yüzlerce tıp öğrencisi ve intörn
+              hekimin komite ve klinik süreçlerine katkı sağlayan "10 Adımda Kardiyoloji" kitabı,
+              güncellenmiş yeni versiyonu ve etkileşimli içerikleriyle şimdi tamamen tek çatı
+              altında bir sitede.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Ozellikler */}
       <section className="bg-surface-container-low py-16">
         <div className="mx-auto max-w-container-max-width px-margin-mobile md:px-margin-desktop">
@@ -156,26 +174,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Guvenilirlik seridi */}
-      <section className="mx-auto max-w-container-max-width px-margin-mobile pt-16 md:px-margin-desktop">
-        <div className="card flex flex-wrap items-center gap-6 p-6">
-          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-            <Icon name="verified_user" size={28} />
-          </span>
-          <div className="min-w-[260px] flex-1">
-            <h2 className="text-headline-md text-on-surface">Güvenilir ve kanıtlanmış içerik</h2>
-            <p className="mt-2 text-body-md text-secondary">
-              Zenodo üzerinde 800'den fazla indirmeye ulaşarak yüzlerce tıp öğrencisi ve intörn
-              hekimin komite ve klinik süreçlerine katkı sağlayan "10 Adımda Kardiyoloji" kitabı,
-              güncellenmiş yeni versiyonu ve etkileşimli içerikleriyle şimdi tamamen tek çatı
-              altında bir sitede.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Konular */}
-      <section className="mx-auto max-w-container-max-width px-margin-mobile pb-16 pt-12 md:px-margin-desktop">
+      <section className="mx-auto max-w-container-max-width px-margin-mobile pb-16 pt-16 md:px-margin-desktop">
         <div className="flex items-end justify-between">
           <h2 className="text-headline-lg text-on-surface">Konu başlıkları</h2>
           <Link to="/konular" className="text-label-sm text-primary hover:underline">

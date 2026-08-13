@@ -10,7 +10,8 @@ import { Icon } from './ui';
  */
 const TOTAL_PREVIEW = 10;
 const TOTAL_PAGES = 74;
-const PDF_URL = '/kitap/10-adimda-kardiyoloji.pdf';
+// Kitabin tam metni Zenodo kaydindan sunuluyor; indirmeler orada sayiliyor.
+const BOOK_URL = 'https://zenodo.org/records/17442239';
 const PDF_SIZE = '20 MB';
 
 const src = (i) => `/kitap/sayfa-${String(i + 1).padStart(2, '0')}.jpg`;
@@ -139,10 +140,10 @@ export default function BookPreview() {
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <a href={PDF_URL} download className="btn-primary">
+        <a href={BOOK_URL} target="_blank" rel="noreferrer" className="btn-primary">
           <Icon name="download" size={18} /> Kitabı indir ({PDF_SIZE})
         </a>
-        <a href={PDF_URL} target="_blank" rel="noreferrer" className="btn-outline">
+        <a href={BOOK_URL} target="_blank" rel="noreferrer" className="btn-outline">
           <Icon name="open_in_new" size={18} /> Tamamını oku
         </a>
       </div>

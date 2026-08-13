@@ -42,8 +42,8 @@ export function ContactPage() {
         <div className="card p-6">
           <Icon name="mail" size={24} className="text-primary" />
           <h3 className="mt-3 text-body-lg font-semibold">E-posta</h3>
-          <a href="mailto:info@10adimdakardiyoloji.com" className="text-body-md text-primary hover:underline">
-            info@10adimdakardiyoloji.com
+          <a href="mailto:10adimdacarido@gmail.com" className="text-body-md text-primary hover:underline">
+            10adimdacarido@gmail.com
           </a>
         </div>
         <div className="card p-6">
@@ -77,8 +77,8 @@ export function AdvertisePage() {
       </p>
       <p>
         Teklif için{' '}
-        <a href="mailto:reklam@10adimdakardiyoloji.com" className="text-primary hover:underline">
-          reklam@10adimdakardiyoloji.com
+        <a href="mailto:10adimdacarido@gmail.com" className="text-primary hover:underline">
+          10adimdacarido@gmail.com
         </a>{' '}
         adresine yazın.
       </p>
@@ -136,8 +136,8 @@ export function PrivacyPage() {
       <h3>Haklarınız</h3>
       <p>
         Hesabınıza ait verilerin silinmesini{' '}
-        <a href="mailto:info@10adimdakardiyoloji.com" className="text-primary hover:underline">
-          info@10adimdakardiyoloji.com
+        <a href="mailto:10adimdacarido@gmail.com" className="text-primary hover:underline">
+          10adimdacarido@gmail.com
         </a>{' '}
         adresinden talep edebilirsiniz.
       </p>
