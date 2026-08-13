@@ -40,15 +40,12 @@ export default function BookPreview() {
     [page]
   );
 
-  // Klavye ile gezinme
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === 'ArrowRight') go('next');
-      if (e.key === 'ArrowLeft') go('prev');
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [go]);
+  // Klavye ile gezinme. Dinleyici window'da degil bilesenin uzerinde:
+  // eskiden ana sayfanin butun ok tuslarini bu onizleme yutuyordu.
+  const onKeyDown = (e) => {
+    if (e.key === 'ArrowRight') go('next');
+    if (e.key === 'ArrowLeft') go('prev');
+  };
 
   const target = turn ? turn.from + (turn.dir === 'next' ? 1 : -1) : page;
   const isFirst = page === 0 && !turn;
@@ -56,7 +53,12 @@ export default function BookPreview() {
 
   return (
     // Genislik sinirlanmazsa sayfa yuksekligi hero'yu asiyor ve solda bosluk kaliyor
-    <div className="mx-auto flex w-full max-w-[420px] flex-col gap-4">
+    <div
+      className="mx-auto flex w-full max-w-[420px] flex-col gap-4"
+      onKeyDown={onKeyDown}
+      role="group"
+      aria-label="Kitap önizlemesi"
+    >
       <div className="card overflow-hidden p-4">
         <div className="mb-3 flex items-center justify-between">
           <div>
@@ -110,7 +112,7 @@ export default function BookPreview() {
         <div className="mt-3 flex items-center justify-between">
           <button
             type="button"
-            className="btn-ghost px-2 py-1.5 disabled:opacity-40"
+            className="btn-ghost min-w-[44px] px-3 disabled:opacity-40"
             onClick={() => go('prev')}
             disabled={isFirst}
           >
@@ -130,7 +132,7 @@ export default function BookPreview() {
 
           <button
             type="button"
-            className="btn-ghost px-2 py-1.5 disabled:opacity-40"
+            className="btn-ghost min-w-[44px] px-3 disabled:opacity-40"
             onClick={() => go('next')}
             disabled={isLast}
           >

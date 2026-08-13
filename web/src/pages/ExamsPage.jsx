@@ -64,8 +64,8 @@ export default function ExamsPage() {
   if (loading) return <PageLoader />;
 
   return (
-    <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
-      <h1 className="text-headline-lg text-on-surface">Deneme Sınavları</h1>
+    <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
+      <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Deneme Sınavları</h1>
       <p className="mt-2 text-body-md text-secondary">
         Süreli, gerçek sınav temposunda çalış. Bitirdiğinde skor kartın ve yanlış analizin hazır olur.
       </p>

@@ -32,6 +32,14 @@
   .prose-clinical table {
     @apply w-full border-collapse mb-3 text-sm;
   }
+  /* Genis klinik tablolar telefonda sayfayi yatay kaydirtiyordu; tablo kendi
+     icinde kaysin. Yalnizca mobil: display:block masaustunde sutun
+     genisliklerini degistiriyor. */
+  @media (max-width: 767px) {
+    .prose-clinical table {
+      @apply block overflow-x-auto;
+    }
+  }
   .prose-clinical th,
   .prose-clinical td {
     @apply border border-outline-variant px-3 py-2 text-left;
@@ -59,8 +67,9 @@
     @apply bg-surface-container-lowest border border-surface-variant rounded-xl shadow-level1;
   }
 
+  /* min-h: dokunma hedefi 44px'in altina dusmesin (13px yazi + py-2.5 = 36px idi) */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg text-label-sm
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg text-label-sm
            px-4 py-2.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
   }
   .btn-primary {
@@ -86,6 +95,12 @@
 
   .chip {
     @apply inline-flex items-center gap-1 rounded px-2 py-1 text-label-sm;
+  }
+  /* Filtre olarak TIKLANAN chip'ler: dekoratif .chip 24px yuksekliginde
+     kaliyor, dokunmak icin fazla kucuk. Etiket gorunumu ayni, hedefi buyuk. */
+  .chip-btn {
+    @apply inline-flex min-h-[36px] items-center gap-1 rounded px-3 py-1.5 text-label-sm
+           transition-colors;
   }
 }
 

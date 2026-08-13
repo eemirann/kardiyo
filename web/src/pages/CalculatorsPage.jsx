@@ -13,8 +13,8 @@ const LEVEL_STYLE = {
 /** Hesaplayici listesi — uyelik gerektirmez. */
 export function CalculatorsPage() {
   return (
-    <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
-      <h1 className="text-headline-lg text-on-surface">Klinik Hesaplayıcılar</h1>
+    <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
+      <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Klinik Hesaplayıcılar</h1>
       <p className="mt-2 max-w-3xl text-body-md text-secondary">
         Yatak başında en sık kullanılan kardiyoloji ve acil tıp skorları. Üyelik gerekmez; sonuçlar
         anında hesaplanır ve klinik yorumuyla birlikte gösterilir.
@@ -93,7 +93,7 @@ export function CalculatorDetailPage() {
 
   if (!calc)
     return (
-      <div className="mx-auto max-w-2xl px-margin-mobile py-16 md:px-margin-desktop">
+      <div className="mx-auto max-w-2xl px-margin-mobile py-8 md:px-margin-desktop md:py-16">
         <EmptyState
           icon="calculate"
           title="Hesaplayıcı bulunamadı"
@@ -120,7 +120,7 @@ export function CalculatorDetailPage() {
   };
 
   return (
-    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-10 md:grid-cols-[1fr_320px] md:px-margin-desktop">
+    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-6 md:py-10 md:grid-cols-[1fr_320px] md:px-margin-desktop">
       <div>
         <nav className="mb-3 text-caption text-secondary">
           <Link to="/hesaplayicilar" className="hover:text-primary">
@@ -129,7 +129,7 @@ export function CalculatorDetailPage() {
           <span> / {calc.category}</span>
         </nav>
 
-        <h1 className="text-headline-lg text-on-surface">{calc.name}</h1>
+        <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">{calc.name}</h1>
         <p className="mt-2 text-body-md text-secondary">{calc.indication}</p>
 
         <div className="card mt-6 p-6">
@@ -231,14 +231,16 @@ export function CalculatorDetailPage() {
         <AdSlot code="calculator_bottom" className="mt-6" />
       </div>
 
-      {/* Sonuc paneli */}
-      <aside className="space-y-4">
-        <div className="card p-6 md:sticky md:top-24">
+      {/* Sonuc paneli. Telefonda formun USTUNE alinir: altta kalinca 15+
+          secenekli formu doldururken skor hic gorunmuyordu. (Mobilde sticky
+          ise yaramaz; grid ogesi kendi alani disina yapisamiyor.) */}
+      <aside className="order-first space-y-4 md:order-none">
+        <div className="card p-4 md:sticky md:top-24 md:p-6">
           <div className="text-label-sm uppercase tracking-wider text-secondary">Sonuç</div>
 
           {calc.type === 'score' ? (
             <div className="mt-3 flex items-baseline gap-2">
-              <span className="text-display-lg text-primary">{score}</span>
+              <span className="text-headline-lg text-primary md:text-display-lg">{score}</span>
               <span className="text-body-md text-secondary">puan</span>
             </div>
           ) : formulaResult ? (

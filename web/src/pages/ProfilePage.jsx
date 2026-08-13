@@ -41,7 +41,7 @@ export default function ProfilePage() {
 
   if (error)
     return (
-      <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+      <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
         <ErrorBox message={error} />
       </div>
     );
@@ -50,14 +50,14 @@ export default function ProfilePage() {
   const earnedBadges = badges.filter((b) => b.earned);
 
   return (
-    <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+    <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
       {/* Ust profil karti */}
       <div className="card flex flex-col items-start gap-5 p-6 sm:flex-row sm:items-center">
         <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-headline-lg text-on-primary">
           {user.fullName[0].toUpperCase()}
         </span>
         <div className="flex-1">
-          <h1 className="text-headline-lg text-on-surface">{user.fullName}</h1>
+          <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">{user.fullName}</h1>
           <p className="text-body-md text-secondary">{user.email}</p>
           <div className="mt-2 flex flex-wrap gap-2">
             <span className="chip bg-primary/10 text-primary">
@@ -132,7 +132,10 @@ function StatsTab({ stats }) {
           {stats.topics.map((t) => (
             <div key={t.id}>
               <div className="mb-1.5 flex items-baseline justify-between gap-3">
-                <Link to={`/soru-bankasi/${t.slug}`} className="text-body-md text-on-surface hover:text-primary">
+                <Link
+                  to={`/soru-bankasi/${t.slug}`}
+                  className="min-w-0 truncate text-body-md text-on-surface hover:text-primary"
+                >
                   {t.name}
                 </Link>
                 <span className="whitespace-nowrap text-caption text-secondary">

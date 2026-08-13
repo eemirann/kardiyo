@@ -29,7 +29,7 @@ export function Spinner({ className = '' }) {
 
 export function PageLoader({ label = 'Yükleniyor…' }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 py-20 text-secondary">
+    <div className="flex flex-col items-center justify-center gap-3 py-12 text-secondary md:py-20">
       <Spinner />
       <span className="text-body-md">{label}</span>
     </div>
@@ -55,7 +55,7 @@ export function ErrorBox({ message, onRetry }) {
 
 export function EmptyState({ icon = 'inbox', title, description, action }) {
   return (
-    <div className="card flex flex-col items-center gap-3 px-6 py-16 text-center">
+    <div className="card flex flex-col items-center gap-3 px-6 py-10 text-center md:py-16">
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-surface-container text-secondary">
         <Icon name={icon} size={28} />
       </span>
@@ -147,8 +147,15 @@ export function QuestionImage({ src, alt = '', className = '' }) {
       title="Tam boy aç"
       className={`group relative block overflow-hidden rounded-lg border border-outline-variant bg-white ${className}`}
     >
-      <img src={src} alt={alt} className="mx-auto block max-h-[520px] w-full object-contain" />
-      <span className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-3 py-1 text-caption text-white opacity-0 transition-opacity group-hover:opacity-100">
+      {/* Telefonda dusuk tavan: gorsel, hikaye ve siklardan once ekrani yutmasin */}
+      <img
+        src={src}
+        alt={alt}
+        className="mx-auto block max-h-[260px] w-full object-contain md:max-h-[520px]"
+      />
+      {/* Rozet mobilde hep gorunur: dokunmatikte hover yok, yoksa gorseli
+          buyutmenin kesfedilebilir bir yolu kalmiyor. */}
+      <span className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-3 py-1 text-caption text-white transition-opacity md:opacity-0 md:group-hover:opacity-100">
         <Icon name="zoom_in" size={16} /> Tam boy
       </span>
     </a>

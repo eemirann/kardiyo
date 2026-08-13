@@ -43,6 +43,8 @@ export default function QuestionBankPage() {
   const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  // Yalnizca mobilde anlamli: yan panel varsayilan olarak kapali gelir
+  const [navOpen, setNavOpen] = useState(false);
 
   // Cevaplama durumu: soru id -> { selectedOptionId, result }
   const [answers, setAnswers] = useState({});
@@ -137,10 +139,37 @@ export default function QuestionBankPage() {
     optionClassFor(option, { selectedId: selected, answer: currentState });
 
   return (
-    <div className="mx-auto flex max-w-container-max-width flex-col gap-gutter px-margin-mobile py-10 md:flex-row md:px-margin-desktop">
+    <div className="mx-auto flex max-w-container-max-width flex-col gap-gutter px-margin-mobile py-6 md:py-10 md:flex-row md:px-margin-desktop">
       {/* Sol: konu listesi (mockup'taki sidebar) */}
       <aside className="w-full shrink-0 md:w-64 lg:w-72">
-        <div className="card p-unit md:sticky md:top-24">
+        {/* Telefonda panel katli gelir: acikken 10 konu + filtreler soru
+            kartini ekranin cok asagisina itiyordu. md'den itibaren degismedi. */}
+        <button
+          type="button"
+          onClick={() => setNavOpen((v) => !v)}
+          aria-expanded={navOpen}
+          className="card flex w-full items-center justify-between gap-2 px-4 py-3 text-left md:hidden"
+        >
+          <span className="min-w-0">
+            <span className="block text-caption uppercase tracking-wider text-secondary">
+              Konu ve filtreler
+            </span>
+            <span className="block truncate text-body-md font-semibold text-on-surface">
+              {activeTopic?.name || 'Konu seç'}
+            </span>
+          </span>
+          <Icon
+            name="expand_more"
+            size={22}
+            className={`shrink-0 text-secondary transition-transform ${navOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+
+        <div
+          className={`card p-unit md:sticky md:top-24 md:mt-0 md:block ${
+            navOpen ? 'mt-2 block' : 'hidden'
+          }`}
+        >
           <h2 className="mb-3 px-3 pt-2 text-label-sm uppercase tracking-wider text-secondary">
             Soru Bankası Konuları
           </h2>
@@ -151,7 +180,8 @@ export default function QuestionBankPage() {
                 <Link
                   key={t.id}
                   to={`/soru-bankasi/${t.slug}`}
-                  className={`flex items-center justify-between rounded px-3 py-2 transition-colors ${
+                  onClick={() => setNavOpen(false)}
+                  className={`flex items-center justify-between rounded px-3 py-2.5 transition-colors ${
                     active
                       ? 'bg-surface-container-high font-bold text-primary'
                       : 'text-on-surface hover:bg-surface-container-highest'
@@ -177,7 +207,7 @@ export default function QuestionBankPage() {
                     key={d.value}
                     type="button"
                     onClick={() => setFilter('zorluk', d.value)}
-                    className={`chip border ${
+                    className={`chip-btn border ${
                       difficulty === d.value
                         ? 'border-primary bg-primary/10 text-primary'
                         : 'border-outline-variant text-secondary hover:border-primary'
@@ -238,7 +268,7 @@ export default function QuestionBankPage() {
 
             <div className="card overflow-hidden">
               {/* Soru basligi */}
-              <div className="flex items-center justify-between border-b border-surface-variant bg-surface-container px-6 py-4">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-variant bg-surface-container px-4 py-3 md:px-6 md:py-4">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="chip bg-primary/10 text-primary">
                     {current.type === 'case' ? 'Vaka Sorusu' : 'Klasik Soru'}
@@ -258,7 +288,7 @@ export default function QuestionBankPage() {
                 </div>
               </div>
 
-              <div className="p-6 md:p-8">
+              <div className="p-5 md:p-8">
                 <QuestionImage src={current.imageUrl} alt={current.imageAlt} className="mb-6" />
                 <RichText html={current.body} className="mb-6 text-body-md text-on-surface" />
 

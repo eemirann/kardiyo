@@ -27,7 +27,7 @@ const NAV = [
 /** Logo + isim. */
 function BrandLink({ className = '' }) {
   return (
-    <Link to="/" className={`flex items-center gap-2.5 ${className}`}>
+    <Link to="/" className={`flex shrink-0 items-center gap-2.5 ${className}`}>
       <img src="/logo-mark.png" alt="" className="h-10 w-10 shrink-0 object-contain" />
       <span className="leading-tight">
         <span className="block text-body-lg font-bold text-primary">10 Adımda</span>
@@ -62,15 +62,19 @@ function TopAppBar() {
       <div className="mx-auto flex h-20 max-w-container-max-width items-center justify-between px-margin-mobile md:px-margin-desktop">
         <BrandLink />
 
-        <nav className="hidden gap-5 lg:flex">
+        {/* 7 baslik + logo + giris butonlari lg'de (1024px) tasip iki satira
+            kiriliyordu; masaustu menusu xl'den itibaren aciliyor. */}
+        <nav className="hidden gap-5 xl:flex">
           {NAV.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                isActive
-                  ? 'border-b-2 border-primary pb-1 font-bold text-primary'
-                  : 'text-secondary transition-colors hover:text-primary-container'
+                `whitespace-nowrap ${
+                  isActive
+                    ? 'border-b-2 border-primary pb-1 font-bold text-primary'
+                    : 'text-secondary transition-colors hover:text-primary-container'
+                }`
               }
             >
               {item.label}
@@ -136,7 +140,7 @@ function TopAppBar() {
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
-            className="btn-ghost lg:hidden"
+            className="btn-ghost xl:hidden"
             aria-label="Menü"
           >
             <Icon name={menuOpen ? 'close' : 'menu'} size={24} />
@@ -145,7 +149,8 @@ function TopAppBar() {
       </div>
 
       {menuOpen && (
-        <nav className="flex flex-col border-t border-surface-variant bg-surface-container-lowest px-margin-mobile py-2 lg:hidden">
+        // max-h + kaydirma: yatay tutulan telefonlarda liste ekrana sigmiyordu
+        <nav className="flex max-h-[calc(100vh-5rem)] flex-col overflow-y-auto border-t border-surface-variant bg-surface-container-lowest px-margin-mobile py-2 xl:hidden">
           {NAV.map((item) => (
             <NavLink
               key={item.to}
@@ -157,6 +162,39 @@ function TopAppBar() {
               {item.label}
             </NavLink>
           ))}
+
+          {/* Giris/profil baglantilari: "Giris Yap" basligi sm altinda gizli
+              oldugu icin dar ekranda oturum acmanin baska yolu yoktu. */}
+          <div className="mt-2 flex flex-col border-t border-surface-variant pt-2">
+            {user ? (
+              <>
+                <Link to="/profil" className="flex items-center gap-2 rounded-lg px-3 py-3 text-on-surface">
+                  <Icon name="person" size={18} /> Profilim
+                </Link>
+                {isAdmin && (
+                  <Link to="/admin" className="flex items-center gap-2 rounded-lg px-3 py-3 text-on-surface">
+                    <Icon name="admin_panel_settings" size={18} /> Yönetim Paneli
+                  </Link>
+                )}
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="flex items-center gap-2 rounded-lg px-3 py-3 text-left text-error"
+                >
+                  <Icon name="logout" size={18} /> Çıkış Yap
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/giris" className="flex items-center gap-2 rounded-lg px-3 py-3 text-on-surface">
+                  <Icon name="login" size={18} /> Giriş Yap
+                </Link>
+                <Link to="/kayit" className="flex items-center gap-2 rounded-lg px-3 py-3 font-bold text-primary">
+                  <Icon name="person_add" size={18} /> Ücretsiz Üye Ol
+                </Link>
+              </>
+            )}
+          </div>
         </nav>
       )}
     </header>
@@ -166,7 +204,7 @@ function TopAppBar() {
 function SiteFooter() {
   return (
     <footer className="mt-16 w-full border-t border-outline-variant bg-surface-container-lowest">
-      <div className="mx-auto grid max-w-container-max-width grid-cols-1 gap-gutter px-margin-mobile py-12 md:grid-cols-4 md:px-margin-desktop md:py-16">
+      <div className="mx-auto grid max-w-container-max-width grid-cols-1 gap-gutter px-margin-mobile py-8 md:grid-cols-4 md:px-margin-desktop md:py-16">
         <div className="flex flex-col gap-3">
           <img src="/logo.png" alt="10 Adımda Kardiyoloji" className="h-24 w-auto self-start object-contain" />
           <p className="text-caption text-secondary">

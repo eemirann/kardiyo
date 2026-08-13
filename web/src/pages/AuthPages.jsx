@@ -6,10 +6,10 @@ import { ErrorBox, Icon, Spinner } from '../components/ui';
 
 function AuthShell({ title, subtitle, children, footer }) {
   return (
-    <div className="mx-auto flex max-w-container-max-width justify-center px-margin-mobile py-16 md:px-margin-desktop">
+    <div className="mx-auto flex max-w-container-max-width justify-center px-margin-mobile py-8 md:px-margin-desktop md:py-16">
       <div className="w-full max-w-md">
         <div className="card p-8">
-          <h1 className="text-headline-lg text-on-surface">{title}</h1>
+          <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">{title}</h1>
           <p className="mt-2 text-body-md text-secondary">{subtitle}</p>
           <div className="mt-6">{children}</div>
         </div>

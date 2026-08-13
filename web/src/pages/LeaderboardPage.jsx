@@ -32,9 +32,9 @@ export default function LeaderboardPage() {
   }, [period]);
 
   return (
-    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
+    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-6 md:py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
       <div>
-        <h1 className="text-headline-lg text-on-surface">Sıralama Tablosu</h1>
+        <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Sıralama Tablosu</h1>
         <p className="mt-2 text-body-md text-secondary">
           Doğru cevaplarla puan kazan, listede yüksel. Zorluk arttıkça puan artar (5 / 10 / 20).
         </p>
@@ -45,7 +45,7 @@ export default function LeaderboardPage() {
               key={p.value}
               type="button"
               onClick={() => setPeriod(p.value)}
-              className={`chip border px-3 py-2 ${
+              className={`chip-btn border px-3 py-2 ${
                 period === p.value
                   ? 'border-primary bg-primary/10 text-primary'
                   : 'border-outline-variant text-secondary hover:border-primary'

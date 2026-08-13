@@ -108,13 +108,13 @@ export default function EkgQuizPage() {
   if (loading) return <PageLoader />;
 
   return (
-    <div className="mx-auto max-w-4xl px-margin-mobile py-10 md:px-margin-desktop">
+    <div className="mx-auto max-w-4xl px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
       <div className="flex items-center gap-3">
         <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
           <Icon name="monitor_heart" size={26} />
         </span>
         <div>
-          <h1 className="text-headline-lg text-on-surface">EKG Quiz</h1>
+          <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">EKG Quiz</h1>
           <p className="text-body-md text-secondary">
             Hastanın geliş hikâyesini oku, EKG'yi yorumla, tanıyı koy.
           </p>

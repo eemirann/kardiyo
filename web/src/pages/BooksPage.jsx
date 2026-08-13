@@ -31,8 +31,8 @@ export function BooksPage() {
   if (loading) return <PageLoader />;
 
   return (
-    <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
-      <h1 className="text-headline-lg text-on-surface">Konu Anlatımları</h1>
+    <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
+      <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Konu Anlatımları</h1>
       <p className="mt-2 text-body-md text-secondary">
         Kılavuz temelli, bölüm bölüm okunabilen konu anlatımları. Okuduğun bölümler işaretlenir.
       </p>
@@ -103,14 +103,14 @@ export function BooksPage() {
  */
 function PdfBook({ book }) {
   return (
-    <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+    <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
       <Link to="/kitaplar" className="text-caption text-secondary hover:text-primary">
         ← Konu anlatımları
       </Link>
 
       <div className="mt-3 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-headline-lg text-on-surface">{book.title}</h1>
+          <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">{book.title}</h1>
           {book.subtitle && <p className="mt-1 text-body-md text-secondary">{book.subtitle}</p>}
         </div>
         <div className="flex flex-wrap gap-2">
@@ -160,7 +160,7 @@ export function BookTocPage() {
 
   if (error)
     return (
-      <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+      <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
         <ErrorBox message={error} />
       </div>
     );
@@ -174,9 +174,9 @@ export function BookTocPage() {
   const firstUnread = allSections.find((s) => !s.isRead) || allSections[0];
 
   return (
-    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
+    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-6 md:py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
       <div>
-        <h1 className="text-headline-lg text-on-surface">{data.book.title}</h1>
+        <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">{data.book.title}</h1>
         {data.book.subtitle && (
           <p className="mt-1 text-body-lg text-secondary">{data.book.subtitle}</p>
         )}
@@ -276,7 +276,7 @@ export function BookSectionPage() {
 
   if (error)
     return (
-      <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+      <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
         <ErrorBox message={error} />
         {error.includes('premium') && (
           <p className="mt-3 text-body-md text-secondary">
@@ -293,7 +293,7 @@ export function BookSectionPage() {
   const { section, prev, next, position } = data;
 
   return (
-    <div className="mx-auto max-w-3xl px-margin-mobile py-10 md:px-margin-desktop">
+    <div className="mx-auto max-w-3xl px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
       <nav className="mb-4 flex flex-wrap items-center gap-1 text-caption text-secondary">
         <Link to="/kitaplar" className="hover:text-primary">
           Konu Anlatımı
@@ -309,7 +309,7 @@ export function BookSectionPage() {
       <div className="text-label-sm uppercase tracking-wider text-primary">
         {section.chapterTitle}
       </div>
-      <h1 className="mt-1 text-headline-lg text-on-surface">
+      <h1 className="mt-1 text-headline-lg-mobile text-on-surface md:text-headline-lg">
         {section.number} {section.title}
       </h1>
       <div className="mt-2 text-caption text-secondary">

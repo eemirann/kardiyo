@@ -40,9 +40,9 @@ export default function FlashcardsPage() {
   const totalDue = due?.decks.reduce((n, d) => n + d.total, 0) || 0;
 
   return (
-    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
+    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-6 md:py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
       <div>
-        <h1 className="text-headline-lg text-on-surface">Flashcard Desteleri</h1>
+        <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Flashcard Desteleri</h1>
         <p className="mt-2 text-body-md text-secondary">
           İki mod var: <strong>Serbest çalışma</strong> ile desteyi baştan sona gözden geçir,
           <strong> aralıklı tekrar</strong> ile kartları unutmadan hemen önce tekrar et.

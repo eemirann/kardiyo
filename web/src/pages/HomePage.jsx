@@ -69,7 +69,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="mx-auto max-w-container-max-width px-margin-mobile pb-12 pt-12 md:px-margin-desktop md:pb-16 md:pt-20">
+      <section className="mx-auto max-w-container-max-width px-margin-mobile pb-8 pt-8 md:px-margin-desktop md:pb-16 md:pt-20">
         <div className="grid items-center gap-gutter md:grid-cols-2">
           <div>
             <span className="chip bg-primary/10 text-primary">
@@ -126,12 +126,12 @@ export default function HomePage() {
       </section>
 
       {/* Guvenilirlik seridi */}
-      <section className="mx-auto max-w-container-max-width px-margin-mobile py-16 md:px-margin-desktop">
+      <section className="mx-auto max-w-container-max-width px-margin-mobile py-8 md:px-margin-desktop md:py-16">
         <div className="card flex flex-wrap items-center gap-6 p-6">
           <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
             <Icon name="verified_user" size={28} />
           </span>
-          <div className="min-w-[260px] flex-1">
+          <div className="min-w-0 flex-1">
             <h2 className="text-headline-md text-on-surface">Güvenilir ve kanıtlanmış içerik</h2>
             <p className="mt-2 text-body-md text-secondary">
               Zenodo üzerinde 800'den fazla indirmeye ulaşarak yüzlerce tıp öğrencisi ve intörn
@@ -144,9 +144,9 @@ export default function HomePage() {
       </section>
 
       {/* Ozellikler */}
-      <section className="bg-surface-container-low py-16">
+      <section className="bg-surface-container-low py-10 md:py-16">
         <div className="mx-auto max-w-container-max-width px-margin-mobile md:px-margin-desktop">
-          <h2 className="text-headline-lg text-on-surface">Sitede sizi neler bekliyor?</h2>
+          <h2 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Sitede sizi neler bekliyor?</h2>
           <div className="mt-8 grid gap-gutter sm:grid-cols-2 lg:grid-cols-4">
             {FEATURES.map((f) => {
               // Karsiligi olan bir sayfa varsa kartin tamami link olsun.
@@ -175,9 +175,9 @@ export default function HomePage() {
       </section>
 
       {/* Konular */}
-      <section className="mx-auto max-w-container-max-width px-margin-mobile pb-16 pt-16 md:px-margin-desktop">
+      <section className="mx-auto max-w-container-max-width px-margin-mobile pb-10 pt-10 md:px-margin-desktop md:pb-16 md:pt-16">
         <div className="flex items-end justify-between">
-          <h2 className="text-headline-lg text-on-surface">Konu başlıkları</h2>
+          <h2 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Konu başlıkları</h2>
           <Link to="/konular" className="text-label-sm text-primary hover:underline">
             Tümünü gör
           </Link>
@@ -201,14 +201,14 @@ export default function HomePage() {
       </section>
 
       {/* Video dersler */}
-      <section className="bg-surface-container-low py-16">
+      <section className="bg-surface-container-low py-10 md:py-16">
         <div className="mx-auto max-w-container-max-width px-margin-mobile md:px-margin-desktop">
           <div className="grid items-center gap-gutter md:grid-cols-2">
             <div>
               <span className="chip bg-primary/10 text-primary">
                 <Icon name="play_circle" size={14} /> Mikro-öğrenme
               </span>
-              <h2 className="mt-4 text-headline-lg text-on-surface">
+              <h2 className="mt-4 text-headline-lg-mobile text-on-surface md:text-headline-lg">
                 Bilişsel yükü azaltan, klinik odaklı video dersler
               </h2>
               <p className="mt-4 text-body-lg text-secondary">
@@ -238,7 +238,7 @@ export default function HomePage() {
       </section>
 
       {/* Siralama onizleme + premium */}
-      <section className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile pb-20 pt-16 md:grid-cols-2 md:px-margin-desktop">
+      <section className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile pb-12 pt-10 md:grid-cols-2 md:px-margin-desktop md:pb-20 md:pt-16">
         <div className="card p-6">
           <div className="flex items-center justify-between">
             <h3 className="text-headline-md text-on-surface">Sıralama tablosu</h3>

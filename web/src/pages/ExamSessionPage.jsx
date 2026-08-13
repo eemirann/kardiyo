@@ -100,7 +100,7 @@ export default function ExamSessionPage() {
   if (loading) return <PageLoader label="Sınav hazırlanıyor…" />;
   if (error)
     return (
-      <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+      <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
         <ErrorBox message={error} />
       </div>
     );
@@ -113,10 +113,12 @@ export default function ExamSessionPage() {
   return (
     <div className="mx-auto flex max-w-container-max-width flex-col gap-gutter px-margin-mobile py-8 md:flex-row md:px-margin-desktop">
       <section className="min-w-0 flex-1">
-        <div className="card overflow-hidden">
-          <div className="flex items-center justify-between border-b border-surface-variant bg-surface-container px-6 py-4">
-            <div>
-              <div className="text-label-sm uppercase tracking-wider text-secondary">
+        {/* overflow-hidden yalnizca md'den itibaren: mobilde baslik seridi
+            sticky olacak, overflow-hidden bunu etkisiz birakiyordu. */}
+        <div className="card md:overflow-hidden">
+          <div className="sticky top-20 z-20 flex flex-wrap items-center justify-between gap-3 rounded-t-xl border-b border-surface-variant bg-surface-container px-4 py-3 md:static md:rounded-none md:px-6 md:py-4">
+            <div className="min-w-0">
+              <div className="truncate text-label-sm uppercase tracking-wider text-secondary">
                 {session.examTitle}
               </div>
               <div className="text-body-lg font-semibold text-on-surface">
@@ -136,7 +138,7 @@ export default function ExamSessionPage() {
             </div>
           </div>
 
-          <div className="p-6 md:p-8">
+          <div className="p-5 md:p-8">
             <QuestionImage src={q.imageUrl} alt={q.imageAlt} className="mb-6" />
             <RichText html={q.body} className="mb-6 text-body-md text-on-surface" />
             <div className="flex flex-col gap-3">

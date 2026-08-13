@@ -124,7 +124,7 @@ export default function FlashcardStudyPage() {
   if (loading) return <PageLoader label="Kartlar yükleniyor…" />;
   if (error)
     return (
-      <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+      <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
         <ErrorBox message={error} />
         <Link to="/kartlar" className="btn-outline mt-4">
           <Icon name="arrow_back" size={18} /> Destelere dön
@@ -135,7 +135,7 @@ export default function FlashcardStudyPage() {
   // Deste bitti
   if (!current) {
     return (
-      <div className="mx-auto max-w-2xl px-margin-mobile py-16 md:px-margin-desktop">
+      <div className="mx-auto max-w-2xl px-margin-mobile py-8 md:px-margin-desktop md:py-16">
         <EmptyState
           icon={cards.length === 0 ? 'task_alt' : 'celebration'}
           title={
@@ -259,7 +259,8 @@ export default function FlashcardStudyPage() {
         </div>
       )}
 
-      <p className="mt-6 text-center text-caption text-secondary">
+      {/* Dokunmatikte klavye kisayolu yok; yalnizca masaustunde gosteriliyor */}
+      <p className="mt-6 hidden text-center text-caption text-secondary md:block">
         Kısayollar: <kbd className="rounded bg-surface-container px-1.5 py-0.5">Boşluk</kbd> çevir ·
         <kbd className="mx-1 rounded bg-surface-container px-1.5 py-0.5">1-4</kbd> değerlendir
       </p>

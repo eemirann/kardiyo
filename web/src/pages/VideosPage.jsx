@@ -58,8 +58,8 @@ export function VideosPage() {
   if (loading) return <PageLoader />;
 
   return (
-    <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
-      <h1 className="text-headline-lg text-on-surface">Video Dersler</h1>
+    <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
+      <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Video Dersler</h1>
       <p className="mt-2 text-body-md text-secondary">
         Konu anlatımları ve pratik uygulamalar. Kaldığın yerden devam edebilirsin.
       </p>
@@ -68,7 +68,7 @@ export function VideosPage() {
         <button
           type="button"
           onClick={() => setSearchParams({})}
-          className={`chip border ${
+          className={`chip-btn border ${
             !topic ? 'border-primary bg-primary/10 text-primary' : 'border-outline-variant text-secondary'
           }`}
         >
@@ -79,7 +79,7 @@ export function VideosPage() {
             key={t.id}
             type="button"
             onClick={() => setSearchParams({ konu: t.slug })}
-            className={`chip border ${
+            className={`chip-btn border ${
               topic === t.slug
                 ? 'border-primary bg-primary/10 text-primary'
                 : 'border-outline-variant text-secondary hover:border-primary'
@@ -168,7 +168,7 @@ export function VideoDetailPage() {
 
   if (error)
     return (
-      <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+      <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
         <ErrorBox message={error} />
         {error.includes('premium') && (
           <p className="mt-4 text-body-md text-secondary">
@@ -185,7 +185,7 @@ export function VideoDetailPage() {
   const embed = embedUrl(video);
 
   return (
-    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
+    <div className="mx-auto grid max-w-container-max-width gap-gutter px-margin-mobile py-6 md:py-10 md:grid-cols-[1fr_300px] md:px-margin-desktop">
       <div>
         <div className="overflow-hidden rounded-xl bg-inverse-surface">
           {/* 'file' = dogrudan mp4/webm baglantisi, 'upload' = R2'ye yuklenen dosya */}
@@ -213,7 +213,7 @@ export function VideoDetailPage() {
           )}
         </div>
 
-        <h1 className="mt-5 text-headline-lg text-on-surface">{video.title}</h1>
+        <h1 className="mt-5 text-headline-lg-mobile text-on-surface md:text-headline-lg">{video.title}</h1>
         <div className="mt-2 flex flex-wrap items-center gap-3 text-caption text-secondary">
           {video.topicName && <span className="chip bg-surface-container">{video.topicName}</span>}
           {video.durationSeconds > 0 && <span>{formatDuration(video.durationSeconds)}</span>}

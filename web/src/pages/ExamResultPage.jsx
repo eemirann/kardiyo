@@ -19,7 +19,7 @@ export default function ExamResultPage() {
 
   if (error)
     return (
-      <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+      <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
         <ErrorBox message={error} />
       </div>
     );
@@ -36,16 +36,16 @@ export default function ExamResultPage() {
     result.score >= 70 ? 'text-success' : result.score >= 50 ? 'text-warning' : 'text-error';
 
   return (
-    <div className="mx-auto max-w-container-max-width px-margin-mobile py-10 md:px-margin-desktop">
+    <div className="mx-auto max-w-container-max-width px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
       {/* Skor karti */}
       <div className="card p-6 md:p-8">
         <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
           <div className="flex h-32 w-32 shrink-0 flex-col items-center justify-center rounded-full border-8 border-surface-container">
-            <span className={`text-display-lg ${scoreColor}`}>{result.score}</span>
+            <span className={`text-headline-lg md:text-display-lg ${scoreColor}`}>{result.score}</span>
             <span className="text-caption text-secondary">/ 100</span>
           </div>
           <div className="flex-1">
-            <h1 className="text-headline-lg text-on-surface">Sınav Sonucun</h1>
+            <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">Sınav Sonucun</h1>
             <p className="mt-1 text-body-md text-secondary">
               {new Date(result.finishedAt).toLocaleString('tr-TR')} tarihinde tamamlandı
             </p>
@@ -91,7 +91,7 @@ export default function ExamResultPage() {
               key={f.value}
               type="button"
               onClick={() => setFilter(f.value)}
-              className={`chip border ${
+              className={`chip-btn border ${
                 filter === f.value
                   ? 'border-primary bg-primary/10 text-primary'
                   : 'border-outline-variant text-secondary hover:border-primary'

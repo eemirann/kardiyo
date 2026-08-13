@@ -3,8 +3,8 @@ import { Icon } from '../components/ui';
 
 function Page({ title, lead, children }) {
   return (
-    <div className="mx-auto max-w-3xl px-margin-mobile py-12 md:px-margin-desktop">
-      <h1 className="text-headline-lg text-on-surface">{title}</h1>
+    <div className="mx-auto max-w-3xl px-margin-mobile py-8 md:px-margin-desktop md:py-12">
+      <h1 className="text-headline-lg-mobile text-on-surface md:text-headline-lg">{title}</h1>
       {lead && <p className="mt-3 text-body-lg text-secondary">{lead}</p>}
       <div className="prose-clinical mt-8 text-body-md text-on-surface">{children}</div>
     </div>
@@ -147,9 +147,9 @@ export function PrivacyPage() {
 
 export function NotFoundPage() {
   return (
-    <div className="mx-auto flex max-w-container-max-width flex-col items-center px-margin-mobile py-24 text-center md:px-margin-desktop">
+    <div className="mx-auto flex max-w-container-max-width flex-col items-center px-margin-mobile py-14 text-center md:py-24 md:px-margin-desktop">
       <Icon name="heart_broken" size={56} className="text-primary" />
-      <h1 className="mt-4 text-display-lg text-on-surface">404</h1>
+      <h1 className="mt-4 text-headline-lg text-on-surface md:text-display-lg">404</h1>
       <p className="mt-2 text-body-lg text-secondary">Aradığın sayfa bulunamadı.</p>
       <Link to="/" className="btn-primary mt-6 px-8 py-3">
         Ana sayfaya dön
