@@ -6,6 +6,18 @@
  */
 require('dotenv').config();
 
+// Guvenlik kilidi: testler tablolari TRUNCATE ediyor. TEST_DATABASE_URL verilmediginde
+// eskiden sessizce DATABASE_URL'e — yani uretim veritabanina — dusuyordu. Artik durur.
+// Bilerek ayni veritabaninda calistirmak istiyorsaniz ALLOW_TEST_DB_WIPE=1 verin.
+if (!process.env.TEST_DATABASE_URL && process.env.ALLOW_TEST_DB_WIPE !== '1') {
+  throw new Error(
+    'TEST_DATABASE_URL tanimli degil. Testler tum tablolari siler; uretim veritabanina\n' +
+      'baglanmamak icin ayri bir test veritabani adresi verin:\n' +
+      '  TEST_DATABASE_URL="postgresql://…/kardiyo_test?sslmode=require" npm test\n' +
+      '(Gercekten DATABASE_URL uzerinde calistiracaksaniz: ALLOW_TEST_DB_WIPE=1)'
+  );
+}
+
 if (process.env.TEST_DATABASE_URL) process.env.DATABASE_URL = process.env.TEST_DATABASE_URL;
 process.env.NODE_ENV = 'test';
 process.env.JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET || 'test-access-secret';
