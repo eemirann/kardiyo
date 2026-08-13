@@ -10,6 +10,7 @@
     "migrate": "node scripts/migrate.js",
     "seed": "node scripts/seed.js",
     "test": "jest --runInBand --forceExit",
+    "test:local": "node scripts/test-local.js",
     "import-content": "node scripts/import-content.js",
     "import-exams": "node scripts/import-exams.js",
     "import-guides": "node scripts/import-guides.js",
