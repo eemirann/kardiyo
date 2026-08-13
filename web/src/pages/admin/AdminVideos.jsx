@@ -256,7 +256,10 @@ export default function AdminVideos() {
                   onChange={(e) => setForm({ durationSeconds: e.target.value })}
                 />
               </Field>
-              <Field label="Kapak görseli (URL)">
+              <Field
+                label="Kapak görseli (URL)"
+                hint="YouTube videolarında boş bırakabilirsiniz; kapak linkten otomatik alınır."
+              >
                 <input
                   type="url"
                   className="input"

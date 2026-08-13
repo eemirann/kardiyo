@@ -8,6 +8,19 @@ const { checkAndAwardBadges } = require('../services/badgeEngine');
 
 const router = express.Router();
 
+/**
+ * Kapak gorseli girilmemisse YouTube linkinden uretir; YouTube her video icin
+ * bu adresi hazir sunuyor, ayrica istek atmaya gerek yok.
+ * (Vimeo'da kapak adresi ancak Vimeo API'sine sorularak bulunabildigi icin
+ * orada kapak bos kalir ve arayuz simgeyi gosterir.)
+ */
+function thumbnailFor(row) {
+  if (row.thumbnail_url) return row.thumbnail_url;
+  if (row.source !== 'youtube' || !row.url) return null;
+  const m = row.url.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|\/v\/)([\w-]{11})/);
+  return m ? `https://i.ytimg.com/vi/${m[1]}/hqdefault.jpg` : null;
+}
+
 /** Video kaydini kullaniciya gonderilebilir hale getirir. Kilitliyse oynatma adresi gizlenir. */
 function toPublicVideo(row, unlocked) {
   return {
@@ -21,7 +34,7 @@ function toPublicVideo(row, unlocked) {
     // Kilitli videonun adresi hic gonderilmez
     url: unlocked ? (row.source === 'upload' ? publicUrlFor(row.storage_key) : row.url) : null,
     durationSeconds: row.duration_seconds,
-    thumbnailUrl: row.thumbnail_url,
+    thumbnailUrl: thumbnailFor(row),
     isPremium: row.is_premium,
     locked: !unlocked,
     watchedSeconds: row.watched_seconds ?? 0,
