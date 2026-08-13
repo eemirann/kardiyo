@@ -2,8 +2,14 @@
  * API istemcisi.
  * Access token bellekte tutulur (XSS'te localStorage'dan calinmasin diye);
  * kalicilik httpOnly refresh cookie ile saglanir. 401 alinca bir kez refresh denenir.
+ *
+ * BASE_URL varsayilan olarak bostur: istekler ayni origin'e (`/api/...`) gider ve
+ * Vercel/Vite bunlari API'ye proxy'ler. Boylece refresh cerezi birinci taraf kalir;
+ * ayri bir alan adina gitseydi Safari ve gizli sekmedeki Chrome cerezi engelledigi
+ * icin sayfa her yenilendiginde oturum dusrdu.
+ * VITE_API_URL yalnizca proxy'siz (dogrudan API'ye giden) kurulumlar icin.
  */
-const BASE_URL = (import.meta.env.VITE_API_URL || 'http://localhost:4000').replace(/\/$/, '');
+const BASE_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 
 let accessToken = null;
 let onUnauthorized = null;

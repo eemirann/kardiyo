@@ -105,7 +105,7 @@ oturumları kapatılır.
 ```bash
 cd web
 npm install
-cp .env.example .env      # VITE_API_URL=http://localhost:4000
+cp .env.example .env      # normalde düzenlemeye gerek yok
 npm run dev               # http://localhost:5173
 ```
 
@@ -150,10 +150,18 @@ reklam alanları ve admin hesabı oluşur.
 
 - Root Directory: `web`
 - Framework Preset: Vite
-- Ortam değişkeni: `VITE_API_URL=https://api.10adimdakardiyoloji.com`
+- Ortam değişkeni **gerekmez** — özellikle `VITE_API_URL` tanımlamayın.
 
-`vercel.json` içindeki rewrite kuralı sayesinde React Router adresleri (`/profil`, `/admin/…`)
-doğrudan açıldığında da çalışır.
+`vercel.json` iki rewrite kuralı içerir:
+
+- `/api/*` → Render'daki API. Arayüz isteklerini kendi adresi üzerinden gönderdiği için
+  oturum çerezi **birinci taraf** kalır. Ayrı bir alan adına gitseydi çerez üçüncü taraf
+  olurdu; Safari/iOS bunu her zaman, Chrome gizli sekmede engeller ve sayfa her
+  yenilendiğinde kullanıcı giriş ekranına düşerdi.
+- `/(.*)` → `index.html`, böylece React Router adresleri (`/profil`, `/admin/…`) doğrudan
+  açıldığında da çalışır.
+
+API adresi değişirse `web/vercel.json` içindeki ilk kuralın `destination` değerini güncelleyin.
 
 ### Alan adı
 

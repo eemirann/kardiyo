@@ -69,14 +69,13 @@ hesabı zaten içinde. Render'da `seed` çalıştırmana **gerek yok**.
    - **Root Directory:** `web`  ← *bunu değiştirmeyi unutma, varsayılan kök gelir*
    - **Framework Preset:** Vite (otomatik gelir)
    - Build ve output ayarlarına dokunma.
-4. **Environment Variables** bölümüne ekle:
+4. **Environment Variables** bölümüne hiçbir şey ekleme. Özellikle `VITE_API_URL`
+   **tanımlama** — tanımlıysa sil.
 
-   | Ad | Değer |
-   |---|---|
-   | `VITE_API_URL` | 1. adımda kopyaladığın Render adresi (sonunda `/` olmadan) |
-
-   Bu değişken derleme sırasında gömülür; sonradan değiştirirsen **yeniden deploy**
-   etmen gerekir.
+   API adresi `web/vercel.json` içinde yazılı: Vercel `/api/*` isteklerini oraya
+   yönlendiriyor. Arayüz API'ye kendi adresi üzerinden gittiği için oturum çerezi
+   birinci taraf kalıyor (bkz. 4. adımdaki not). API adresin farklıysa `vercel.json`
+   içindeki `destination` değerini güncelle.
 5. **Deploy** de. Biten adresi kopyala: `https://kardiyo.vercel.app` gibi.
 
 ---
@@ -111,9 +110,15 @@ Vercel adresini aç ve sırayla dene:
 - [ ] `/kartlar`, `/kitaplar`, `/hesaplayicilar` açılıyor
 - [ ] Yönetici hesabıyla `/admin` açılıyor
 
-> **Oturum kalıcı değilse:** yenileme çerezi `SameSite=None; Secure` ile gönderiliyor,
-> bu yalnızca HTTPS'te çalışır. Her iki adres de `https://` olmalı ve Render'daki
-> `NODE_ENV` mutlaka `production` olmalı (blueprint bunu zaten ayarlıyor).
+> **Oturum kalıcı değilse:** iki şeyi kontrol et.
+>
+> 1. Vercel'de `VITE_API_URL` **tanımlı olmamalı**. Tanımlıysa arayüz API'ye doğrudan
+>    gider, oturum çerezi üçüncü taraf çerez olur ve tarayıcı onu atar — Safari/iOS
+>    her zaman, Chrome gizli sekmede engeller. Sonuç: sayfa yenilendiğinde giriş
+>    ekranına düşersin. Değişkeni sil ve **yeniden deploy et**; istekler `vercel.json`
+>    üzerinden `/api/*` yoluna, yani kendi adresine gitmeli.
+> 2. Yenileme çerezi `Secure` ile gönderiliyor, yani yalnızca HTTPS'te çalışır.
+>    Render'daki `NODE_ENV` mutlaka `production` olmalı (blueprint bunu zaten ayarlıyor).
 
 ---
 
@@ -125,8 +130,9 @@ Vercel adresini aç ve sırayla dene:
    kayıtlarını alan adı paneline gir.
 2. Render → Settings → Custom Domain → `api.10adimdakardiyoloji.com` ekle, verilen
    CNAME'i gir.
-3. Vercel'de `VITE_API_URL`'i `https://api.10adimdakardiyoloji.com` yap ve **yeniden
-   deploy et**.
+3. `web/vercel.json` içindeki `/api/:path*` kuralının `destination` değerini
+   `https://api.10adimdakardiyoloji.com/api/:path*` yap ve push'la (Vercel otomatik
+   deploy eder). `VITE_API_URL` yine tanımsız kalsın.
 4. Render'da `CORS_ORIGINS`'e yeni adresleri ekle:
    `https://10adimdakardiyoloji.com,https://www.10adimdakardiyoloji.com`
 
