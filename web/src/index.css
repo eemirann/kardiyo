@@ -36,6 +36,10 @@
   .prose-clinical td {
     @apply border border-outline-variant px-3 py-2 text-left;
   }
+  /* Cozum metnine gomulen gorseller (EKG, sema) tasmasin */
+  .prose-clinical img {
+    @apply my-3 max-w-full rounded-lg border border-outline-variant;
+  }
 }
 
 @layer components {

@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { api } from '../api/client';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
-import { ErrorBox, Icon, PageLoader, RichText, Spinner } from '../components/ui';
+import { ErrorBox, Icon, PageLoader, QuestionImage, RichText, Spinner } from '../components/ui';
 
 /** Sinav ekrani: geri sayim, soru navigasyonu, otomatik kaydetme. */
 export default function ExamSessionPage() {
@@ -137,6 +137,7 @@ export default function ExamSessionPage() {
           </div>
 
           <div className="p-6 md:p-8">
+            <QuestionImage src={q.imageUrl} alt={q.imageAlt} className="mb-6" />
             <RichText html={q.body} className="mb-6 text-body-md text-on-surface" />
             <div className="flex flex-col gap-3">
               {q.options.map((o) => (

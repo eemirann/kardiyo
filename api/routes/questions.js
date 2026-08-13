@@ -28,6 +28,8 @@ function toPublicQuestion(row, options) {
     type: row.type,
     difficulty: row.difficulty,
     body: row.body,
+    imageUrl: row.image_url ?? null,
+    imageAlt: row.image_alt ?? '',
     isPremium: row.is_premium,
     alreadySolved: row.already_solved ?? false,
     options: options.map((o) => ({ id: o.id, label: o.label, text: o.text })),
@@ -78,7 +80,7 @@ router.get(
     const listParams = [...filterParams, userId, limit, offset];
     const userIdx = filterParams.length + 1;
     const { rows } = await query(
-      `SELECT q.id, q.topic_id, q.type, q.difficulty, q.body, q.is_premium,
+      `SELECT q.id, q.topic_id, q.type, q.difficulty, q.body, q.image_url, q.image_alt, q.is_premium,
               t.name AS topic_name, t.slug AS topic_slug,
               EXISTS (SELECT 1 FROM attempts a
                        WHERE a.user_id = $${userIdx} AND a.question_id = q.id AND a.is_correct)
@@ -128,7 +130,7 @@ router.get(
     if (!Number.isInteger(id)) throw badRequest('Gecersiz soru id.');
 
     const { rows } = await query(
-      `SELECT q.id, q.topic_id, q.type, q.difficulty, q.body, q.is_premium,
+      `SELECT q.id, q.topic_id, q.type, q.difficulty, q.body, q.image_url, q.image_alt, q.is_premium,
               t.name AS topic_name, t.slug AS topic_slug,
               EXISTS (SELECT 1 FROM attempts a
                        WHERE a.user_id = $2 AND a.question_id = q.id AND a.is_correct)

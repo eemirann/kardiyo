@@ -132,6 +132,49 @@ export function RichText({ html, className = '' }) {
   );
 }
 
+/**
+ * Soru gorseli (EKG gibi). Dosyalar web/public altinda durur, src site ici
+ * mutlak yoldur. Tiklaninca tam boy yeni sekmede acilir; EKG'de kucuk
+ * dalgalari incelemek icin sart.
+ */
+export function QuestionImage({ src, alt = '', className = '' }) {
+  if (!src) return null;
+  return (
+    <a
+      href={src}
+      target="_blank"
+      rel="noreferrer"
+      title="Tam boy aç"
+      className={`group relative block overflow-hidden rounded-lg border border-outline-variant bg-white ${className}`}
+    >
+      <img src={src} alt={alt} className="mx-auto block max-h-[520px] w-full object-contain" />
+      <span className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-3 py-1 text-caption text-white opacity-0 transition-opacity group-hover:opacity-100">
+        <Icon name="zoom_in" size={16} /> Tam boy
+      </span>
+    </a>
+  );
+}
+
+/**
+ * Cevaplandiktan sonra sikkin rengi: dogru yesil, secilen yanlis kirmizi,
+ * digerleri soluk. Cevaptan once yalnizca secili sik vurgulanir.
+ *
+ * answer: { selectedOptionId, result } | null — soru bankasi ve EKG Quiz
+ * sayfalari cevaplari bu sekilde tutuyor.
+ */
+export function optionClass(option, { selectedId, answer }) {
+  if (!answer?.result) {
+    return selectedId === option.id
+      ? 'border-primary bg-primary/5'
+      : 'border-outline-variant hover:bg-surface-container-low';
+  }
+  if (option.id === answer.result.correctOptionId)
+    return 'border-success bg-success-container text-on-success-container';
+  if (option.id === answer.selectedOptionId)
+    return 'border-error bg-error-container text-on-error-container';
+  return 'border-outline-variant opacity-60';
+}
+
 export function formatDate(value) {
   if (!value) return '—';
   return new Date(value).toLocaleDateString('tr-TR', {

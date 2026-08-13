@@ -64,6 +64,8 @@ const topicSchema = z.object({
   icon: z.string().max(60).nullish(),
   sortOrder: z.coerce.number().int().default(0),
   isActive: z.boolean().default(true),
+  // Kendi sayfasi olan konular (EKG Quiz) /konular listesinden gizlenir
+  isListed: z.boolean().default(true),
 });
 
 router.get(
@@ -80,9 +82,12 @@ router.post(
   asyncHandler(async (req, res) => {
     const b = req.body;
     const { rows } = await query(
-      `INSERT INTO topics (name, slug, description, icon, sort_order, is_active)
-       VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
-      [b.name, b.slug || slugify(b.name), b.description ?? null, b.icon ?? null, b.sortOrder, b.isActive]
+      `INSERT INTO topics (name, slug, description, icon, sort_order, is_active, is_listed)
+       VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
+      [
+        b.name, b.slug || slugify(b.name), b.description ?? null, b.icon ?? null,
+        b.sortOrder, b.isActive, b.isListed,
+      ]
     );
     res.status(201).json({ topic: rows[0] });
   })
@@ -95,11 +100,11 @@ router.put(
     const b = req.body;
     const { rows } = await query(
       `UPDATE topics SET name = $2, slug = $3, description = $4, icon = $5,
-              sort_order = $6, is_active = $7
+              sort_order = $6, is_active = $7, is_listed = $8
         WHERE id = $1 RETURNING *`,
       [
         Number(req.params.id), b.name, b.slug || slugify(b.name),
-        b.description ?? null, b.icon ?? null, b.sortOrder, b.isActive,
+        b.description ?? null, b.icon ?? null, b.sortOrder, b.isActive, b.isListed,
       ]
     );
     if (!rows[0]) throw notFound('Konu bulunamadi.');
@@ -134,6 +139,18 @@ const questionSchema = z.object({
   type: z.enum(['case', 'classic']).default('classic'),
   difficulty: z.enum(['easy', 'medium', 'hard']).default('medium'),
   body: z.string().min(10),
+  // EKG gibi gorselli sorular icin site ici mutlak yol: "/ekg/soru-01.png".
+  // Dis baglanti gomulmesin diye yalnizca / ile baslayan yollar kabul edilir.
+  imageUrl: z
+    .string()
+    .trim()
+    .max(300)
+    .optional()
+    .transform((v) => v || null)
+    .refine((v) => v === null || v.startsWith('/'), {
+      message: 'Gorsel yolu / ile baslamali (ornek: /ekg/soru-01.png).',
+    }),
+  imageAlt: z.string().trim().max(200).default(''),
   explanation: z.string().default(''),
   isPremium: z.boolean().default(false),
   isActive: z.boolean().default(true),
@@ -191,17 +208,24 @@ async function upsertQuestion(client, data, userId, id = null) {
   if (id) {
     const { rows } = await client.query(
       `UPDATE questions SET topic_id=$2, type=$3, difficulty=$4, body=$5, explanation=$6,
-              is_premium=$7, is_active=$8, updated_at=now()
+              is_premium=$7, is_active=$8, image_url=$9, image_alt=$10, updated_at=now()
         WHERE id=$1 RETURNING id`,
-      [id, data.topicId, data.type, data.difficulty, body, explanation, data.isPremium, data.isActive]
+      [
+        id, data.topicId, data.type, data.difficulty, body, explanation,
+        data.isPremium, data.isActive, data.imageUrl, data.imageAlt,
+      ]
     );
     if (!rows[0]) throw notFound('Soru bulunamadi.');
     await client.query('DELETE FROM question_options WHERE question_id = $1', [id]);
   } else {
     const { rows } = await client.query(
-      `INSERT INTO questions (topic_id, type, difficulty, body, explanation, is_premium, is_active, created_by)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`,
-      [data.topicId, data.type, data.difficulty, body, explanation, data.isPremium, data.isActive, userId]
+      `INSERT INTO questions (topic_id, type, difficulty, body, explanation, is_premium, is_active,
+                             image_url, image_alt, created_by)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING id`,
+      [
+        data.topicId, data.type, data.difficulty, body, explanation,
+        data.isPremium, data.isActive, data.imageUrl, data.imageAlt, userId,
+      ]
     );
     questionId = rows[0].id;
   }

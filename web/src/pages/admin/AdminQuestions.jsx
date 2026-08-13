@@ -11,6 +11,8 @@ const emptyForm = (topicId) => ({
   topicId: topicId || '',
   type: 'classic',
   difficulty: 'medium',
+  imageUrl: '',
+  imageAlt: '',
   body: '',
   explanation: '',
   isPremium: false,
@@ -62,6 +64,8 @@ export default function AdminQuestions() {
         topicId: q.topic_id,
         type: q.type,
         difficulty: q.difficulty,
+        imageUrl: q.image_url || '',
+        imageAlt: q.image_alt || '',
         body: q.body,
         explanation: q.explanation,
         isPremium: q.is_premium,
@@ -272,6 +276,40 @@ export default function AdminQuestions() {
                 </select>
               </Field>
             </div>
+
+            <Field
+              label="Görsel (EKG vb.)"
+              hint="Dosyayı web/public/ekg/ klasörüne koyup yolunu yazın: /ekg/dosya-adi.png — boş bırakılabilir."
+            >
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start">
+                <div className="flex-1 space-y-2">
+                  <input
+                    className="input font-mono text-sm"
+                    value={editing.form.imageUrl}
+                    placeholder="/ekg/inferior-stemi-01.png"
+                    onChange={(e) =>
+                      setEditing({ ...editing, form: { ...editing.form, imageUrl: e.target.value } })
+                    }
+                  />
+                  <input
+                    className="input"
+                    value={editing.form.imageAlt}
+                    placeholder="Görsel açıklaması (görme engelliler ve görsel yüklenmezse)"
+                    onChange={(e) =>
+                      setEditing({ ...editing, form: { ...editing.form, imageAlt: e.target.value } })
+                    }
+                  />
+                </div>
+                {/* Yol yanlissa tarayici kirik gorsel gosterir; onizleme bunu aninda belli eder */}
+                {editing.form.imageUrl.trim() && (
+                  <img
+                    src={editing.form.imageUrl.trim()}
+                    alt="Önizleme"
+                    className="h-24 w-40 shrink-0 rounded-lg border border-outline-variant bg-white object-contain"
+                  />
+                )}
+              </div>
+            </Field>
 
             <Field label="Soru metni" hint="Basit HTML kullanabilirsiniz: <p>, <strong>, <ul>, <table>…">
               <textarea

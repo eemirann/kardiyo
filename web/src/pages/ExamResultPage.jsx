@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { api } from '../api/client';
 import AdSlot from '../components/AdSlot';
-import { DifficultyChip, ErrorBox, Icon, PageLoader, RichText } from '../components/ui';
+import { DifficultyChip, ErrorBox, Icon, PageLoader, QuestionImage, RichText } from '../components/ui';
 
 export default function ExamResultPage() {
   const { sessionId } = useParams();
@@ -125,6 +125,7 @@ export default function ExamResultPage() {
               </span>
             </div>
             <div className="p-5">
+              <QuestionImage src={q.imageUrl} alt={q.imageAlt} className="mb-4" />
               <RichText html={q.body} className="mb-4 text-body-md text-on-surface" />
               <div className="flex flex-col gap-2">
                 {q.options.map((o) => {

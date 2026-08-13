@@ -4,7 +4,15 @@ import { useToast } from '../../context/ToastContext';
 import { AdminHeader, DataTable, Field, Modal, RowActions, StatusPill, Toggle } from '../../components/admin';
 import { ErrorBox, Icon, PageLoader, Spinner } from '../../components/ui';
 
-const empty = { name: '', slug: '', description: '', icon: 'cardiology', sortOrder: 0, isActive: true };
+const empty = {
+  name: '',
+  slug: '',
+  description: '',
+  icon: 'cardiology',
+  sortOrder: 0,
+  isActive: true,
+  isListed: true,
+};
 
 export default function AdminTopics() {
   const toast = useToast();
@@ -103,6 +111,7 @@ export default function AdminTopics() {
                           icon: t.icon || '',
                           sortOrder: t.sort_order,
                           isActive: t.is_active,
+                          isListed: t.is_listed,
                         },
                       })
                     }
@@ -165,6 +174,16 @@ export default function AdminTopics() {
               onChange={(v) => setEditing({ ...editing, form: { ...editing.form, isActive: v } })}
               label="Yayında"
             />
+            <div>
+              <Toggle
+                checked={editing.form.isListed}
+                onChange={(v) => setEditing({ ...editing, form: { ...editing.form, isListed: v } })}
+                label="Konular sayfasında listele"
+              />
+              <p className="mt-1 text-caption text-secondary">
+                Kendi sayfası olan bölümlerde (EKG Quiz) kapatın; konu çalışmaya devam eder.
+              </p>
+            </div>
             <div className="flex justify-end gap-3 border-t border-surface-variant pt-4">
               <button type="button" className="btn-outline" onClick={() => setEditing(null)}>
                 Vazgeç

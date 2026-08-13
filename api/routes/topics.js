@@ -9,6 +9,9 @@ const router = express.Router();
  * Konu listesi + her konudaki soru/video sayisi ve (giris varsa) kullanicinin ilerlemesi.
  * Sayimlar kullanicinin ERISEBILDIGI icerikle sinirlidir; aksi halde ucretsiz uyenin
  * ilerleme cubugu hicbir zaman dolmaz.
+ *
+ * is_listed = false olan konular (kendi sayfasi olan EKG Quiz gibi) burada
+ * gorunmez; kendi sayfalari sorulari /questions?topic=<slug> ile ceker.
  */
 router.get(
   '/',
@@ -30,7 +33,7 @@ router.get(
                  WHERE q2.topic_id = t.id AND a.user_id = $1 AND a.is_correct
               ), 0) AS solved_count
          FROM topics t
-        WHERE t.is_active
+        WHERE t.is_active AND t.is_listed
         ORDER BY t.sort_order, t.name`,
       [userId, premium]
     );

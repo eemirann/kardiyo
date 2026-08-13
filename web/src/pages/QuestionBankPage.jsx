@@ -12,8 +12,10 @@ import {
   PageLoader,
   PremiumChip,
   ProgressBar,
+  QuestionImage,
   RichText,
   Spinner,
+  optionClass as optionClassFor,
 } from '../components/ui';
 
 const DIFFICULTIES = [
@@ -131,19 +133,8 @@ export default function QuestionBankPage() {
     setSearchParams(next);
   };
 
-  /** Cevaplandiktan sonra sikkin rengi: dogru yesil, secilen yanlis kirmizi. */
-  const optionClass = (option) => {
-    if (!answered) {
-      return selected === option.id
-        ? 'border-primary bg-primary/5'
-        : 'border-outline-variant hover:bg-surface-container-low';
-    }
-    if (option.id === currentState.result.correctOptionId)
-      return 'border-success bg-success-container text-on-success-container';
-    if (option.id === currentState.selectedOptionId)
-      return 'border-error bg-error-container text-on-error-container';
-    return 'border-outline-variant opacity-60';
-  };
+  const optionClass = (option) =>
+    optionClassFor(option, { selectedId: selected, answer: currentState });
 
   return (
     <div className="mx-auto flex max-w-container-max-width flex-col gap-gutter px-margin-mobile py-10 md:flex-row md:px-margin-desktop">
@@ -268,6 +259,7 @@ export default function QuestionBankPage() {
               </div>
 
               <div className="p-6 md:p-8">
+                <QuestionImage src={current.imageUrl} alt={current.imageAlt} className="mb-6" />
                 <RichText html={current.body} className="mb-6 text-body-md text-on-surface" />
 
                 {current.alreadySolved && !answered && (

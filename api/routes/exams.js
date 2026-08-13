@@ -119,7 +119,7 @@ async function loadSession(sessionIdRaw, userId) {
 /** Oturumun sorularini (dogru sik gizli) + verilen cevaplari doner. */
 async function buildSessionPayload(session, exam, userId) {
   const { rows: questions } = await query(
-    `SELECT q.id, q.type, q.difficulty, q.body, eq.sort_order,
+    `SELECT q.id, q.type, q.difficulty, q.body, q.image_url, q.image_alt, eq.sort_order,
             t.name AS topic_name
        FROM exam_questions eq
        JOIN questions q ON q.id = eq.question_id
@@ -164,6 +164,8 @@ async function buildSessionPayload(session, exam, userId) {
       type: q.type,
       difficulty: q.difficulty,
       body: q.body,
+      imageUrl: q.image_url ?? null,
+      imageAlt: q.image_alt ?? '',
       topicName: q.topic_name,
       selectedOptionId: answerMap.get(q.id) ?? null,
       options: options
@@ -317,7 +319,7 @@ async function buildResult(sessionId, userId) {
   const session = sRows[0];
 
   const { rows } = await query(
-    `SELECT q.id, q.body, q.explanation, q.difficulty,
+    `SELECT q.id, q.body, q.image_url, q.image_alt, q.explanation, q.difficulty,
             t.name AS topic_name,
             a.selected_option_id, a.is_correct, a.points_awarded,
             (SELECT json_agg(json_build_object(
@@ -347,6 +349,8 @@ async function buildResult(sessionId, userId) {
     questions: rows.map((r) => ({
       id: r.id,
       body: r.body,
+      imageUrl: r.image_url ?? null,
+      imageAlt: r.image_alt ?? '',
       explanation: r.explanation,
       difficulty: r.difficulty,
       topicName: r.topic_name,

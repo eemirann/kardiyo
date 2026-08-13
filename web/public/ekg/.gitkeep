@@ -1,0 +1,4 @@
+# EKG Quiz gorselleri
+#
+# Sorulara eklenecek EKG kayitlari (PNG) bu klasore konur ve yonetici
+# panelinde "/ekg/dosya-adi.png" seklinde referans verilir.

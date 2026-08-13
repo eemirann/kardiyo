@@ -16,6 +16,7 @@ function shortName(fullName = '') {
 
 const NAV = [
   { to: '/konular', label: 'Soru Bankası' },
+  { to: '/ekg', label: 'EKG Quiz' },
   { to: '/kartlar', label: 'Flashcard' },
   { to: '/kitaplar', label: 'Konu Anlatımı' },
   { to: '/sinavlar', label: 'Denemeler' },

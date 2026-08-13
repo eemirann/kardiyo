@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import { LoginPage, RegisterPage } from './pages/AuthPages';
 import TopicsPage from './pages/TopicsPage';
 import QuestionBankPage from './pages/QuestionBankPage';
+import EkgQuizPage from './pages/EkgQuizPage';
 import ExamsPage from './pages/ExamsPage';
 import ExamSessionPage from './pages/ExamSessionPage';
 import ExamResultPage from './pages/ExamResultPage';
@@ -61,6 +62,7 @@ export default function App() {
           <Route path="kayit" element={<RegisterPage />} />
           <Route path="konular" element={<TopicsPage />} />
           <Route path="soru-bankasi/:topicSlug" element={<QuestionBankPage />} />
+          <Route path="ekg" element={<EkgQuizPage />} />
           <Route path="sinavlar" element={<ExamsPage />} />
           <Route
             path="sinav/:sessionId"
