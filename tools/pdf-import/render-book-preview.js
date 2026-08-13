@@ -1,9 +1,12 @@
 /**
  * "10 Adimda Kardiyoloji" kitabinin ilk sayfalarini ana sayfadaki onizleme icin
- * gorsele cevirir ve tam PDF'i web/public altina kopyalar.
+ * gorsele cevirir.
  *
  * Cikti: web/public/kitap/sayfa-01.png ... sayfa-10.png
- *        web/public/kitap/10-adimda-kardiyoloji.pdf
+ *
+ * Kitabin tam metni artik siteden servis edilmiyor; indirme linkleri Zenodo
+ * kaydina gidiyor (bkz. web/src/components/BookPreview.jsx). Bu yuzden PDF
+ * web/public altina kopyalanmiyor.
  *
  *   npm run book
  */
@@ -36,9 +39,7 @@ const SCALE = 1.4; // ~1150px genislik: ekranda net, dosya boyutu makul
     console.log(`  sayfa ${i}: ${(buf.length / 1024).toFixed(0)} KB`);
   }
 
-  const pdfOut = path.join(OUT, '10-adimda-kardiyoloji.pdf');
-  fs.copyFileSync(SRC, pdfOut);
-  const size = fs.statSync(pdfOut).size;
+  const size = fs.statSync(SRC).size;
 
   fs.writeFileSync(
     path.join(OUT, 'kitap.json'),
@@ -47,7 +48,6 @@ const SCALE = 1.4; // ~1150px genislik: ekranda net, dosya boyutu makul
         title: '10 Adımda Kardiyoloji',
         totalPages: doc.length,
         previewPages: Math.min(PAGES, doc.length),
-        pdf: '/kitap/10-adimda-kardiyoloji.pdf',
         pdfSizeMb: Number((size / 1024 / 1024).toFixed(1)),
       },
       null,
