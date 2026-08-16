@@ -3,7 +3,7 @@ const { verifyAccessToken } = require('../services/tokens');
 const { unauthorized, forbidden, asyncHandler } = require('../utils/http');
 
 const PUBLIC_USER_FIELDS =
-  'id, email, full_name, role, is_premium, premium_until, is_blocked, avatar_url, total_points, created_at';
+  'id, email, full_name, role, is_premium, premium_until, is_blocked, avatar_url, total_points, created_at, email_verified_at';
 
 /** Authorization: Bearer <token> basligindan kullaniciyi cozer. */
 async function loadUser(req) {

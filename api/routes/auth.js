@@ -13,6 +13,12 @@ const {
   refreshCookieOptions,
   REFRESH_COOKIE,
 } = require('../services/tokens');
+const {
+  issueVerificationToken,
+  consumeVerificationToken,
+  findUnverifiedUser,
+} = require('../services/emailVerification');
+const { sendVerificationEmail } = require('../services/mailer');
 
 const router = express.Router();
 
@@ -25,6 +31,15 @@ const authLimiter = rateLimit({
   message: { error: 'Cok fazla deneme yaptiniz. Lutfen 15 dakika sonra tekrar deneyin.' },
 });
 
+// Yeniden gonderme daha dar: her istek bir e-posta demek, spam sikayeti riski var
+const resendLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: process.env.NODE_ENV === 'test' ? 1000 : 3,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Cok fazla istek. Lutfen 15 dakika sonra tekrar deneyin.' },
+});
+
 const registerSchema = z.object({
   email: z.string().email('Gecerli bir e-posta adresi girin.').toLowerCase().trim(),
   password: z.string().min(8, 'Sifre en az 8 karakter olmali.').max(72),
@@ -35,6 +50,30 @@ const loginSchema = z.object({
   email: z.string().email('Gecerli bir e-posta adresi girin.').toLowerCase().trim(),
   password: z.string().min(1, 'Sifre gerekli.'),
 });
+
+const verifySchema = z.object({
+  token: z.string().min(16, 'Gecersiz dogrulama bagi.').max(200).trim(),
+});
+
+const resendSchema = z.object({
+  email: z.string().email('Gecerli bir e-posta adresi girin.').toLowerCase().trim(),
+});
+
+/** Arayuzun kok adresi; dogrulama baglantisi buraya isaret eder. */
+function appUrl() {
+  const configured = process.env.APP_URL || (process.env.CORS_ORIGINS || '').split(',')[0];
+  return (configured || 'http://localhost:5173').trim().replace(/\/$/, '');
+}
+
+/** Dogrulama token'i uretip e-postayi gonderir. */
+async function sendVerification(user) {
+  const { token } = await issueVerificationToken(user.id);
+  await sendVerificationEmail({
+    to: user.email,
+    fullName: user.full_name,
+    link: `${appUrl()}/eposta-dogrula?token=${token}`,
+  });
+}
 
 /** Access token + refresh cookie'yi birlikte doner. */
 async function respondWithSession(res, user) {
@@ -57,6 +96,7 @@ function publicUser(u) {
     avatarUrl: u.avatar_url,
     totalPoints: u.total_points,
     createdAt: u.created_at,
+    emailVerified: Boolean(u.email_verified_at),
   };
 }
 
@@ -77,7 +117,9 @@ router.post(
       [email, passwordHash, fullName]
     );
 
-    res.status(201).json(await respondWithSession(res, rows[0]));
+    // Oturum acilmaz: hesap, e-postadaki bag tiklanana kadar giris yapamaz.
+    await sendVerification(rows[0]);
+    res.status(201).json({ pendingVerification: true, email });
   })
 );
 
@@ -94,9 +136,49 @@ router.post(
     const ok = await bcrypt.compare(password, user ? user.password_hash : '$2a$10$invalidinvalidinvalidinvalidinvalidinvalidinvalidinv');
     if (!user || !ok) throw unauthorized('E-posta veya sifre hatali.');
     if (user.is_blocked) throw forbidden('Hesabiniz engellenmis.');
+    if (!user.email_verified_at) {
+      throw forbidden(
+        'E-posta adresinizi dogrulamadan giris yapamazsiniz. Kutunuzu kontrol edin.',
+        'EMAIL_NOT_VERIFIED'
+      );
+    }
 
     await query('UPDATE users SET last_login_at = now() WHERE id = $1', [user.id]);
     res.json(await respondWithSession(res, user));
+  })
+);
+
+/**
+ * E-postadaki bagin ucu. Dogrulamayi yapip HEMEN oturum acar: kullanici linke
+ * tikladiginda tekrar giris ekranina dusmeden icerige giriyor.
+ */
+router.post(
+  '/verify-email',
+  authLimiter,
+  validate(verifySchema),
+  asyncHandler(async (req, res) => {
+    const user = await consumeVerificationToken(req.body.token);
+    if (!user) throw badRequest('Dogrulama bagi gecersiz veya suresi dolmus.', 'INVALID_TOKEN');
+    if (user.is_blocked) throw forbidden('Hesabiniz engellenmis.');
+
+    await query('UPDATE users SET last_login_at = now() WHERE id = $1', [user.id]);
+    res.json(await respondWithSession(res, user));
+  })
+);
+
+/**
+ * Dogrulama e-postasini yeniden gonderir.
+ * Adres kayitli olmasa da, hesap zaten dogrulanmis olsa da ayni yanit doner:
+ * aksi halde bu uc "bu e-posta sistemde var mi" sorusunun cevabina donusurdu.
+ */
+router.post(
+  '/resend-verification',
+  resendLimiter,
+  validate(resendSchema),
+  asyncHandler(async (req, res) => {
+    const user = await findUnverifiedUser(req.body.email);
+    if (user) await sendVerification(user);
+    res.json({ ok: true });
   })
 );
 

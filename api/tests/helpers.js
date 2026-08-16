@@ -33,17 +33,24 @@ async function resetDatabase() {
   await query(`
     TRUNCATE ad_events, ads, ad_slots, user_badges, badges, video_progress, videos,
              attempts, exam_sessions, exam_questions, exams, question_options, questions,
-             topics, refresh_tokens, users
+             topics, refresh_tokens, email_verification_tokens, users
     RESTART IDENTITY CASCADE
   `);
 }
 
-async function createUser({ email, password = 'Sifre1234', role = 'user', isPremium = false }) {
+/** Varsayilan olarak e-postasi dogrulanmis kullanici uretir (loginAs calissin diye). */
+async function createUser({
+  email,
+  password = 'Sifre1234',
+  role = 'user',
+  isPremium = false,
+  emailVerified = true,
+}) {
   const hash = await bcrypt.hash(password, 4);
   const { rows } = await query(
-    `INSERT INTO users (email, password_hash, full_name, role, is_premium)
-     VALUES ($1, $2, $3, $4, $5) RETURNING *`,
-    [email, hash, `Test ${email}`, role, isPremium]
+    `INSERT INTO users (email, password_hash, full_name, role, is_premium, email_verified_at)
+     VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+    [email, hash, `Test ${email}`, role, isPremium, emailVerified ? new Date() : null]
   );
   return rows[0];
 }

@@ -10,7 +10,7 @@ class AppError extends Error {
 
 const badRequest = (msg, code) => new AppError(400, msg, code);
 const unauthorized = (msg = 'Giris yapmalisiniz.') => new AppError(401, msg);
-const forbidden = (msg = 'Bu islem icin yetkiniz yok.') => new AppError(403, msg);
+const forbidden = (msg = 'Bu islem icin yetkiniz yok.', code) => new AppError(403, msg, code);
 const notFound = (msg = 'Kayit bulunamadi.') => new AppError(404, msg);
 const premiumRequired = (msg = 'Bu icerik premium uyelere ozeldir.') =>
   new AppError(403, msg, 'PREMIUM_REQUIRED');

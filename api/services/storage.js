@@ -67,6 +67,24 @@ async function createUploadUrl({ kind, filename, contentType, sizeBytes }) {
   return { uploadUrl, key, publicUrl: publicUrlFor(key) };
 }
 
+/**
+ * Dosyayi dogrudan yukler (imzali URL'e gerek yok).
+ * Tarayici degil, yerelde calisan betikler icin: EKG gorselleri gibi toplu
+ * yuklemelerde her dosya icin ayri presign turu gereksiz.
+ */
+async function putObject({ key, body, contentType }) {
+  if (!isEnabled()) throw badRequest('Dosya yukleme yapilandirilmamis (R2 ayarlari eksik).');
+  await getClient().send(
+    new PutObjectCommand({
+      Bucket: process.env.R2_BUCKET,
+      Key: key,
+      Body: body,
+      ContentType: contentType,
+    })
+  );
+  return { key, publicUrl: publicUrlFor(key) };
+}
+
 function publicUrlFor(key) {
   if (!key) return null;
   const base = (process.env.R2_PUBLIC_URL || '').replace(/\/$/, '');
@@ -80,4 +98,12 @@ async function deleteObject(key) {
   );
 }
 
-module.exports = { isEnabled, createUploadUrl, publicUrlFor, deleteObject, ALLOWED, MAX_BYTES };
+module.exports = {
+  isEnabled,
+  createUploadUrl,
+  putObject,
+  publicUrlFor,
+  deleteObject,
+  ALLOWED,
+  MAX_BYTES,
+};

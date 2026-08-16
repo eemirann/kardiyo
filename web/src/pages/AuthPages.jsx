@@ -19,6 +19,38 @@ function AuthShell({ title, subtitle, children, footer }) {
   );
 }
 
+/**
+ * "Doğrulama bağlantısını yeniden gönder" düğmesi.
+ * Hem kayıt sonrası bekleme ekranında hem de doğrulanmamış hesapla giriş
+ * denendiğinde kullanılır.
+ */
+export function ResendVerification({ email }) {
+  const { resendVerification } = useAuth();
+  const toast = useToast();
+  const [busy, setBusy] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const resend = async () => {
+    setBusy(true);
+    try {
+      await resendVerification(email);
+      setSent(true);
+      toast.success('Bağlantı yeniden gönderildi', 'Gelen kutunu ve spam klasörünü kontrol et.');
+    } catch (err) {
+      toast.error('Gönderilemedi', err.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <button type="button" onClick={resend} disabled={busy || sent} className="btn-outline w-full">
+      {busy ? <Spinner /> : <Icon name="mail" size={18} />}
+      {sent ? 'Gönderildi' : 'Bağlantıyı yeniden gönder'}
+    </button>
+  );
+}
+
 export function LoginPage() {
   const { login } = useAuth();
   const toast = useToast();
@@ -26,11 +58,13 @@ export function LoginPage() {
   const location = useLocation();
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
+  const [unverified, setUnverified] = useState('');
   const [busy, setBusy] = useState(false);
 
   const submit = async (e) => {
     e.preventDefault();
     setError('');
+    setUnverified('');
     setBusy(true);
     try {
       const user = await login(form.email, form.password);
@@ -38,6 +72,8 @@ export function LoginPage() {
       navigate(location.state?.from || '/konular', { replace: true });
     } catch (err) {
       setError(err.message);
+      // Doğrulanmamış hesap: hatayla birlikte yeniden gönderme yolu sunulur
+      if (err.code === 'EMAIL_NOT_VERIFIED') setUnverified(form.email);
     } finally {
       setBusy(false);
     }
@@ -92,6 +128,7 @@ export function LoginPage() {
           {busy ? <Spinner /> : <Icon name="login" size={18} />}
           Giriş Yap
         </button>
+        {unverified && <ResendVerification email={unverified} />}
       </form>
     </AuthShell>
   );
@@ -99,11 +136,11 @@ export function LoginPage() {
 
 export function RegisterPage() {
   const { register } = useAuth();
-  const toast = useToast();
-  const navigate = useNavigate();
   const [form, setForm] = useState({ fullName: '', email: '', password: '', password2: '' });
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  // Kayıt tamamlandığında forma değil, "e-postanı kontrol et" ekranına geçilir
+  const [sentTo, setSentTo] = useState('');
 
   const submit = async (e) => {
     e.preventDefault();
@@ -114,15 +151,45 @@ export function RegisterPage() {
     }
     setBusy(true);
     try {
-      await register(form.fullName, form.email, form.password);
-      toast.success('Hesabın oluşturuldu!', 'İlk soruyu çözerek ilk rozetini kazan.');
-      navigate('/konular', { replace: true });
+      const data = await register(form.fullName, form.email, form.password);
+      setSentTo(data.email);
     } catch (err) {
       setError(err.message);
     } finally {
       setBusy(false);
     }
   };
+
+  if (sentTo) {
+    return (
+      <AuthShell
+        title="E-postanı Kontrol Et"
+        subtitle={`${sentTo} adresine bir doğrulama bağlantısı gönderdik.`}
+        footer={
+          <>
+            Yanlış adres mi girdin?{' '}
+            <Link to="/kayit" onClick={() => setSentTo('')} className="text-primary hover:underline">
+              Baştan dene
+            </Link>
+          </>
+        }
+      >
+        <div className="flex flex-col gap-4">
+          <div className="flex items-start gap-3 rounded-lg bg-surface-container-low p-4">
+            <Icon name="mark_email_unread" size={24} className="mt-0.5 shrink-0 text-primary" />
+            <p className="text-body-md text-on-surface">
+              Bağlantıya tıkladığında hesabın etkinleşir ve otomatik giriş yaparsın. Bağlantı 24
+              saat geçerli. E-posta görünmüyorsa spam klasörünü kontrol et.
+            </p>
+          </div>
+          <ResendVerification email={sentTo} />
+          <Link to="/giris" className="text-center text-body-md text-primary hover:underline">
+            Giriş ekranına dön
+          </Link>
+        </div>
+      </AuthShell>
+    );
+  }
 
   return (
     <AuthShell
