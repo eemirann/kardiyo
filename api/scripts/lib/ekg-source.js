@@ -85,6 +85,19 @@ function docxFile(category) {
 }
 
 /**
+ * "Hasta Bilgisi" satirindaki anonimlestirilmis yasi okunur hale getirir.
+ *
+ * Kaynak PTB-XL veri setinde 90 yas ustu hastalarin yasi 300 olarak
+ * anonimlestirilmis, alan oldugu gibi "300 yaş, Kadın" diyor (4 vaka).
+ * Ayni vakalarin oykusu zaten "90 yaş üzeri kadın hasta, ..." dedigi icin
+ * ikisi birbirini tutsun diye "90+ yaş" yaziyoruz.
+ *
+ * Not: "yaş" sonrasi \b kullanilmiyor — JS'te ş ASCII kelime karakteri
+ * sayilmadigi icin sinir olusmaz ve kalip hic eslesmez.
+ */
+const fixAnonymizedAge = (s) => s.replace(/^300(?=\s*yaş)/, '90+');
+
+/**
  * Bir vaka blogunu ayristirir. Blok duzeni:
  *   EKG #1  —  Kayıt ID: 582
  *   Tanı: Normal Sinüs Ritmi
@@ -148,10 +161,7 @@ function parseCase(category, lines, where) {
     category: category.code,
     ecgId,
     diagnosis,
-    // "Hasta Bilgisi" alani (ornegin "38 yaş, Kadın") bilerek disarida birakildi:
-    // veri setinde 90 yas ustu hastalar 300 olarak anonimlestirilmis ve alan
-    // "300 yaş" diyor (4 vaka). Oykunun ilk cumlesi ayni bilgiyi dogru veriyor
-    // ("90 yaş üzeri kadın hasta, ..."), o yuzden soru govdesine oyku giriyor.
+    patient: fixAnonymizedAge(field('Hasta Bilgisi')),
     narrative: fixDiacritics(field('Öykü')),
     // Soru koku "Soru 1" basligindan hemen sonraki satirdir
     question: fixDiacritics(lines[q1 + 1]),

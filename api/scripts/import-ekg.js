@@ -40,7 +40,11 @@ const esc = (s) =>
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
 
-const bodyHtml = (c) => `<p>${esc(c.narrative)}</p><p><strong>${esc(c.question)}</strong></p>`;
+// Ustte hastanin yasi/cinsiyeti, altinda gelis hikayesi, en altta soru koku
+const bodyHtml = (c) =>
+  `<p><strong>${esc(c.patient)}</strong></p>` +
+  `<p>${esc(c.narrative)}</p>` +
+  `<p><strong>${esc(c.question)}</strong></p>`;
 
 const explanationHtml = (c) =>
   `<p><strong>Doğru cevap: ${c.correctLabel}) ${esc(c.correctText)}</strong></p>` +
@@ -125,6 +129,10 @@ function report(selected) {
       }
       const correct = c.options.filter((o) => o.isCorrect).length;
       if (correct !== 1) throw new Error(`${c.sourceKey}: ${correct} dogru sik var, 1 olmali.`);
+      // Anonimlestirilmis yas (300) sayfaya "300 yaş" olarak dusmemeli
+      if (/\b300\b/.test(c.patient)) {
+        throw new Error(`${c.sourceKey}: hasta bilgisinde anonim yas duzeltilmemis: "${c.patient}"`);
+      }
       // Gorsel hazirlanmadan ice aktarilirsa sayfa kirik resimle acilirdi
       if (!fs.existsSync(path.join(WEB_PUBLIC, c.imageUrl))) missingImages.push(c.imageUrl);
     }
@@ -134,6 +142,7 @@ function report(selected) {
   const first = casesFor(selected[0])[0];
   console.log(`\nToplam: ${total} soru\n`);
   console.log('Ornek vaka:');
+  console.log(`  ${first.patient}`);
   console.log(`  ${first.narrative}`);
   console.log(`  ${first.question}`);
   for (const o of first.options) console.log(`    ${o.label}) ${o.text}${o.isCorrect ? '  <-' : ''}`);
