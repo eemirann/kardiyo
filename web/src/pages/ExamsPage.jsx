@@ -10,6 +10,9 @@ export default function ExamsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [startingId, setStartingId] = useState(null);
+  // Kapatilmis kategori basliklari. Varsayilan acik: liste uzun ama kullanici
+  // ilk girdiginde denemeleri gormeli, aramak zorunda kalmamali.
+  const [collapsed, setCollapsed] = useState(() => new Set());
   const { user } = useAuth();
   const toast = useToast();
   const navigate = useNavigate();
@@ -44,6 +47,14 @@ export default function ExamsPage() {
       else groups.push({ name, exams: [exam] });
     }
   }
+
+  const toggle = (name) =>
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (next.has(name)) next.delete(name);
+      else next.add(name);
+      return next;
+    });
 
   const start = async (exam) => {
     if (!user) {
@@ -83,12 +94,27 @@ export default function ExamsPage() {
           />
         </div>
       ) : (
-        groups.map((g) => (
+        groups.map((g) => {
+          const open = !collapsed.has(g.name);
+          return (
           <section key={g.name} className="mt-10 first:mt-8">
-            <div className="flex items-baseline gap-3 border-b border-surface-variant pb-2">
+            <button
+              type="button"
+              onClick={() => toggle(g.name)}
+              aria-expanded={open}
+              className="flex w-full items-baseline gap-3 border-b border-surface-variant pb-2 text-left"
+            >
+              <Icon
+                name="expand_more"
+                size={22}
+                className={`self-center text-secondary transition-transform ${open ? '' : '-rotate-90'}`}
+              />
               <h2 className="text-headline-md text-on-surface">{g.name}</h2>
               <span className="text-caption text-secondary">{g.exams.length} deneme</span>
-            </div>
+            </button>
+            {/* Kapali grup DOM'dan cikarilir: "hidden" ozniteligi burada ise
+                yaramaz, .grid sinifinin display kurali onu eziyor. */}
+            {open && (
             <div className="mt-5 grid gap-gutter md:grid-cols-2 lg:grid-cols-3">
               {g.exams.map((e) => (
             <div key={e.id} className="card flex flex-col p-6">
@@ -130,8 +156,10 @@ export default function ExamsPage() {
             </div>
               ))}
             </div>
+            )}
           </section>
-        ))
+          );
+        })
       )}
     </div>
   );

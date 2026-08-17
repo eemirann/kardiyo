@@ -203,6 +203,24 @@ Object.assign(WORDS, {
 });
 
 /**
+ * EKG deneme sinavlarindaki sik metinlerinin ek kelimeleri.
+ * Bu kaynakta siklarin yazimi tutarsiz: ayni terim bir soruda "Ventriküler
+ * Taşikardi", digerinde "Ventrikuler Tasikardi" olarak geciyor. Dogru yazimi
+ * zaten kaynakta bulunan kelimeler burada tek karsiliga baglaniyor.
+ */
+Object.assign(WORDS, {
+  bloğu: 'bloğu',
+  blogu: 'bloğu',
+  degisikligi: 'değişikliği',
+  fasikuler: 'fasiküler',
+  genisleme: 'genişleme',
+  // Karsiligi ayni; kaynakta ASCII "I" ile yazildigi icin buyuk harfe
+  // cevrilirken "İnferior" olsun diye listede ("izlem"/"izole" ile ayni durum).
+  inferior: 'inferior',
+  tasikardi: 'taşikardi',
+});
+
+/**
  * Kelime bazli sozlugun yakalayamadigi kaliplar.
  * Tek basina anlamli baska bir kelime olan ("su", "on", "sok") yazimlar sozluge
  * konamaz; yalnizca gectikleri kalip degistiriliyor.

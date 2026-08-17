@@ -17,7 +17,9 @@
     "import-question-sets": "node scripts/import-question-sets.js",
     "clear-ekg": "node scripts/clear-ekg.js",
     "import-ekg": "node scripts/import-ekg.js",
+    "import-ekg-exams": "node scripts/import-ekg-exams.js",
     "prepare-ekg-images": "node scripts/prepare-ekg-images.js",
+    "prepare-ekg-exam-images": "node scripts/prepare-ekg-exam-images.js",
     "set-admin-password": "node scripts/set-admin-password.js",
     "dedupe-questions": "node scripts/dedupe-questions.js"
   },
