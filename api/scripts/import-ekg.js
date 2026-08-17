@@ -14,12 +14,14 @@
  *   npm run import-ekg -- --all
  */
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 const { pool } = require('../config/db');
-const { publicUrlFor } = require('../services/storage');
 const { CATEGORIES, casesFor, selectCategories } = require('./lib/ekg-source');
 const { suspiciousWords } = require('./lib/tr-diacritics');
 
 const TOPIC_SLUG = 'ekg-quiz';
+const WEB_PUBLIC = path.join(__dirname, '..', '..', 'web', 'public');
 // Gorselin alt metni taniyi ELE VERMEMELI: ekran okuyucuda ve gorsel
 // yuklenmediginde soru cevabiyla birlikte okunurdu.
 const IMAGE_ALT = '12 derivasyonlu EKG kaydı';
@@ -65,7 +67,8 @@ async function ensureTopic(client) {
   return created[0].id;
 }
 
-async function upsertCase(client, { topicId, adminId, c, imageUrl }) {
+async function upsertCase(client, { topicId, adminId, c }) {
+  const imageUrl = c.imageUrl;
   const { rows: existing } = await client.query('SELECT id FROM questions WHERE source_key = $1', [
     c.sourceKey,
   ]);
@@ -104,6 +107,7 @@ async function upsertCase(client, { topicId, adminId, c, imageUrl }) {
 function report(selected) {
   let total = 0;
   const suspicious = new Set();
+  const missingImages = [];
 
   for (const cat of selected) {
     const cases = casesFor(cat);
@@ -114,6 +118,8 @@ function report(selected) {
       }
       const correct = c.options.filter((o) => o.isCorrect).length;
       if (correct !== 1) throw new Error(`${c.sourceKey}: ${correct} dogru sik var, 1 olmali.`);
+      // Gorsel hazirlanmadan ice aktarilirsa sayfa kirik resimle acilirdi
+      if (!fs.existsSync(path.join(WEB_PUBLIC, c.imageUrl))) missingImages.push(c.imageUrl);
     }
     console.log(`  ${cat.code.padEnd(6)} ${cat.name.padEnd(28)} ${cases.length} vaka`);
   }
@@ -125,9 +131,17 @@ function report(selected) {
   console.log(`  ${first.question}`);
   for (const o of first.options) console.log(`    ${o.label}) ${o.text}${o.isCorrect ? '  <-' : ''}`);
   console.log(`  Klinik yaklasim: ${first.clinicalApproach}`);
-  console.log(`  Gorsel: ${publicUrlFor(first.imageKey) || '(R2_PUBLIC_URL bos)'}`);
+  console.log(`  Gorsel: ${first.imageUrl}`);
   console.log(`\nSozlukte olmayan kelimeler (${suspicious.size}): ${[...suspicious].sort().join(', ')}`);
-  return total;
+
+  if (missingImages.length) {
+    console.error(
+      `\nEKSIK GORSEL: ${missingImages.length} dosya web/public altinda yok. Ornek:\n` +
+        missingImages.slice(0, 3).map((p) => `  ${p}`).join('\n') +
+        `\n\nOnce gorselleri hazirlayin:  npm run prepare-ekg-images -- --all`
+    );
+  }
+  return { total, missingImages };
 }
 
 async function run() {
@@ -154,7 +168,12 @@ async function run() {
     return;
   }
 
-  report(selected);
+  // Gorseller hazir degilse yazma: kirik resimli sorular olusurdu
+  const { missingImages } = report(selected);
+  if (missingImages.length) {
+    await pool.end();
+    process.exit(1);
+  }
 
   const client = await pool.connect();
   try {
@@ -170,9 +189,7 @@ async function run() {
 
     for (const cat of selected) {
       for (const c of casesFor(cat)) {
-        const imageUrl = publicUrlFor(c.imageKey);
-        if (!imageUrl) throw new Error('R2_PUBLIC_URL tanimli degil; gorsel adresi uretilemiyor.');
-        const wasUpdate = await upsertCase(client, { topicId, adminId, c, imageUrl });
+        const wasUpdate = await upsertCase(client, { topicId, adminId, c });
         if (wasUpdate) updated += 1;
         else added += 1;
       }

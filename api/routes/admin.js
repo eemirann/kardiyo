@@ -134,35 +134,21 @@ const optionSchema = z.object({
   isCorrect: z.boolean().default(false),
 });
 
-/** Adres kendi R2 kovamiza mi ait? Host birebir eslesmeli (alt alan adi yetmez). */
-function isOwnMediaUrl(value) {
-  const base = (process.env.R2_PUBLIC_URL || '').trim();
-  if (!base) return false;
-  try {
-    const url = new URL(value);
-    const allowed = new URL(base);
-    return url.protocol === 'https:' && url.host === allowed.host;
-  } catch {
-    return false;
-  }
-}
-
 const questionSchema = z.object({
   topicId: z.coerce.number().int().positive(),
   type: z.enum(['case', 'classic']).default('classic'),
   difficulty: z.enum(['easy', 'medium', 'hard']).default('medium'),
   body: z.string().min(10),
-  // EKG gibi gorselli sorular icin site ici mutlak yol ("/ekg/soru-01.png") ya
-  // da kendi R2 kovamizin adresi. Rastgele dis baglanti gomulmesin diye baska
-  // hicbir adres kabul edilmiyor; R2_PUBLIC_URL bos ise yalnizca / yollari gecer.
+  // EKG gibi gorselli sorular icin site ici mutlak yol: "/ekg/soru-01.png".
+  // Dis baglanti gomulmesin diye yalnizca / ile baslayan yollar kabul edilir.
   imageUrl: z
     .string()
     .trim()
     .max(300)
     .optional()
     .transform((v) => v || null)
-    .refine((v) => v === null || v.startsWith('/') || isOwnMediaUrl(v), {
-      message: 'Gorsel yolu / ile baslamali (ornek: /ekg/soru-01.png) veya kendi medya adresimiz olmali.',
+    .refine((v) => v === null || v.startsWith('/'), {
+      message: 'Gorsel yolu / ile baslamali (ornek: /ekg/soru-01.png).',
     }),
   imageAlt: z.string().trim().max(200).default(''),
   explanation: z.string().default(''),

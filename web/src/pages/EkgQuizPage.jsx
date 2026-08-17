@@ -28,6 +28,8 @@ import {
  * geciyor. Konu /konular listesinde gorunmez (topics.is_listed = false).
  */
 const TOPIC_SLUG = 'ekg-quiz';
+// API'nin tek istekte verdigi ust sinir (api/routes/questions.js listSchema)
+const PAGE_SIZE = 100;
 
 export default function EkgQuizPage() {
   const { user, refreshUser } = useAuth();
@@ -50,10 +52,24 @@ export default function EkgQuizPage() {
 
   const load = useCallback(() => {
     setLoading(true);
-    api
-      .get(`/questions?topic=${TOPIC_SLUG}&limit=100`)
-      .then((d) => {
-        setQuestions(d.questions);
+    // API tek istekte en fazla 100 soru veriyor; vaka sayisi bunu astigi icin
+    // (su an 270) sayfa sayfa cekip birlestiriyoruz.
+    const fetchAll = async () => {
+      const first = await api.get(`/questions?topic=${TOPIC_SLUG}&limit=${PAGE_SIZE}`);
+      const all = [...first.questions];
+      for (let offset = PAGE_SIZE; offset < first.total; offset += PAGE_SIZE) {
+        const page = await api.get(
+          `/questions?topic=${TOPIC_SLUG}&limit=${PAGE_SIZE}&offset=${offset}`
+        );
+        if (!page.questions.length) break;
+        all.push(...page.questions);
+      }
+      return all;
+    };
+
+    fetchAll()
+      .then((questions) => {
+        setQuestions(questions);
         setIndex(0);
         setAnswers({});
         setSelected(null);

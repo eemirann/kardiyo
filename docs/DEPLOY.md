@@ -43,7 +43,7 @@ hesabı zaten içinde. Render'da `seed` çalıştırmana **gerek yok**.
    |---|---|
    | `DATABASE_URL` | Neon adresin (`postgresql://…?sslmode=require`) |
    | `CORS_ORIGINS` | Şimdilik `http://localhost:5173` yaz — 3. adımda güncelleyeceğiz |
-   | `ADMIN_EMAIL` | `admin@10adimdakardiyoloji.com` (seed çalıştırmayacağın için sadece formalite) |
+   | `ADMIN_EMAIL` | `admin@10adimdacardio.com` (seed çalıştırmayacağın için sadece formalite) |
    | `ADMIN_PASSWORD` | Herhangi bir değer |
    | `R2_*` (5 adet) | Boş bırak — dosya yükleme kapalı kalır, video linki çalışmaya devam eder |
 
@@ -124,17 +124,17 @@ Vercel adresini aç ve sırayla dene:
 
 ## 5. Sonrasında
 
-**Alan adı eklerken** (`10adimdakardiyoloji.com`):
+**Alan adı eklerken** (`10adimdacardio.com`):
 
 1. Vercel → Project → Settings → Domains → alan adını ekle, gösterilen A/CNAME
    kayıtlarını alan adı paneline gir.
-2. Render → Settings → Custom Domain → `api.10adimdakardiyoloji.com` ekle, verilen
+2. Render → Settings → Custom Domain → `api.10adimdacardio.com` ekle, verilen
    CNAME'i gir.
 3. `web/vercel.json` içindeki `/api/:path*` kuralının `destination` değerini
-   `https://api.10adimdakardiyoloji.com/api/:path*` yap ve push'la (Vercel otomatik
+   `https://api.10adimdacardio.com/api/:path*` yap ve push'la (Vercel otomatik
    deploy eder). `VITE_API_URL` yine tanımsız kalsın.
 4. Render'da `CORS_ORIGINS`'e yeni adresleri ekle:
-   `https://10adimdakardiyoloji.com,https://www.10adimdakardiyoloji.com`
+   `https://10adimdacardio.com,https://www.10adimdacardio.com`
 
 **Yönetici şifresi:** Neon'daki hesap seed varsayılanıyla oluşturuldu. Yayına aldıktan
 sonra `/profil` sayfasından şifreni değiştir.

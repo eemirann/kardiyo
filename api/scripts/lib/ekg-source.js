@@ -69,7 +69,8 @@ function casesFor(category) {
       correctText: e.q1_options[correctIndex],
       // Q2'nin dogru sikki: "bu tani konduysa ne yapilmali" — cozumun govdesi
       clinicalApproach: fixDiacritics(e.q2_correct_answer),
-      imageKey: `ekg/${category.code}/ECG_${e.ecg_id}.png`,
+      // Site ici mutlak yol; dosya web/public/ekg/ altinda durur (Vercel sunar)
+      imageUrl: `/ekg/${category.code}/ECG_${e.ecg_id}.png`,
       sourceKey: `ekg#${category.code}#${e.ecg_id}`,
     };
   });
