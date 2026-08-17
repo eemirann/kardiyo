@@ -1,11 +1,12 @@
 /**
  * EKG Quiz vakalarini soru bankasina yukler.
  *
- * Kaynak: OKU/EKG/<kategori>/quiz_data.json (bkz. scripts/lib/ekg-source.js)
- * Gorseller once R2'ye yuklenmis olmali: npm run upload-ekg-images
+ * Kaynak: OKU/EKG/<kategori>/<kategori>.docx (bkz. scripts/lib/ekg-source.js)
+ * Gorseller once hazirlanmis olmali: npm run prepare-ekg-images -- --all
  *
- * Sorular "ekg-quiz" konusuna yazilir; bu konu /konular listesinde gorunmez
- * (topics.is_listed = false), kendi sayfasindan (/ekg) sunulur.
+ * Her kaynak klasoru kendi konusuna yazilir (ekg-norm, ekg-mi, ...); bu konular
+ * /konular listesinde gorunmez (topics.is_listed = false), /ekg sayfasindaki
+ * kategori seciciden sunulur.
  *
  * source_key sayesinde tekrar calistirmak kopya uretmez, mevcut kaydi gunceller.
  *
@@ -17,10 +18,9 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const { pool } = require('../config/db');
-const { CATEGORIES, casesFor, selectCategories } = require('./lib/ekg-source');
+const { CATEGORIES, casesFor, selectCategories, topicSlug } = require('./lib/ekg-source');
 const { suspiciousWords } = require('./lib/tr-diacritics');
 
-const TOPIC_SLUG = 'ekg-quiz';
 const WEB_PUBLIC = path.join(__dirname, '..', '..', 'web', 'public');
 // Gorselin alt metni taniyi ELE VERMEMELI: ekran okuyucuda ve gorsel
 // yuklenmediginde soru cevabiyla birlikte okunurdu.
@@ -47,23 +47,30 @@ const explanationHtml = (c) =>
   `<p><strong>Klinik yaklaşım:</strong> ${esc(c.clinicalApproach)}</p>` +
   `<p><em>${esc(ATTRIBUTION)}</em></p>`;
 
-/** Konu yoksa olusturur; varsa listelenmeme ayarini korur. */
-async function ensureTopic(client) {
-  const { rows } = await client.query('SELECT id FROM topics WHERE slug = $1', [TOPIC_SLUG]);
+/**
+ * Kategorinin konusunu dondurur, yoksa olusturur.
+ *
+ * Konular /konular listesinde gorunmez (is_listed = FALSE); /ekg sayfasindaki
+ * kategori seciciden acilirlar. sort_order kaynak klasorun sira numarasini
+ * izler, boylece yonetici panelinde de ayni sirada dururlar.
+ */
+async function ensureTopic(client, category) {
+  const slug = topicSlug(category.code);
+  const { rows } = await client.query('SELECT id FROM topics WHERE slug = $1', [slug]);
   if (rows[0]) return rows[0].id;
 
   const { rows: created } = await client.query(
     `INSERT INTO topics (name, slug, description, icon, sort_order, is_listed)
      VALUES ($1, $2, $3, $4, $5, FALSE) RETURNING id`,
     [
-      'EKG Quiz',
-      TOPIC_SLUG,
-      'Gerçek EKG kayıtları üzerinden vaka temelli tanı soruları.',
+      `EKG · ${category.name}`,
+      slug,
+      `Gerçek EKG kayıtları üzerinden ${category.name.toLocaleLowerCase('tr')} vakaları.`,
       'monitor_heart',
-      100,
+      100 + category.dir,
     ]
   );
-  console.log('Konu olusturuldu: ekg-quiz (listelenmiyor)');
+  console.log(`Konu olusturuldu: ${slug} (listelenmiyor)`);
   return created[0].id;
 }
 
@@ -178,7 +185,6 @@ async function run() {
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
-    const topicId = await ensureTopic(client);
     const { rows: adminRows } = await client.query(
       "SELECT id FROM users WHERE role = 'admin' ORDER BY id LIMIT 1"
     );
@@ -188,6 +194,7 @@ async function run() {
     let updated = 0;
 
     for (const cat of selected) {
+      const topicId = await ensureTopic(client, cat);
       for (const c of casesFor(cat)) {
         const wasUpdate = await upsertCase(client, { topicId, adminId, c });
         if (wasUpdate) updated += 1;

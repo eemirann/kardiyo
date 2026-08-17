@@ -1,7 +1,7 @@
 /**
  * EKG kayit gorsellerini sikistirip web/public/ekg/ altina kopyalar.
  *
- * Kaynak: OKU/EKG/<sira>- <kod>_quiz_output/ecg_only/ECG_<id>.png
+ * Kaynak: OKU/EKG/<sira>- <ad>/ecg_only_<ad>/ECG_<id>.png
  * Hedef:  web/public/ekg/<kod>/ECG_<id>.png  ->  site icinde /ekg/<kod>/ECG_<id>.png
  *
  * Neden sikistiriyoruz: kaynak dosyalar 1988x1817 RGBA, ortalama 367 KB; 270 vaka
@@ -16,7 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
-const { CATEGORIES, casesFor, selectCategories, sourceRoot } = require('./lib/ekg-source');
+const { CATEGORIES, casesFor, selectCategories, imageDir } = require('./lib/ekg-source');
 
 const PUBLIC_DIR = path.join(__dirname, '..', '..', 'web', 'public', 'ekg');
 const COLORS = 64;
@@ -41,13 +41,17 @@ async function run() {
 
   for (const cat of selected) {
     const outDir = path.join(PUBLIC_DIR, cat.code);
+    // Kategori klasoru sifirdan yazilir: kaynaktan cikarilan bir vakanin gorseli
+    // hedefte kalirsa depoda sahipsiz dosya olarak birikirdi.
+    fs.rmSync(outDir, { recursive: true, force: true });
     fs.mkdirSync(outDir, { recursive: true });
 
     const cases = casesFor(cat);
+    const srcDir = imageDir(cat);
     process.stdout.write(`${cat.code.padEnd(6)} ${String(cases.length).padStart(3)} gorsel `);
 
     for (const c of cases) {
-      const src = path.join(sourceRoot(), cat.dir, 'ecg_only', `ECG_${c.ecgId}.png`);
+      const src = path.join(srcDir, `ECG_${c.ecgId}.png`);
       if (!fs.existsSync(src)) throw new Error(`Gorsel bulunamadi: ${src}`);
       const out = path.join(outDir, `ECG_${c.ecgId}.png`);
 

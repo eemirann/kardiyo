@@ -38,6 +38,7 @@ const WORDS = {
   basvurdugu: 'başvurduğu',
   basvuruyor: 'başvuruyor',
   bayilma: 'bayılma',
+  birkac: 'birkaç',
   bozuklugu: 'bozukluğu',
   bulanti: 'bulantı',
   bulgularina: 'bulgularına',

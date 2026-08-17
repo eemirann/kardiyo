@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { api } from '../api/client';
+import { EKG_CATEGORIES, ekgTopicSlug } from '../data/ekg-categories';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import AdSlot from '../components/AdSlot';
@@ -21,19 +22,30 @@ import {
 /**
  * EKG Quiz — gorsel odakli vaka sorulari.
  *
- * Sorular soru bankasiyla ayni tabloda durur; bu sayfa yalnizca "ekg-quiz"
- * konusunu ceker ve gorseli one alan bir duzende gosterir: ustte EKG,
- * altinda hastanin gelis hikayesi, sonra "hangi tani" siklari. Cevaplama,
- * puanlama ve rozetler soru bankasiyla ayni uctan (/questions/:id/answer)
- * geciyor. Konu /konular listesinde gorunmez (topics.is_listed = false).
+ * Sorular soru bankasiyla ayni tabloda durur; her EKG kategorisi kendi konusudur
+ * (ekg-norm, ekg-mi, ...) ve bu sayfa seçili kategorinin konusunu ceker. Duzen
+ * gorseli one alir: ustte EKG, altinda hastanin gelis hikayesi, sonra "hangi
+ * tani" siklari. Cevaplama, puanlama ve rozetler soru bankasiyla ayni uctan
+ * (/questions/:id/answer) geciyor. Konular /konular listesinde gorunmez
+ * (topics.is_listed = false).
+ *
+ * Secili kategori adres cubugunda tutulur (/ekg?kategori=mi): baglanti
+ * paylasilabilir ve geri tusu kategoriler arasinda gezinir.
  */
-const TOPIC_SLUG = 'ekg-quiz';
-// API'nin tek istekte verdigi ust sinir (api/routes/questions.js listSchema)
+const CATEGORY_PARAM = 'kategori';
+// Kategori basina 30 vaka var; API tek istekte en fazla 100 soru veriyor
+// (api/routes/questions.js listSchema), yani tek istek yetiyor.
 const PAGE_SIZE = 100;
 
 export default function EkgQuizPage() {
   const { user, refreshUser } = useAuth();
   const toast = useToast();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  // Adreste gecersiz/eksik kategori varsa ilk kategoriye duseriz
+  const paramCode = searchParams.get(CATEGORY_PARAM);
+  const category =
+    EKG_CATEGORIES.find((c) => c.code === paramCode) || EKG_CATEGORIES[0];
 
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
@@ -52,23 +64,11 @@ export default function EkgQuizPage() {
 
   const load = useCallback(() => {
     setLoading(true);
-    // API tek istekte en fazla 100 soru veriyor; vaka sayisi bunu astigi icin
-    // (su an 270) sayfa sayfa cekip birlestiriyoruz.
-    const fetchAll = async () => {
-      const first = await api.get(`/questions?topic=${TOPIC_SLUG}&limit=${PAGE_SIZE}`);
-      const all = [...first.questions];
-      for (let offset = PAGE_SIZE; offset < first.total; offset += PAGE_SIZE) {
-        const page = await api.get(
-          `/questions?topic=${TOPIC_SLUG}&limit=${PAGE_SIZE}&offset=${offset}`
-        );
-        if (!page.questions.length) break;
-        all.push(...page.questions);
-      }
-      return all;
-    };
+    const slug = ekgTopicSlug(category.code);
 
-    fetchAll()
-      .then((questions) => {
+    api
+      .get(`/questions?topic=${slug}&limit=${PAGE_SIZE}`)
+      .then(({ questions }) => {
         setQuestions(questions);
         setIndex(0);
         setAnswers({});
@@ -77,7 +77,7 @@ export default function EkgQuizPage() {
       })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
-  }, []);
+  }, [category.code]);
 
   useEffect(load, [load]);
 
@@ -121,7 +121,12 @@ export default function EkgQuizPage() {
   const optionClass = (option) =>
     optionClassFor(option, { selectedId: selected, answer: currentState });
 
-  if (loading) return <PageLoader />;
+  // Kategori degistiginde vaka listesi bastan yuklenir; cevaplanmis vakalar sifirlanir
+  const selectCategory = (code) => {
+    if (code === category.code) return;
+    setSearchParams({ [CATEGORY_PARAM]: code });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="mx-auto max-w-4xl px-margin-mobile py-6 md:py-10 md:px-margin-desktop">
@@ -137,25 +142,64 @@ export default function EkgQuizPage() {
         </div>
       </div>
 
-      {error && (
+      {/* Kategori secici: her biri kendi konusundaki 30 vakayi acar */}
+      <div className="mt-6 flex flex-wrap gap-2" role="tablist" aria-label="EKG kategorileri">
+        {EKG_CATEGORIES.map((c) => {
+          const active = c.code === category.code;
+          return (
+            <button
+              key={c.code}
+              type="button"
+              role="tab"
+              aria-selected={active}
+              title={c.name}
+              onClick={() => selectCategory(c.code)}
+              className={`rounded-full border px-4 py-2 text-caption transition-colors ${
+                active
+                  ? 'border-primary bg-primary text-on-primary'
+                  : 'border-outline-variant bg-surface-container-lowest text-secondary hover:bg-surface-container-low'
+              }`}
+            >
+              {c.short}
+            </button>
+          );
+        })}
+      </div>
+
+      <h2 className="mt-6 text-headline-md text-on-surface">
+        {category.name}
+        {!loading && questions.length > 0 && (
+          <span className="ml-2 text-body-md font-normal text-secondary">
+            · {questions.length} vaka
+          </span>
+        )}
+      </h2>
+
+      {loading && (
+        <div className="mt-8">
+          <PageLoader />
+        </div>
+      )}
+
+      {!loading && error && (
         <div className="mt-6">
           <ErrorBox message={error} onRetry={load} />
         </div>
       )}
 
-      {!error && questions.length === 0 && (
+      {!loading && !error && questions.length === 0 && (
         <div className="mt-8">
           <EmptyState
             icon="monitor_heart"
-            title="Henüz EKG sorusu eklenmemiş"
+            title="Bu kategoride henüz vaka yok"
             description="Yeni vakalar eklendiğinde burada göreceksin."
           />
         </div>
       )}
 
-      {current && (
+      {!loading && current && (
         <>
-          <div className="mb-4 mt-8 flex items-center gap-4">
+          <div className="mb-4 mt-6 flex items-center gap-4">
             <ProgressBar value={index + 1} max={questions.length} className="flex-1" />
             <span className="whitespace-nowrap text-caption text-secondary">
               {solvedCount} doğru / {Object.keys(answers).length} cevap

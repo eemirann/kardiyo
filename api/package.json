@@ -15,6 +15,7 @@
     "import-exams": "node scripts/import-exams.js",
     "import-guides": "node scripts/import-guides.js",
     "import-question-sets": "node scripts/import-question-sets.js",
+    "clear-ekg": "node scripts/clear-ekg.js",
     "import-ekg": "node scripts/import-ekg.js",
     "prepare-ekg-images": "node scripts/prepare-ekg-images.js",
     "set-admin-password": "node scripts/set-admin-password.js",
