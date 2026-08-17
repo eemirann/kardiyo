@@ -55,7 +55,9 @@ router.get(
     const premium = hasPremiumAccess(req.user);
 
     // Filtre parametreleri hem liste hem sayim sorgusunda ayni sirayla kullanilir
-    const where = ['q.is_active', 't.is_active'];
+    // Devam sorulari (parent_question_id dolu) listede tek basina gorunmez:
+    // govdesi ilk sorunun cevabini ele verir, ancak /answer yanitinda doner.
+    const where = ['q.is_active', 't.is_active', 'q.parent_question_id IS NULL'];
     const filterParams = [];
     if (topic) {
       filterParams.push(topic);
@@ -121,7 +123,10 @@ router.get(
   })
 );
 
-/** Tek soru. */
+/**
+ * Tek soru. Devam sorulari buradan da alinamaz: govdeleri bagli olduklari
+ * sorunun dogru cevabini yaziyor, yalnizca o soru cevaplanınca aciga cikmali.
+ */
 router.get(
   '/:id',
   optionalAuth,
@@ -136,7 +141,7 @@ router.get(
                        WHERE a.user_id = $2 AND a.question_id = q.id AND a.is_correct)
                 AS already_solved
          FROM questions q JOIN topics t ON t.id = q.topic_id
-        WHERE q.id = $1 AND q.is_active`,
+        WHERE q.id = $1 AND q.is_active AND q.parent_question_id IS NULL`,
       [id, req.user?.id || null]
     );
     const question = rows[0];
@@ -151,6 +156,33 @@ router.get(
     res.json({ question: toPublicQuestion(question, opts) });
   })
 );
+
+/**
+ * Sorunun devam sorusunu (varsa) cevaplanabilir halde doner.
+ * Ayni bicimde donuyor ki arayuz onu normal bir soru gibi gosterip
+ * /questions/:id/answer ile cevaplayabilsin.
+ */
+async function loadFollowUp(client, parentId, userId) {
+  const { rows } = await client.query(
+    `SELECT q.id, q.topic_id, q.type, q.difficulty, q.body, q.image_url, q.image_alt, q.is_premium,
+            t.name AS topic_name, t.slug AS topic_slug,
+            EXISTS (SELECT 1 FROM attempts a
+                     WHERE a.user_id = $2 AND a.question_id = q.id AND a.is_correct)
+              AS already_solved
+       FROM questions q JOIN topics t ON t.id = q.topic_id
+      WHERE q.parent_question_id = $1 AND q.is_active
+      ORDER BY q.id LIMIT 1`,
+    [parentId, userId]
+  );
+  if (!rows[0]) return null;
+
+  const { rows: opts } = await client.query(
+    `SELECT id, label, text FROM question_options
+      WHERE question_id = $1 ORDER BY sort_order, label`,
+    [rows[0].id]
+  );
+  return toPublicQuestion(rows[0], opts);
+}
 
 const answerSchema = z.object({
   optionId: z.coerce.number().int().positive(),
@@ -198,6 +230,10 @@ router.post(
         [req.user.id]
       );
 
+      // Devam sorusu ancak burada aciga cikar: govdesi bu sorunun dogru
+      // cevabini yazdigi icin cevaplamadan once gonderilemez.
+      const followUp = await loadFollowUp(client, questionId, req.user.id);
+
       return {
         isCorrect: selected.is_correct,
         correctOptionId: correct ? correct.id : null,
@@ -206,6 +242,7 @@ router.post(
         pointsAwarded,
         totalPoints: pointRows[0].total_points,
         newBadges,
+        followUp,
       };
     });
 

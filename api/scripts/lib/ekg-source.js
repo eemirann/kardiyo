@@ -148,6 +148,7 @@ function parseCase(category, lines, where) {
   check(raw2, 2);
 
   const correctIndex = raw1.findIndex((o) => o.isCorrect);
+  const followUpCorrectIndex = raw2.findIndex((o) => o.isCorrect);
   const diagnosis = field('Tanı');
 
   // Kaynak hatasi olarak dogru sik ile tani ayrisirsa cozum metni yanlis olurdu
@@ -168,8 +169,14 @@ function parseCase(category, lines, where) {
     options: raw1.map((o, i) => ({ label: LABELS[i], text: o.text, isCorrect: o.isCorrect })),
     correctLabel: LABELS[correctIndex],
     correctText: raw1[correctIndex].text,
-    // Soru 2'nin dogru sikki: "bu tani konduysa ne yapilmali" — cozumun govdesi
-    clinicalApproach: fixDiacritics(raw2.find((o) => o.isCorrect).text),
+    // Ikinci asama: "tani konduysa ne yapilmali". Govdesi taniyi acikca yazdigi
+    // icin ayri bir vaka olarak listelenemez; ilk soru cevaplaninca acilir.
+    followUp: {
+      question: fixDiacritics(lines[q2 + 1]),
+      options: raw2.map((o, i) => ({ label: LABELS[i], text: o.text, isCorrect: o.isCorrect })),
+      correctLabel: LABELS[followUpCorrectIndex],
+      correctText: fixDiacritics(raw2[followUpCorrectIndex].text),
+    },
     // Site ici mutlak yol; dosya web/public/ekg/ altinda durur (Vercel sunar)
     imageUrl: `/ekg/${category.code}/ECG_${ecgId}.png`,
     sourceKey: `ekg#${category.code}#${ecgId}`,

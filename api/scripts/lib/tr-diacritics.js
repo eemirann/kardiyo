@@ -221,6 +221,18 @@ Object.assign(WORDS, {
 });
 
 /**
+ * Ikinci asama sorularinin ("tani konduysa ne yapilmali") koklerindeki kelimeler.
+ * Kaynakta yalnizca dort farkli kok var, hepsi ayni sablondan:
+ *   "Dogru tanı 'X' olarak belirlenmistir. Bu hastada ... yaklasim ... hangisidir?"
+ */
+Object.assign(WORDS, {
+  belirlenmistir: 'belirlenmiştir',
+  dogru: 'doğru',
+  uygulanmasi: 'uygulanması',
+  yaklasim: 'yaklaşım',
+});
+
+/**
  * Kelime bazli sozlugun yakalayamadigi kaliplar.
  * Tek basina anlamli baska bir kelime olan ("su", "on", "sok") yazimlar sozluge
  * konamaz; yalnizca gectikleri kalip degistiriliyor.

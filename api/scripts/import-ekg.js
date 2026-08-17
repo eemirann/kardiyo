@@ -46,9 +46,19 @@ const bodyHtml = (c) =>
   `<p>${esc(c.narrative)}</p>` +
   `<p><strong>${esc(c.question)}</strong></p>`;
 
+// Ilk sorunun cozumu ikinci sorunun cevabini VERMEZ: "klinik yaklasim" artik
+// ayri bir soru, burada yazsaydik altinda sorulmadan cevaplanmis olurdu.
 const explanationHtml = (c) =>
   `<p><strong>Doğru cevap: ${c.correctLabel}) ${esc(c.correctText)}</strong></p>` +
-  `<p><strong>Klinik yaklaşım:</strong> ${esc(c.clinicalApproach)}</p>` +
+  `<p><em>${esc(ATTRIBUTION)}</em></p>`;
+
+// Ikinci asama sorusu. Govdesi taniyi acikca yazar; yalnizca ilk soru
+// cevaplandiktan sonra sunulur (bkz. migrations/009_question_followup.sql).
+const followUpBodyHtml = (c) =>
+  `<p><strong>${esc(c.followUp.question)}</strong></p>`;
+
+const followUpExplanationHtml = (c) =>
+  `<p><strong>Doğru cevap: ${c.followUp.correctLabel}) ${esc(c.followUp.correctText)}</strong></p>` +
   `<p><em>${esc(ATTRIBUTION)}</em></p>`;
 
 /**
@@ -76,6 +86,47 @@ async function ensureTopic(client, category) {
   );
   console.log(`Konu olusturuldu: ${slug} (listelenmiyor)`);
   return created[0].id;
+}
+
+/**
+ * Vakanin ikinci asama sorusunu ekler/gunceller ve ilk soruya baglar.
+ *
+ * Gorsel yeniden verilmiyor: arayuz iki soruyu ayni EKG'nin altinda gosteriyor,
+ * ikinci kez basmak ayni kaydi ust uste iki defa cizerdi.
+ */
+async function upsertFollowUp(client, { topicId, adminId, c, parentId }) {
+  const sourceKey = `${c.sourceKey}#2`;
+  const { rows: existing } = await client.query('SELECT id FROM questions WHERE source_key = $1', [
+    sourceKey,
+  ]);
+
+  let questionId;
+  if (existing[0]) {
+    questionId = existing[0].id;
+    await client.query('DELETE FROM question_options WHERE question_id = $1', [questionId]);
+    await client.query(
+      `UPDATE questions SET topic_id=$2, parent_question_id=$3, type='case', difficulty='medium',
+              body=$4, explanation=$5, is_active=TRUE, updated_at=now()
+        WHERE id=$1`,
+      [questionId, topicId, parentId, followUpBodyHtml(c), followUpExplanationHtml(c)]
+    );
+  } else {
+    const { rows } = await client.query(
+      `INSERT INTO questions (topic_id, parent_question_id, type, difficulty, body,
+                              explanation, created_by, source_key)
+       VALUES ($1,$2,'case','medium',$3,$4,$5,$6) RETURNING id`,
+      [topicId, parentId, followUpBodyHtml(c), followUpExplanationHtml(c), adminId, sourceKey]
+    );
+    questionId = rows[0].id;
+  }
+
+  for (const [i, o] of c.followUp.options.entries()) {
+    await client.query(
+      `INSERT INTO question_options (question_id, label, text, is_correct, sort_order)
+       VALUES ($1,$2,$3,$4,$5)`,
+      [questionId, o.label, o.text, o.isCorrect, i]
+    );
+  }
 }
 
 async function upsertCase(client, { topicId, adminId, c }) {
@@ -111,6 +162,8 @@ async function upsertCase(client, { topicId, adminId, c }) {
       [questionId, o.label, o.text, o.isCorrect, i]
     );
   }
+
+  await upsertFollowUp(client, { topicId, adminId, c, parentId: questionId });
   return Boolean(existing[0]);
 }
 
@@ -124,11 +177,15 @@ function report(selected) {
     const cases = casesFor(cat);
     total += cases.length;
     for (const c of cases) {
-      for (const text of [c.narrative, c.question, c.clinicalApproach]) {
+      for (const text of [c.narrative, c.question, c.followUp.question, c.followUp.correctText]) {
         for (const w of suspiciousWords(text)) suspicious.add(w);
       }
       const correct = c.options.filter((o) => o.isCorrect).length;
       if (correct !== 1) throw new Error(`${c.sourceKey}: ${correct} dogru sik var, 1 olmali.`);
+      const followUpCorrect = c.followUp.options.filter((o) => o.isCorrect).length;
+      if (followUpCorrect !== 1) {
+        throw new Error(`${c.sourceKey}#2: ${followUpCorrect} dogru sik var, 1 olmali.`);
+      }
       // Anonimlestirilmis yas (300) sayfaya "300 yaş" olarak dusmemeli
       if (/\b300\b/.test(c.patient)) {
         throw new Error(`${c.sourceKey}: hasta bilgisinde anonim yas duzeltilmemis: "${c.patient}"`);
@@ -140,13 +197,15 @@ function report(selected) {
   }
 
   const first = casesFor(selected[0])[0];
-  console.log(`\nToplam: ${total} soru\n`);
+  console.log(`\nToplam: ${total} vaka — her biri 2 soru, yani ${total * 2} soru\n`);
   console.log('Ornek vaka:');
   console.log(`  ${first.patient}`);
   console.log(`  ${first.narrative}`);
-  console.log(`  ${first.question}`);
-  for (const o of first.options) console.log(`    ${o.label}) ${o.text}${o.isCorrect ? '  <-' : ''}`);
-  console.log(`  Klinik yaklasim: ${first.clinicalApproach}`);
+  console.log(`  1) ${first.question}`);
+  for (const o of first.options) console.log(`      ${o.label}) ${o.text}${o.isCorrect ? '  <-' : ''}`);
+  console.log(`  2) ${first.followUp.question}`);
+  for (const o of first.followUp.options)
+    console.log(`      ${o.label}) ${o.text}${o.isCorrect ? '  <-' : ''}`);
   console.log(`  Gorsel: ${first.imageUrl}`);
   console.log(`\nSozlukte olmayan kelimeler (${suspicious.size}): ${[...suspicious].sort().join(', ')}`);
 
