@@ -23,6 +23,13 @@ process.env.NODE_ENV = 'test';
 process.env.JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET || 'test-access-secret';
 process.env.JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'test-refresh-secret';
 
+// Mail gonderimi testlerde HER ZAMAN kapali. .env gercek bir RESEND_API_KEY
+// icerdiginde testler kayit uclarini cagirdigi icin ornek@test.com gibi var
+// olmayan adreslere gercekten mail gidiyor; bu bounce'lar alan adinin gonderim
+// itibarini dusuruyor. Anahtari burada temizliyoruz (mailer isEnabled() false doner).
+delete process.env.RESEND_API_KEY;
+delete process.env.MAIL_FROM;
+
 const bcrypt = require('bcryptjs');
 const request = require('supertest');
 const app = require('../app');
