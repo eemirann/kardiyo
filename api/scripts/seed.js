@@ -216,7 +216,7 @@ async function seed() {
     }
 
     // --- Admin kullanici
-    const adminEmail = (process.env.ADMIN_EMAIL || 'admin@10adimdakardiyoloji.com').toLowerCase();
+    const adminEmail = (process.env.ADMIN_EMAIL || 'admin@10adimdacardio.com').toLowerCase();
     const adminHash = await bcrypt.hash(process.env.ADMIN_PASSWORD || 'Admin1234!', 10);
     const { rows: adminRows } = await client.query(
       `INSERT INTO users (email, password_hash, full_name, role, is_premium)

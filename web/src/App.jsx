@@ -7,6 +7,7 @@ import { RequireAdmin, RequireAuth } from './components/RouteGuards';
 
 import HomePage from './pages/HomePage';
 import { LoginPage, RegisterPage } from './pages/AuthPages';
+import VerifyEmailPage from './pages/VerifyEmailPage';
 import TopicsPage from './pages/TopicsPage';
 import QuestionBankPage from './pages/QuestionBankPage';
 import EkgQuizPage from './pages/EkgQuizPage';
@@ -60,6 +61,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="giris" element={<LoginPage />} />
           <Route path="kayit" element={<RegisterPage />} />
+          <Route path="eposta-dogrula" element={<VerifyEmailPage />} />
           <Route path="konular" element={<TopicsPage />} />
           <Route path="soru-bankasi/:topicSlug" element={<QuestionBankPage />} />
           <Route path="ekg" element={<EkgQuizPage />} />

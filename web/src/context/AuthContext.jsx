@@ -35,12 +35,27 @@ export function AuthProvider({ children }) {
     return data.user;
   }, []);
 
-  const register = useCallback(async (fullName, email, password) => {
-    const data = await api.post('/auth/register', { fullName, email, password });
+  /**
+   * Kayit oturum ACMAZ: hesap, e-postadaki bag tiklanana kadar bekler.
+   * Cagiran sayfa "dogrulama baglantisi gonderildi" ekranini gosterir.
+   */
+  const register = useCallback(
+    (fullName, email, password) => api.post('/auth/register', { fullName, email, password }),
+    []
+  );
+
+  /** E-postadaki bagi harcar; basarili olursa oturumu da acar. */
+  const verifyEmail = useCallback(async (token) => {
+    const data = await api.post('/auth/verify-email', { token });
     setAccessToken(data.accessToken);
     setUser(data.user);
     return data.user;
   }, []);
+
+  const resendVerification = useCallback(
+    (email) => api.post('/auth/resend-verification', { email }),
+    []
+  );
 
   const logout = useCallback(async () => {
     try {
@@ -68,13 +83,15 @@ export function AuthProvider({ children }) {
       loading,
       login,
       register,
+      verifyEmail,
+      resendVerification,
       logout,
       refreshUser,
       setUser,
       isAdmin: user?.role === 'admin',
       isPremium: Boolean(user?.isPremium) || user?.role === 'admin',
     }),
-    [user, loading, login, register, logout, refreshUser]
+    [user, loading, login, register, verifyEmail, resendVerification, logout, refreshUser]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

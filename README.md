@@ -141,7 +141,7 @@ HTML temizleme, sınav süresi ve skor hesabı, premium kullanıcıya reklam gö
 - Pre-Deploy Command: `npm run migrate`
 - Ortam değişkenleri: `.env.example`'daki tüm anahtarlar.
   `DATABASE_SSL=true`, `NODE_ENV=production`,
-  `CORS_ORIGINS=https://10adimdakardiyoloji.com,https://www.10adimdakardiyoloji.com`
+  `CORS_ORIGINS=https://10adimdacardio.com,https://www.10adimdacardio.com`
 
 İlk deploydan sonra bir kez `npm run seed` çalıştır (Render Shell'den) — konular, rozetler,
 reklam alanları ve admin hesabı oluşur.
@@ -166,9 +166,9 @@ API adresi değişirse `web/vercel.json` içindeki ilk kuralın `destination` de
 ### Alan adı
 
 1. Alan adını satın al (Namecheap, GoDaddy, Turhost…).
-2. **Vercel** → Project → Settings → Domains → `10adimdakardiyoloji.com` ekle, gösterilen
+2. **Vercel** → Project → Settings → Domains → `10adimdacardio.com` ekle, gösterilen
    A/CNAME kayıtlarını alan adı paneline gir.
-3. **Render** → Settings → Custom Domain → `api.10adimdakardiyoloji.com` ekle, verilen CNAME'i gir.
+3. **Render** → Settings → Custom Domain → `api.10adimdacardio.com` ekle, verilen CNAME'i gir.
 4. Render'daki `CORS_ORIGINS` değerine yeni alan adını ekle ve API'yi yeniden başlat.
 5. SSL sertifikaları her iki serviste de otomatik gelir (birkaç dakika sürebilir).
 
@@ -176,7 +176,7 @@ API adresi değişirse `web/vercel.json` içindeki ilk kuralın `destination` de
 
 1. Cloudflare → R2 → bucket oluştur (`kardiyo-media`).
 2. R2 API token üret (Object Read & Write).
-3. Bucket'a genel erişim adresi bağla (`media.10adimdakardiyoloji.com`).
+3. Bucket'a genel erişim adresi bağla (`media.10adimdacardio.com`).
 4. Render'a `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET`,
    `R2_PUBLIC_URL` değişkenlerini gir.
 5. Bucket CORS ayarına Vercel alan adını `PUT` izniyle ekle (tarayıcı doğrudan yükleme yapar).
